@@ -63,12 +63,17 @@
     <Compile Include="CustomControls\SecondCustomInputWindow.Designer.cs">
       <DependentUpon>SecondCustomInputWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SelectionSystem.cs" />
     <Compile Include="Forms\SimulationTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SimulationTableForm.Designer.cs">
       <DependentUpon>SimulationTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WelcomeForm.cs">
       <SubType>Form</SubType>
@@ -131,6 +136,9 @@
       <Project>{ea31be33-5807-4e11-8716-c5ed9c14b3bb}</Project>
       <Name>MultiQueueModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OOP\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

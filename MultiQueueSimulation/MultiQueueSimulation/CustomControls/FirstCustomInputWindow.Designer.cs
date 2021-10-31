@@ -53,17 +53,17 @@ namespace MultiQueueSimulation
             this.containerPanel.Controls.Add(this.stoppingCriteriaGroup);
             this.containerPanel.Controls.Add(this.selectionMethodGroup);
             this.containerPanel.Controls.Add(this.serversNumberGroup);
-            this.containerPanel.Location = new System.Drawing.Point(14, 14);
+            this.containerPanel.Location = new System.Drawing.Point(10, 10);
             this.containerPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.containerPanel.Name = "containerPanel";
-            this.containerPanel.Size = new System.Drawing.Size(472, 372);
+            this.containerPanel.Size = new System.Drawing.Size(580, 480);
             this.containerPanel.TabIndex = 1;
             // 
             // StoppingNumberGroup
             // 
             this.StoppingNumberGroup.Controls.Add(this.stoppingNumberTxt);
             this.StoppingNumberGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.StoppingNumberGroup.Location = new System.Drawing.Point(78, 285);
+            this.StoppingNumberGroup.Location = new System.Drawing.Point(129, 363);
             this.StoppingNumberGroup.Name = "StoppingNumberGroup";
             this.StoppingNumberGroup.Size = new System.Drawing.Size(321, 70);
             this.StoppingNumberGroup.TabIndex = 10;
@@ -84,7 +84,7 @@ namespace MultiQueueSimulation
             // 
             this.stoppingCriteriaGroup.Controls.Add(this.stoppingCriteriaCmb);
             this.stoppingCriteriaGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.stoppingCriteriaGroup.Location = new System.Drawing.Point(78, 202);
+            this.stoppingCriteriaGroup.Location = new System.Drawing.Point(129, 263);
             this.stoppingCriteriaGroup.Name = "stoppingCriteriaGroup";
             this.stoppingCriteriaGroup.Size = new System.Drawing.Size(321, 70);
             this.stoppingCriteriaGroup.TabIndex = 10;
@@ -110,7 +110,7 @@ namespace MultiQueueSimulation
             this.selectionMethodGroup.Controls.Add(this.selectionCmb);
             this.selectionMethodGroup.Controls.Add(this.howToSelectLbl);
             this.selectionMethodGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.selectionMethodGroup.Location = new System.Drawing.Point(78, 101);
+            this.selectionMethodGroup.Location = new System.Drawing.Point(129, 145);
             this.selectionMethodGroup.Name = "selectionMethodGroup";
             this.selectionMethodGroup.Size = new System.Drawing.Size(321, 88);
             this.selectionMethodGroup.TabIndex = 10;
@@ -147,7 +147,7 @@ namespace MultiQueueSimulation
             // 
             this.serversNumberGroup.Controls.Add(this.numberOfServersTxt);
             this.serversNumberGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.serversNumberGroup.Location = new System.Drawing.Point(78, 18);
+            this.serversNumberGroup.Location = new System.Drawing.Point(129, 45);
             this.serversNumberGroup.Name = "serversNumberGroup";
             this.serversNumberGroup.Size = new System.Drawing.Size(321, 70);
             this.serversNumberGroup.TabIndex = 9;
@@ -173,7 +173,7 @@ namespace MultiQueueSimulation
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FirstCustomInputWindow";
-            this.Size = new System.Drawing.Size(500, 400);
+            this.Size = new System.Drawing.Size(600, 500);
             this.containerPanel.ResumeLayout(false);
             this.StoppingNumberGroup.ResumeLayout(false);
             this.StoppingNumberGroup.PerformLayout();

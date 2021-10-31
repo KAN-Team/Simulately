@@ -1,5 +1,4 @@
-﻿using MultiQueueModels;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -23,8 +22,6 @@ namespace MultiQueueSimulation
 
         // determines which window is active from 0 to 3
         private int activeWindow;
-        private bool secondIsLoaded;
-        private bool isSimulated;
 
         public WelcomeForm()
         {
@@ -34,7 +31,6 @@ namespace MultiQueueSimulation
             loadFileWindow.setWelcomeForm(this);
             firstCustomInputWindow.setWelcomeForm(this);
             secondCustomInputWindow.setWelcomeForm(this);
-            secondIsLoaded = isSimulated = false;
         }
 
         private void closePic_Click(object sender, EventArgs e)
@@ -47,12 +43,16 @@ namespace MultiQueueSimulation
         {
             if (activeWindow < 3)
                 activeWindow++;
+
+            activateWindow();
         }
 
         private void backPic_Click(object sender, EventArgs e)
         {
             if (activeWindow > 0)
                 activeWindow--;
+
+            activateWindow();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -62,45 +62,31 @@ namespace MultiQueueSimulation
             if (activeWindow == 0 && loadFileWindow.Left < Width)
             {
                 loadFileWindow.Left += animation_speed;
-                activateWindow();
             }
+
             else if (activeWindow == 1 && (loadFileWindow.Left > 0 || firstCustomInputWindow.Left < Width))
             {
                 if (loadFileWindow.Left > 0)
                     loadFileWindow.Left -= animation_speed;
 
-                loadFileWindow.BringToFront();
-                firstCustomInputWindow.BringToFront();
-
                 if (firstCustomInputWindow.Left < Width)
                     firstCustomInputWindow.Left += animation_speed;
-                activateWindow();
-                secondIsLoaded = false;
             }
+
             else if (activeWindow == 2 && (firstCustomInputWindow.Left > 0 || secondCustomInputWindow.Left < Width))
             {
                 if (firstCustomInputWindow.Left > 0)
                     firstCustomInputWindow.Left -= animation_speed;
 
-                firstCustomInputWindow.BringToFront();
-                secondCustomInputWindow.BringToFront();
-
                 if (secondCustomInputWindow.Left < Width)
                     secondCustomInputWindow.Left += animation_speed;
-                activateWindow();
-                if (!secondIsLoaded)
-                {
-                    secondCustomInputWindow.setColums();
-                    secondIsLoaded = true;
-                }
             }
+
             else if (activeWindow == 3 && secondCustomInputWindow.Left > 0)
             {
                 secondCustomInputWindow.Left -= animation_speed;
-                secondCustomInputWindow.BringToFront();
-                activateWindow();
-                secondIsLoaded = false;
             }
+
             /*else if (activeWindow == 4)
             {
                 if (!isSimulated)
@@ -141,20 +127,33 @@ namespace MultiQueueSimulation
                 closePic.Parent = secondCustomInputWindow;
             }
 
+            if (activeWindow == 1 && (loadFileWindow.Left > 0 || firstCustomInputWindow.Left < Width))
+            {
+                loadFileWindow.BringToFront();
+                firstCustomInputWindow.BringToFront();
+            }
+
+            else if (activeWindow == 2 && (firstCustomInputWindow.Left > 0 || secondCustomInputWindow.Left < Width))
+            {
+                firstCustomInputWindow.BringToFront();
+                secondCustomInputWindow.BringToFront();
+                secondCustomInputWindow.initializeServersColumns();
+            }
+
+            else if (activeWindow == 3 && secondCustomInputWindow.Left > 0)
+            {
+                secondCustomInputWindow.BringToFront();
+            }
+
             nextPic.BringToFront();
             backPic.BringToFront();
             closePic.BringToFront();
         }
 
-        public void CloseForm()
-        {
-            Close();
-            Dispose();
-        } 
-
         public SecondCustomInputWindow getSecondCustomInput()
         {
             return secondCustomInputWindow;
         }
+
     }
 }

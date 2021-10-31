@@ -56,17 +56,17 @@ namespace MultiQueueSimulation
             this.containerPanel.Controls.Add(this.serviceTimeLbl);
             this.containerPanel.Controls.Add(this.interarrivalDgv);
             this.containerPanel.Controls.Add(this.interarrivalLbl);
-            this.containerPanel.Location = new System.Drawing.Point(14, 14);
+            this.containerPanel.Location = new System.Drawing.Point(10, 10);
             this.containerPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.containerPanel.Name = "containerPanel";
-            this.containerPanel.Size = new System.Drawing.Size(472, 372);
+            this.containerPanel.Size = new System.Drawing.Size(580, 480);
             this.containerPanel.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(380, 187);
+            this.button1.Location = new System.Drawing.Point(439, 227);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
+            this.button1.Size = new System.Drawing.Size(91, 26);
             this.button1.TabIndex = 8;
             this.button1.Text = "Simulate";
             this.button1.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@ namespace MultiQueueSimulation
             // 
             // serviceTimeDgv
             // 
-            this.serviceTimeDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.serviceTimeDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.serviceTimeDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.serviceTimeDgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -95,7 +95,7 @@ namespace MultiQueueSimulation
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.serviceTimeDgv.DefaultCellStyle = dataGridViewCellStyle2;
-            this.serviceTimeDgv.Location = new System.Drawing.Point(8, 216);
+            this.serviceTimeDgv.Location = new System.Drawing.Point(3, 255);
             this.serviceTimeDgv.Name = "serviceTimeDgv";
             this.serviceTimeDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -107,14 +107,14 @@ namespace MultiQueueSimulation
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.serviceTimeDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.serviceTimeDgv.RowHeadersVisible = false;
-            this.serviceTimeDgv.Size = new System.Drawing.Size(455, 145);
+            this.serviceTimeDgv.Size = new System.Drawing.Size(574, 220);
             this.serviceTimeDgv.TabIndex = 7;
             // 
             // serviceTimeLbl
             // 
             this.serviceTimeLbl.AutoSize = true;
             this.serviceTimeLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.serviceTimeLbl.Location = new System.Drawing.Point(132, 190);
+            this.serviceTimeLbl.Location = new System.Drawing.Point(188, 230);
             this.serviceTimeLbl.Name = "serviceTimeLbl";
             this.serviceTimeLbl.Size = new System.Drawing.Size(206, 23);
             this.serviceTimeLbl.TabIndex = 6;
@@ -146,7 +146,7 @@ namespace MultiQueueSimulation
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.interarrivalDgv.DefaultCellStyle = dataGridViewCellStyle5;
-            this.interarrivalDgv.Location = new System.Drawing.Point(8, 36);
+            this.interarrivalDgv.Location = new System.Drawing.Point(3, 36);
             this.interarrivalDgv.Name = "interarrivalDgv";
             this.interarrivalDgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -158,7 +158,7 @@ namespace MultiQueueSimulation
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.interarrivalDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.interarrivalDgv.RowHeadersVisible = false;
-            this.interarrivalDgv.Size = new System.Drawing.Size(455, 145);
+            this.interarrivalDgv.Size = new System.Drawing.Size(574, 190);
             this.interarrivalDgv.TabIndex = 5;
             // 
             // interarrivalTime
@@ -175,7 +175,7 @@ namespace MultiQueueSimulation
             // 
             this.interarrivalLbl.AutoSize = true;
             this.interarrivalLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.interarrivalLbl.Location = new System.Drawing.Point(134, 10);
+            this.interarrivalLbl.Location = new System.Drawing.Point(190, 10);
             this.interarrivalLbl.Name = "interarrivalLbl";
             this.interarrivalLbl.Size = new System.Drawing.Size(203, 23);
             this.interarrivalLbl.TabIndex = 1;
@@ -190,7 +190,7 @@ namespace MultiQueueSimulation
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "SecondCustomInputWindow";
-            this.Size = new System.Drawing.Size(500, 400);
+            this.Size = new System.Drawing.Size(600, 500);
             this.containerPanel.ResumeLayout(false);
             this.containerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serviceTimeDgv)).EndInit();

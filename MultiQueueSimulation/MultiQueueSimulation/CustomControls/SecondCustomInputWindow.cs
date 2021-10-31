@@ -2,6 +2,7 @@
 using MultiQueueSimulation.Forms;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -51,15 +52,19 @@ namespace MultiQueueSimulation
             this.welcomeForm = welcomeForm;
         }
 
-        public void setColums()
+        public void initializeServersColumns()
         {
             DataTable dataTable = new DataTable();
-            for (int i = 0; i < Program.system.NumberOfServers; i++)
+            for (int i = 0; i < Program.system.NumberOfServers; ++i)
             {
                 dataTable.Columns.Add("Server " + (i + 1) + "\nService Time");
                 dataTable.Columns.Add("Server " + (i + 1) + "\nProbability");
             }
+
             serviceTimeDgv.DataSource = dataTable;
+            for (int i = 0; i < serviceTimeDgv.Columns.Count; ++i)
+                serviceTimeDgv.Columns[i].HeaderCell.Style.Font = 
+                        new Font("comic sans ms", 10, FontStyle.Bold);
         }
 
         public void simulateData()
