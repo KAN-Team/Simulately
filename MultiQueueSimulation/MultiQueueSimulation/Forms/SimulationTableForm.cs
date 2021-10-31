@@ -19,7 +19,7 @@ namespace MultiQueueSimulation.Forms
         {
             decimal cumulative = 0;
             int minNum = 1;
-            for(int i=0; i <Program.system.InterarrivalDistribution.Count; i++)
+            for(int i = 0; i < Program.system.InterarrivalDistribution.Count; ++i)
             {
                 cumulative += Program.system.InterarrivalDistribution[i].Probability;
                 Program.system.InterarrivalDistribution[i].CummProbability = cumulative;
@@ -32,12 +32,12 @@ namespace MultiQueueSimulation.Forms
 
         public void CalcServerSeviceTime()
         {
-            for (int j = 0; j < Program.system.NumberOfServers; j++)
+            for (int j = 0; j < Program.system.NumberOfServers; ++j)
             {
                 decimal cumulative = 0;
                 int minNum = 1;
 
-                for (int i = 0; i < Program.system.Servers[j].TimeDistribution.Count; i++)
+                for (int i = 0; i < Program.system.Servers[j].TimeDistribution.Count; ++i)
                 {
                     cumulative += Program.system.Servers[j].TimeDistribution[i].Probability;
                     Program.system.Servers[j].TimeDistribution[i].CummProbability = cumulative;

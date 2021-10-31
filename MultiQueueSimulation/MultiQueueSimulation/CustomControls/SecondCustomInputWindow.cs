@@ -1,6 +1,6 @@
 ﻿using MultiQueueModels;
 using MultiQueueSimulation.Forms;
-using System;
+using MultiQueueSimulation.OOP;
 using System.Data;
 using System.Drawing;
 using System.Threading;
@@ -18,7 +18,8 @@ namespace MultiQueueSimulation
             InitializeComponent();
         }
 
-        private void SetInterarrivalDist()
+        #region HELPER_METHODS
+        private void setInterarrivalDistribution()
         {
             int count = 0;
             foreach (DataGridViewRow row in interarrivalDgv.Rows)
@@ -31,7 +32,7 @@ namespace MultiQueueSimulation
             }
         }
 
-        private void SetServerServiceTime()
+        private void setServerServiceTime()
         {
             int count = 0;
             foreach (DataGridViewRow row in serviceTimeDgv.Rows)
@@ -46,6 +47,7 @@ namespace MultiQueueSimulation
                 count++;
             }
         }
+        #endregion
 
         public void setWelcomeForm(WelcomeForm welcomeForm)
         {
@@ -63,19 +65,20 @@ namespace MultiQueueSimulation
 
             serviceTimeDgv.DataSource = dataTable;
             for (int i = 0; i < serviceTimeDgv.Columns.Count; ++i)
-                serviceTimeDgv.Columns[i].HeaderCell.Style.Font = 
+                serviceTimeDgv.Columns[i].HeaderCell.Style.Font =
                         new Font("comic sans ms", 10, FontStyle.Bold);
         }
 
         public void simulateData()
         {
-            SetInterarrivalDist();
-            SetServerServiceTime();
+            setInterarrivalDistribution();
+            setServerServiceTime();
 
             openSumulationTableForm();
-            // testFileData();
+            // TestSimulationSystem.testSimulationData();
         }
 
+        #region OPENING_SIMULATION_TABLE_FORM
         private void openSumulationTableForm()
         {
             SimulationTableForm simulationTableForm = new SimulationTableForm();
@@ -84,48 +87,12 @@ namespace MultiQueueSimulation
             thread.Start();
             welcomeForm.Close();
         }
+
         private void openSimulationForm(object obj)
         {
             Application.Run(new SimulationTableForm());
         }
+        #endregion
 
-        private void testFileData()
-        {
-            string showConfigurations = Program.system.NumberOfServers + " "
-                 + Program.system.StoppingNumber + " "
-                 + Program.system.StoppingCriteria + " "
-                 + Program.system.SelectionMethod;
-
-            string showInterarrivalTime = "";
-            for (int i = 0; i < Program.system.InterarrivalDistribution.Count; ++i)
-            {
-                showInterarrivalTime += " [Time] ";
-                showInterarrivalTime += Program.system.InterarrivalDistribution[i].Time.ToString();
-                showInterarrivalTime += " [Prob] ";
-                showInterarrivalTime += Program.system.InterarrivalDistribution[i].Probability.ToString();
-            }
-
-            string showServerServiceTime = "";
-            for (int i = 0; i < Program.system.Servers.Count; ++i)
-            {
-                showServerServiceTime += "\nServer -> " + Program.system.Servers[i].ID + "\n";
-                for (int j = 0; j < Program.system.Servers[i].TimeDistribution.Count; ++j)
-                {
-                    showServerServiceTime += " [Time] ";
-                    showServerServiceTime += Program.system.Servers[i].TimeDistribution[j].Time.ToString();
-                    showServerServiceTime += " [Prob] ";
-                    showServerServiceTime += Program.system.Servers[i].TimeDistribution[j].Probability.ToString();
-                }
-            }
-
-            MessageBox.Show(showConfigurations, "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MessageBox.Show(showInterarrivalTime, "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MessageBox.Show(showServerServiceTime, "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            simulateData();
-        }
     }
 }

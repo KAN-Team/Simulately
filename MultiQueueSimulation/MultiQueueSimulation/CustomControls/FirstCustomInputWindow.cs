@@ -20,6 +20,7 @@ namespace MultiQueueSimulation
             Program.system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
         }
 
+        #region HANDLING_INSTANT_VALUE_CHANGES
         private void numberOfServersTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -75,6 +76,7 @@ namespace MultiQueueSimulation
             else
                 Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
         }
+        #endregion
 
         public void setWelcomeForm(WelcomeForm welcomeForm)
         {

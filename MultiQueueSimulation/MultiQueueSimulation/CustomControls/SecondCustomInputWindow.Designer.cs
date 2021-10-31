@@ -36,7 +36,6 @@ namespace MultiQueueSimulation
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.containerPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.serviceTimeDgv = new System.Windows.Forms.DataGridView();
             this.serviceTimeLbl = new System.Windows.Forms.Label();
             this.interarrivalDgv = new System.Windows.Forms.DataGridView();
@@ -51,7 +50,6 @@ namespace MultiQueueSimulation
             // containerPanel
             // 
             this.containerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.containerPanel.Controls.Add(this.button1);
             this.containerPanel.Controls.Add(this.serviceTimeDgv);
             this.containerPanel.Controls.Add(this.serviceTimeLbl);
             this.containerPanel.Controls.Add(this.interarrivalDgv);
@@ -61,16 +59,6 @@ namespace MultiQueueSimulation
             this.containerPanel.Name = "containerPanel";
             this.containerPanel.Size = new System.Drawing.Size(580, 480);
             this.containerPanel.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(439, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 26);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Simulate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // serviceTimeDgv
             // 
@@ -208,6 +196,5 @@ namespace MultiQueueSimulation
         private System.Windows.Forms.DataGridViewTextBoxColumn probability;
         private System.Windows.Forms.DataGridView serviceTimeDgv;
         private System.Windows.Forms.Label serviceTimeLbl;
-        private System.Windows.Forms.Button button1;
     }
 }

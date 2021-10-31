@@ -1,5 +1,6 @@
 ﻿using MultiQueueModels;
 using MultiQueueSimulation.Forms;
+using MultiQueueSimulation.OOP;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -44,19 +45,20 @@ namespace MultiQueueSimulation
                     string FilePath = dialog.FileName;
                     string[] lines = System.IO.File.ReadAllLines(FilePath);
                     setConfigurations(lines);
-                    SetInterarrivalDist(lines);
+                    setInterarrivalDistribution(lines);
 
                     for (int i = 0; i < Program.system.NumberOfServers; i++)
-                        SetServerServiceTime(i + 1, lines);
+                        setServerServiceTime(i + 1, lines);
 
                     openSumulationTableForm();
 
                     // Testing Data File which you get from the file
-                    // testFileData();
+                    // TestSimulationSystem.testSimulationData();
                 }
             }
         }
 
+        #region HELPER_METHODS
         private void setConfigurations(string[] lines)
         {
             Program.system.NumberOfServers = int.Parse(lines[1]);
@@ -77,7 +79,7 @@ namespace MultiQueueSimulation
                 Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
         }
 
-        private void SetInterarrivalDist(string[] lines)
+        private void setInterarrivalDistribution(string[] lines)
         {
             for (int i = 13; i < lines.Length; i++)
             {
@@ -93,7 +95,7 @@ namespace MultiQueueSimulation
 
         }
 
-        private void SetServerServiceTime(int serverID, string[] lines)
+        private void setServerServiceTime(int serverID, string[] lines)
         {
             for (int i = FileLineIndex; i < lines.Length; i++)
             {
@@ -113,7 +115,9 @@ namespace MultiQueueSimulation
         {
             this.welcomeForm = welcomeForm;
         }
+        #endregion
 
+        #region OPENING_SIMULATION_TABLE_FORM
         private void openSumulationTableForm()
         {
             SimulationTableForm simulationTableForm = new SimulationTableForm();
@@ -127,39 +131,7 @@ namespace MultiQueueSimulation
         {
             Application.Run(new SimulationTableForm());
         }
-        
-        private void testFileData()
-        {
-            string showConfigurations = Program.system.NumberOfServers + " "
-                 + Program.system.StoppingNumber + " "
-                 + Program.system.StoppingCriteria + " "
-                 + Program.system.SelectionMethod;
+        #endregion
 
-            string showInterarrivalTime = "";
-            for (int i = 0; i < Program.system.InterarrivalDistribution.Count; ++i)
-            {
-                showInterarrivalTime += " [Time] ";
-                showInterarrivalTime += Program.system.InterarrivalDistribution[i].Time.ToString();
-                showInterarrivalTime += " [Prob] ";
-                showInterarrivalTime += Program.system.InterarrivalDistribution[i].Probability.ToString();
-            }
-
-            string showServerServiceTime = "";
-            for (int i = 0; i < Program.system.Servers.Count; ++i)
-            {
-                showServerServiceTime += " Server -> " + Program.system.Servers[i].ID + "\n";
-                for (int j = 0; j < Program.system.Servers[i].TimeDistribution.Count; ++j)
-                {
-                    showServerServiceTime += " [Time] ";
-                    showServerServiceTime += Program.system.Servers[i].TimeDistribution[j].Time.ToString();
-                    showServerServiceTime += " [Prob] ";
-                    showServerServiceTime += Program.system.Servers[i].TimeDistribution[j].Probability.ToString();
-                }
-            }
-
-            MessageBox.Show(showConfigurations, "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MessageBox.Show(showInterarrivalTime, "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MessageBox.Show(showServerServiceTime, "DATA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
     }
 }

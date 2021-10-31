@@ -33,6 +33,7 @@ namespace MultiQueueSimulation
             secondCustomInputWindow.setWelcomeForm(this);
         }
 
+        #region NAVIGATION_PICTURE_BUTTONS
         private void closePic_Click(object sender, EventArgs e)
         {
             Application.ExitThread();
@@ -41,7 +42,7 @@ namespace MultiQueueSimulation
 
         private void nextPic_Click(object sender, EventArgs e)
         {
-            if (activeWindow < 3)
+            if (activeWindow < 4)
                 activeWindow++;
 
             activateWindow();
@@ -54,7 +55,9 @@ namespace MultiQueueSimulation
 
             activateWindow();
         }
+        #endregion
 
+        #region TIMER_AND_ACTIVATING_WINDOW
         private void timer_Tick(object sender, EventArgs e)
         {
             int animation_speed = 20;
@@ -86,45 +89,41 @@ namespace MultiQueueSimulation
             {
                 secondCustomInputWindow.Left -= animation_speed;
             }
-
-            /*else if (activeWindow == 4)
-            {
-                if (!isSimulated)
-                {
-                    secondCustomInputWindow.simulateData();
-                    isSimulated = true;
-                }
-            }*/
         }
 
         private void activateWindow()
         {
-            if (activeWindow == 0)
+            if (activeWindow == 0) // Welcome Window
             {
                 nextPic.Parent = welcomePanel;
                 backPic.Parent = welcomePanel;
                 closePic.Parent = welcomePanel;
             }
 
-            else if (activeWindow == 1)
+            else if (activeWindow == 1) // Load From File Window
             {
                 nextPic.Parent = loadFileWindow;
                 backPic.Parent = loadFileWindow;
                 closePic.Parent = loadFileWindow;
             }
 
-            else if (activeWindow == 2)
+            else if (activeWindow == 2) // First Custom Input Window
             {
                 nextPic.Parent = firstCustomInputWindow;
                 backPic.Parent = firstCustomInputWindow;
                 closePic.Parent = firstCustomInputWindow;
             }
 
-            else if (activeWindow == 3)
+            else if (activeWindow == 3) // Second Custom Input Window
             {
                 nextPic.Parent = secondCustomInputWindow;
                 backPic.Parent = secondCustomInputWindow;
                 closePic.Parent = secondCustomInputWindow;
+            }
+
+            else if (activeWindow == 4) // Simulation Table Form
+            {
+                secondCustomInputWindow.simulateData();
             }
 
             if (activeWindow == 1 && (loadFileWindow.Left > 0 || firstCustomInputWindow.Left < Width))
@@ -149,6 +148,7 @@ namespace MultiQueueSimulation
             backPic.BringToFront();
             closePic.BringToFront();
         }
+        #endregion
 
         public SecondCustomInputWindow getSecondCustomInput()
         {
