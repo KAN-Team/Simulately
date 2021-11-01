@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MultiQueueSimulation.CustomControls;
+using System;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -62,6 +63,19 @@ namespace MultiQueueSimulation.Forms
             Application.Run(new PerformanceMesuresForm());
         }
         #endregion
-        
+
+        private void ChartForm_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 1; ++i)
+            {
+                ChartWindow chartWindow = new ChartWindow();
+                chartWindow.addServerWithID(i + 1);
+                chartWindow.addDataToPlot(); // send data as a parameter
+                chartWindow.Left = 0;
+                chartWindow.Top = 0;
+                chartWindow.Dock = DockStyle.Fill;
+                chartContainerPanel.Controls.Add(chartWindow);
+            }
+        }
     }
 }

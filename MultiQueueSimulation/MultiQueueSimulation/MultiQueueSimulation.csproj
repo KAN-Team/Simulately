@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\ChartWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ChartWindow.Designer.cs">
+      <DependentUpon>ChartWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\FirstCustomInputWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,6 +103,9 @@
     <Compile Include="CustomControls\LoadFileWindow.Designer.cs">
       <DependentUpon>LoadFileWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomControls\ChartWindow.resx">
+      <DependentUpon>ChartWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\FirstCustomInputWindow.resx">
       <DependentUpon>FirstCustomInputWindow.cs</DependentUpon>
     </EmbeddedResource>

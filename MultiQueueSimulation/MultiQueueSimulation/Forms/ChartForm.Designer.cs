@@ -31,15 +31,16 @@ namespace MultiQueueSimulation.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChartForm));
             this.footerPanel = new System.Windows.Forms.Panel();
+            this.showMesuresBtn = new System.Windows.Forms.Button();
             this.backToSimulation = new System.Windows.Forms.Button();
             this.backToWelcomeBtn = new System.Windows.Forms.Button();
-            this.showMesuresBtn = new System.Windows.Forms.Button();
+            this.chartContainerPanel = new System.Windows.Forms.Panel();
             this.footerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // footerPanel
             // 
-            this.footerPanel.BackColor = System.Drawing.Color.Silver;
+            this.footerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.footerPanel.Controls.Add(this.showMesuresBtn);
             this.footerPanel.Controls.Add(this.backToSimulation);
             this.footerPanel.Controls.Add(this.backToWelcomeBtn);
@@ -48,6 +49,22 @@ namespace MultiQueueSimulation.Forms
             this.footerPanel.Name = "footerPanel";
             this.footerPanel.Size = new System.Drawing.Size(784, 54);
             this.footerPanel.TabIndex = 2;
+            // 
+            // showMesuresBtn
+            // 
+            this.showMesuresBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showMesuresBtn.BackColor = System.Drawing.Color.Crimson;
+            this.showMesuresBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showMesuresBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showMesuresBtn.ForeColor = System.Drawing.Color.White;
+            this.showMesuresBtn.Location = new System.Drawing.Point(263, 0);
+            this.showMesuresBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.showMesuresBtn.Name = "showMesuresBtn";
+            this.showMesuresBtn.Size = new System.Drawing.Size(259, 54);
+            this.showMesuresBtn.TabIndex = 3;
+            this.showMesuresBtn.Text = "Show Performance Mesures";
+            this.showMesuresBtn.UseVisualStyleBackColor = false;
+            this.showMesuresBtn.Click += new System.EventHandler(this.showMesuresBtn_Click);
             // 
             // backToSimulation
             // 
@@ -80,34 +97,30 @@ namespace MultiQueueSimulation.Forms
             this.backToWelcomeBtn.UseVisualStyleBackColor = false;
             this.backToWelcomeBtn.Click += new System.EventHandler(this.backToWelcomeBtn_Click);
             // 
-            // showMesuresBtn
+            // chartContainerPanel
             // 
-            this.showMesuresBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.showMesuresBtn.BackColor = System.Drawing.Color.Crimson;
-            this.showMesuresBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.showMesuresBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showMesuresBtn.ForeColor = System.Drawing.Color.White;
-            this.showMesuresBtn.Location = new System.Drawing.Point(263, 0);
-            this.showMesuresBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.showMesuresBtn.Name = "showMesuresBtn";
-            this.showMesuresBtn.Size = new System.Drawing.Size(259, 54);
-            this.showMesuresBtn.TabIndex = 3;
-            this.showMesuresBtn.Text = "Show Performance Mesures";
-            this.showMesuresBtn.UseVisualStyleBackColor = false;
-            this.showMesuresBtn.Click += new System.EventHandler(this.showMesuresBtn_Click);
+            this.chartContainerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartContainerPanel.Location = new System.Drawing.Point(0, 0);
+            this.chartContainerPanel.Name = "chartContainerPanel";
+            this.chartContainerPanel.Size = new System.Drawing.Size(782, 416);
+            this.chartContainerPanel.TabIndex = 3;
             // 
             // ChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 476);
+            this.Controls.Add(this.chartContainerPanel);
             this.Controls.Add(this.footerPanel);
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ChartForm";
             this.Text = "Chart";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ChartForm_Load);
             this.footerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -119,5 +132,6 @@ namespace MultiQueueSimulation.Forms
         private System.Windows.Forms.Button backToSimulation;
         private System.Windows.Forms.Button backToWelcomeBtn;
         private System.Windows.Forms.Button showMesuresBtn;
+        private System.Windows.Forms.Panel chartContainerPanel;
     }
 }

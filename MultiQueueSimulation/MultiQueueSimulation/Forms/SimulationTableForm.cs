@@ -12,6 +12,7 @@ namespace MultiQueueSimulation.Forms
         {
             InitializeComponent();
             DisplayTable();
+            
         }
 
         private void DisplayTable()

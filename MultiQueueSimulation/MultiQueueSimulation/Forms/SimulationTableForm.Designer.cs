@@ -151,7 +151,7 @@ namespace MultiQueueSimulation.Forms
             // 
             // footerPanel
             // 
-            this.footerPanel.BackColor = System.Drawing.Color.Silver;
+            this.footerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
             this.footerPanel.Controls.Add(this.showMesuresBtn);
             this.footerPanel.Controls.Add(this.chartBtn);
             this.footerPanel.Controls.Add(this.backToWelcomeBtn);
