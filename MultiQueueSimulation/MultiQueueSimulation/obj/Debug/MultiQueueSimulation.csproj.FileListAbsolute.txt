@@ -117,3 +117,5 @@ C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.SimulationTableForm.resources
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete
 E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.SimulationTableForm.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.ChartForm.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.PerformanceMesuresForm.resources

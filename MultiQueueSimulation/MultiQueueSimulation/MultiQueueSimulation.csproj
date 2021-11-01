@@ -63,17 +63,23 @@
     <Compile Include="CustomControls\SecondCustomInputWindow.Designer.cs">
       <DependentUpon>SecondCustomInputWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChartForm.Designer.cs">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PerformanceMesuresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PerformanceMesuresForm.Designer.cs">
+      <DependentUpon>PerformanceMesuresForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SimulationTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SimulationTableForm.Designer.cs">
       <DependentUpon>SimulationTableForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Welcome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Welcome.Designer.cs">
-      <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WelcomeForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\SecondCustomInputWindow.resx">
       <DependentUpon>SecondCustomInputWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChartForm.resx">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PerformanceMesuresForm.resx">
+      <DependentUpon>PerformanceMesuresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SimulationTableForm.resx">
       <DependentUpon>SimulationTableForm.cs</DependentUpon>

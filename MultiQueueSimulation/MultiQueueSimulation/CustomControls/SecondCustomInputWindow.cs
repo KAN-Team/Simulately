@@ -81,7 +81,6 @@ namespace MultiQueueSimulation
         #region OPENING_SIMULATION_TABLE_FORM
         private void openSumulationTableForm()
         {
-            SimulationTableForm simulationTableForm = new SimulationTableForm();
             thread = new Thread(openSimulationForm);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
