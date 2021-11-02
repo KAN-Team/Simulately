@@ -14,17 +14,19 @@ namespace MultiQueueSimulation.OOP
 
         public CustomerServerSimulator()
         {
-            simulationCaseList = new List<SimulationCase>();
             random = new Random();
             Program.system.numberOfCustomers = Defaults.STOPPING_NUMBER;
+            Program.system.endSimulationTime = Defaults.STOPPING_NUMBER;
             clockTimeArrival = 0;
             selectedServerID = -1;
 
             if (Program.system.StoppingCriteria == Enums.StoppingCriteria.NumberOfCustomers)
                 Program.system.numberOfCustomers = Math.Max(Program.system.numberOfCustomers, Program.system.StoppingNumber);
-
-            for (int i = 0; i < Program.system.numberOfCustomers; ++i)
-                simulationCaseList.Add(new SimulationCase());
+            else // Unknwon number of customers
+            {
+                Program.system.numberOfCustomers = int.MaxValue;
+                Program.system.endSimulationTime = Math.Max(Program.system.endSimulationTime, Program.system.StoppingNumber);
+            }
 
             calcInterarrivalDist();
             calcServiceDist();
@@ -71,6 +73,7 @@ namespace MultiQueueSimulation.OOP
         {
             for (int i = 0; i < Program.system.numberOfCustomers; i++)
             {
+                Program.system.SimulationTable.Add(new SimulationCase());
                 setCustomerNumber(i);
                 generateRandomDigitsForCustomers(i);
                 setTimeBetweenArrivals(i);
@@ -78,20 +81,22 @@ namespace MultiQueueSimulation.OOP
                 generateRandomDigitsForServers(i);
                 setServerID(i);
                 setServerTime(i);
+                
+                if (isSimulationOver(i)) break;
             }
         }
 
         private void setCustomerNumber(int i)
         {
-            simulationCaseList[i].CustomerNumber = i + 1;
+            Program.system.SimulationTable[i].CustomerNumber = i + 1;
         }
 
         private void generateRandomDigitsForCustomers(int i)
         {
             if (i != 0)
-                simulationCaseList[i].RandomInterArrival = random.Next(1, 100);
+                Program.system.SimulationTable[i].RandomInterArrival = random.Next(1, 100);
             else
-                simulationCaseList[i].RandomInterArrival = -1;
+                Program.system.SimulationTable[i].RandomInterArrival = -1;
         }
 
         private void setTimeBetweenArrivals(int i)
@@ -101,57 +106,57 @@ namespace MultiQueueSimulation.OOP
                 {
                     int minRange = Program.system.InterarrivalDistribution[j].MinRange;
                     int maxRange = Program.system.InterarrivalDistribution[j].MaxRange;
-                    int RandomInterarrival = simulationCaseList[i].RandomInterArrival;
+                    int RandomInterarrival = Program.system.SimulationTable[i].RandomInterArrival;
                     if (RandomInterarrival >= minRange && RandomInterarrival <= maxRange)
                     {
-                        simulationCaseList[i].InterArrival = Program.system.InterarrivalDistribution[j].Time;
+                        Program.system.SimulationTable[i].InterArrival = Program.system.InterarrivalDistribution[j].Time;
                         break;
                     }
                 }
             
             else
-                simulationCaseList[i].InterArrival = -1;
+                Program.system.SimulationTable[i].InterArrival = -1;
         }
 
         private void setTimeArrivals(int i)
         {
             if (i != 0)
             {
-                clockTimeArrival += simulationCaseList[i].InterArrival;
-                simulationCaseList[i].ArrivalTime = clockTimeArrival;
+                clockTimeArrival += Program.system.SimulationTable[i].InterArrival;
+                Program.system.SimulationTable[i].ArrivalTime = clockTimeArrival;
             }
         }
 
         private void generateRandomDigitsForServers(int i)
         {
-            simulationCaseList[i].RandomService = random.Next(1, 100);
+            Program.system.SimulationTable[i].RandomService = random.Next(1, 100);
         }
 
         private void setServerID(int i)
         {
             if(Program.system.SelectionMethod == Enums.SelectionMethod.HighestPriority)
-                serverSelectionMethod = new HighestPrioritySelection(simulationCaseList, i);
+                serverSelectionMethod = new HighestPrioritySelection(Program.system.SimulationTable, i);
             else if (Program.system.SelectionMethod == Enums.SelectionMethod.Random)
-                serverSelectionMethod = new RandomSelection(simulationCaseList, i);
+                serverSelectionMethod = new RandomSelection(Program.system.SimulationTable, i);
             else
-                serverSelectionMethod = new LeastUtilizationSelection(simulationCaseList, i);
+                serverSelectionMethod = new LeastUtilizationSelection(Program.system.SimulationTable, i);
 
             selectedServerID = serverSelectionMethod.serverID;
-            simulationCaseList[i].AssignedServer = getServerWithID(selectedServerID);
+            Program.system.SimulationTable[i].AssignedServer = getServerWithID(selectedServerID);
         }
 
         private void setServerTime(int i)
         {
-            int startTime = Math.Max(simulationCaseList[i].ArrivalTime, simulationCaseList[i].AssignedServer.FinishTime);
+            int startTime = Math.Max(Program.system.SimulationTable[i].ArrivalTime, Program.system.SimulationTable[i].AssignedServer.FinishTime);
             int serviceTime = getServiceTime(i);
             int endTime = startTime + serviceTime;
 
-            simulationCaseList[i].StartTime = startTime;
-            simulationCaseList[i].ServiceTime = serviceTime;
-            simulationCaseList[i].EndTime = endTime;
+            Program.system.SimulationTable[i].StartTime = startTime;
+            Program.system.SimulationTable[i].ServiceTime = serviceTime;
+            Program.system.SimulationTable[i].EndTime = endTime;
 
-            simulationCaseList[i].AssignedServer.FinishTime = endTime;
-            simulationCaseList[i].AssignedServer.TotalWorkingTime += serviceTime;
+            Program.system.SimulationTable[i].AssignedServer.FinishTime = endTime;
+            Program.system.SimulationTable[i].AssignedServer.TotalWorkingTime += serviceTime;
             Server assignedServer = getServerWithID(selectedServerID);
             assignedServer.FinishTime = endTime;
             assignedServer.TotalWorkingTime += serviceTime;
@@ -159,14 +164,14 @@ namespace MultiQueueSimulation.OOP
 
         private int getServiceTime(int i)
         {
-            for (int j = 0; j < simulationCaseList[i].AssignedServer.TimeDistribution.Count; j++)
+            for (int j = 0; j < Program.system.SimulationTable[i].AssignedServer.TimeDistribution.Count; j++)
             {
-                int minRange = simulationCaseList[i].AssignedServer.TimeDistribution[j].MinRange;
-                int maxRange = simulationCaseList[i].AssignedServer.TimeDistribution[j].MaxRange;
-                int RandomService = simulationCaseList[i].RandomService;
+                int minRange = Program.system.SimulationTable[i].AssignedServer.TimeDistribution[j].MinRange;
+                int maxRange = Program.system.SimulationTable[i].AssignedServer.TimeDistribution[j].MaxRange;
+                int RandomService = Program.system.SimulationTable[i].RandomService;
 
                 if (RandomService >= minRange && RandomService <= maxRange)
-                    return simulationCaseList[i].AssignedServer.TimeDistribution[j].Time;
+                    return Program.system.SimulationTable[i].AssignedServer.TimeDistribution[j].Time;
             }
             return 0;
         }
@@ -180,9 +185,19 @@ namespace MultiQueueSimulation.OOP
             MessageBox.Show("No Server Found with ID = " + ID, "getServer METHOD", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;
         }
-        #endregion
 
-        public List<SimulationCase> simulationCaseList { get; set; }
+        private bool isSimulationOver(int i)
+        {
+            if (Program.system.StoppingCriteria == Enums.StoppingCriteria.SimulationEndTime)
+                if (clockTimeArrival >= Program.system.endSimulationTime)
+                {
+                    Program.system.SimulationTable.RemoveAt(i);
+                    Program.system.numberOfCustomers = i;
+                    return true;
+                }
+            return false;
+        }
+        #endregion
 
     }
 }

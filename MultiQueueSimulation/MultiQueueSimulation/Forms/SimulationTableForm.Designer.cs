@@ -34,20 +34,20 @@ namespace MultiQueueSimulation.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulationTableForm));
             this.simulationDgv = new System.Windows.Forms.DataGridView();
+            this.customerNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.randomDigits = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeBetweenArrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clockTimeOfArrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.randomDigitsForService = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serverEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeInQueue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.footerPanel = new System.Windows.Forms.Panel();
             this.showMesuresBtn = new System.Windows.Forms.Button();
             this.chartBtn = new System.Windows.Forms.Button();
             this.backToWelcomeBtn = new System.Windows.Forms.Button();
-            this.timeInQueue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverBegin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serverID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.randomDigitsForService = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clockTimeOfArrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeBetweenArrivals = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.randomDigits = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.simulationDgv)).BeginInit();
             this.footerPanel.SuspendLayout();
             this.SuspendLayout();
@@ -97,8 +97,68 @@ namespace MultiQueueSimulation.Forms
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.simulationDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.simulationDgv.RowTemplate.Height = 30;
-            this.simulationDgv.Size = new System.Drawing.Size(784, 413);
+            this.simulationDgv.Size = new System.Drawing.Size(785, 415);
             this.simulationDgv.TabIndex = 0;
+            // 
+            // customerNumber
+            // 
+            this.customerNumber.HeaderText = "Customer Number";
+            this.customerNumber.Name = "customerNumber";
+            this.customerNumber.ReadOnly = true;
+            // 
+            // randomDigits
+            // 
+            this.randomDigits.HeaderText = "Random Digits For Arrival";
+            this.randomDigits.Name = "randomDigits";
+            this.randomDigits.ReadOnly = true;
+            // 
+            // timeBetweenArrivals
+            // 
+            this.timeBetweenArrivals.HeaderText = "Time Between Arrivals";
+            this.timeBetweenArrivals.Name = "timeBetweenArrivals";
+            this.timeBetweenArrivals.ReadOnly = true;
+            // 
+            // clockTimeOfArrivals
+            // 
+            this.clockTimeOfArrivals.HeaderText = "Clock Time of Arrivals";
+            this.clockTimeOfArrivals.Name = "clockTimeOfArrivals";
+            this.clockTimeOfArrivals.ReadOnly = true;
+            // 
+            // randomDigitsForService
+            // 
+            this.randomDigitsForService.HeaderText = "Random Digits For Service";
+            this.randomDigitsForService.Name = "randomDigitsForService";
+            this.randomDigitsForService.ReadOnly = true;
+            // 
+            // serverID
+            // 
+            this.serverID.HeaderText = "Server ID";
+            this.serverID.Name = "serverID";
+            this.serverID.ReadOnly = true;
+            // 
+            // serverBegin
+            // 
+            this.serverBegin.HeaderText = "Server Begin";
+            this.serverBegin.Name = "serverBegin";
+            this.serverBegin.ReadOnly = true;
+            // 
+            // serviceTime
+            // 
+            this.serviceTime.HeaderText = "Service Time";
+            this.serviceTime.Name = "serviceTime";
+            this.serviceTime.ReadOnly = true;
+            // 
+            // serverEnd
+            // 
+            this.serverEnd.HeaderText = "Server End";
+            this.serverEnd.Name = "serverEnd";
+            this.serverEnd.ReadOnly = true;
+            // 
+            // timeInQueue
+            // 
+            this.timeInQueue.HeaderText = "Time In Queue";
+            this.timeInQueue.Name = "timeInQueue";
+            this.timeInQueue.ReadOnly = true;
             // 
             // footerPanel
             // 
@@ -107,9 +167,9 @@ namespace MultiQueueSimulation.Forms
             this.footerPanel.Controls.Add(this.chartBtn);
             this.footerPanel.Controls.Add(this.backToWelcomeBtn);
             this.footerPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.footerPanel.Location = new System.Drawing.Point(0, 422);
+            this.footerPanel.Location = new System.Drawing.Point(0, 416);
             this.footerPanel.Name = "footerPanel";
-            this.footerPanel.Size = new System.Drawing.Size(784, 54);
+            this.footerPanel.Size = new System.Drawing.Size(784, 60);
             this.footerPanel.TabIndex = 1;
             // 
             // showMesuresBtn
@@ -119,10 +179,10 @@ namespace MultiQueueSimulation.Forms
             this.showMesuresBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showMesuresBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showMesuresBtn.ForeColor = System.Drawing.Color.White;
-            this.showMesuresBtn.Location = new System.Drawing.Point(263, 0);
+            this.showMesuresBtn.Location = new System.Drawing.Point(263, 5);
             this.showMesuresBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.showMesuresBtn.Name = "showMesuresBtn";
-            this.showMesuresBtn.Size = new System.Drawing.Size(259, 54);
+            this.showMesuresBtn.Size = new System.Drawing.Size(240, 50);
             this.showMesuresBtn.TabIndex = 4;
             this.showMesuresBtn.Text = "Show Performance Mesures";
             this.showMesuresBtn.UseVisualStyleBackColor = false;
@@ -130,15 +190,15 @@ namespace MultiQueueSimulation.Forms
             // 
             // chartBtn
             // 
-            this.chartBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.chartBtn.BackColor = System.Drawing.Color.SteelBlue;
             this.chartBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chartBtn.ForeColor = System.Drawing.Color.White;
-            this.chartBtn.Location = new System.Drawing.Point(423, 0);
+            this.chartBtn.Location = new System.Drawing.Point(423, 5);
             this.chartBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chartBtn.Name = "chartBtn";
-            this.chartBtn.Size = new System.Drawing.Size(259, 54);
+            this.chartBtn.Size = new System.Drawing.Size(240, 50);
             this.chartBtn.TabIndex = 2;
             this.chartBtn.Text = "Represent in a Graph";
             this.chartBtn.UseVisualStyleBackColor = false;
@@ -146,78 +206,19 @@ namespace MultiQueueSimulation.Forms
             // 
             // backToWelcomeBtn
             // 
+            this.backToWelcomeBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.backToWelcomeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(189)))), ((int)(((byte)(151)))));
             this.backToWelcomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backToWelcomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backToWelcomeBtn.ForeColor = System.Drawing.Color.White;
-            this.backToWelcomeBtn.Location = new System.Drawing.Point(100, 0);
+            this.backToWelcomeBtn.Location = new System.Drawing.Point(100, 5);
             this.backToWelcomeBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backToWelcomeBtn.Name = "backToWelcomeBtn";
-            this.backToWelcomeBtn.Size = new System.Drawing.Size(259, 54);
+            this.backToWelcomeBtn.Size = new System.Drawing.Size(240, 50);
             this.backToWelcomeBtn.TabIndex = 1;
             this.backToWelcomeBtn.Text = "Back to Welcome Screen";
             this.backToWelcomeBtn.UseVisualStyleBackColor = false;
             this.backToWelcomeBtn.Click += new System.EventHandler(this.backToWelcomeBtn_Click);
-            // 
-            // timeInQueue
-            // 
-            this.timeInQueue.HeaderText = "Time In Queue";
-            this.timeInQueue.Name = "timeInQueue";
-            this.timeInQueue.ReadOnly = true;
-            // 
-            // serverEnd
-            // 
-            this.serverEnd.HeaderText = "Server End";
-            this.serverEnd.Name = "serverEnd";
-            this.serverEnd.ReadOnly = true;
-            // 
-            // serviceTime
-            // 
-            this.serviceTime.HeaderText = "Service Time";
-            this.serviceTime.Name = "serviceTime";
-            this.serviceTime.ReadOnly = true;
-            // 
-            // serverBegin
-            // 
-            this.serverBegin.HeaderText = "Server Begin";
-            this.serverBegin.Name = "serverBegin";
-            this.serverBegin.ReadOnly = true;
-            // 
-            // serverID
-            // 
-            this.serverID.HeaderText = "Server ID";
-            this.serverID.Name = "serverID";
-            this.serverID.ReadOnly = true;
-            // 
-            // randomDigitsForService
-            // 
-            this.randomDigitsForService.HeaderText = "Random Digits For Service";
-            this.randomDigitsForService.Name = "randomDigitsForService";
-            this.randomDigitsForService.ReadOnly = true;
-            // 
-            // clockTimeOfArrivals
-            // 
-            this.clockTimeOfArrivals.HeaderText = "Clock Time of Arrivals";
-            this.clockTimeOfArrivals.Name = "clockTimeOfArrivals";
-            this.clockTimeOfArrivals.ReadOnly = true;
-            // 
-            // timeBetweenArrivals
-            // 
-            this.timeBetweenArrivals.HeaderText = "Time Between Arrivals";
-            this.timeBetweenArrivals.Name = "timeBetweenArrivals";
-            this.timeBetweenArrivals.ReadOnly = true;
-            // 
-            // randomDigits
-            // 
-            this.randomDigits.HeaderText = "Random Digits For Arrival";
-            this.randomDigits.Name = "randomDigits";
-            this.randomDigits.ReadOnly = true;
-            // 
-            // customerNumber
-            // 
-            this.customerNumber.HeaderText = "Customer Number";
-            this.customerNumber.Name = "customerNumber";
-            this.customerNumber.ReadOnly = true;
             // 
             // SimulationTableForm
             // 

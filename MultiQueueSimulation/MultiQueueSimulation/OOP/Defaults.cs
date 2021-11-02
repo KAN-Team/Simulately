@@ -17,5 +17,8 @@ namespace MultiQueueSimulation.OOP
 
         // Simulation Ends after simulating this number of iterations.
         public static readonly int STOPPING_NUMBER = 2;
+
+        // Maximum Chart Y axis Value
+        public static readonly int MAX_Y_VALUE = 2;
     }
 }

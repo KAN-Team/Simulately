@@ -9,31 +9,29 @@ namespace MultiQueueSimulation.Forms
     {
 
         private Thread thread;
-        private readonly CustomerServerSimulator simulator;
 
         public SimulationTableForm()
         {
             InitializeComponent();
 
-            simulator = new CustomerServerSimulator();
+            new CustomerServerSimulator();
             loadDataToGgv();
-            simulationDgv.Columns["customerNumber"].DefaultCellStyle.BackColor = Color.Goldenrod;
         }
 
         private void loadDataToGgv()
         {
             for (int i = 0; i < Program.system.numberOfCustomers; ++i)
                 simulationDgv.Rows.Add(
-                    simulator.simulationCaseList[i].CustomerNumber,
-                    simulator.simulationCaseList[i].RandomInterArrival,
-                    simulator.simulationCaseList[i].InterArrival,
-                    simulator.simulationCaseList[i].ArrivalTime,
-                    simulator.simulationCaseList[i].RandomService,
-                    simulator.simulationCaseList[i].AssignedServer.ID,
-                    simulator.simulationCaseList[i].StartTime,
-                    simulator.simulationCaseList[i].ServiceTime,
-                    simulator.simulationCaseList[i].EndTime,
-                    simulator.simulationCaseList[i].TimeInQueue);
+                    Program.system.SimulationTable[i].CustomerNumber,
+                    Program.system.SimulationTable[i].RandomInterArrival,
+                    Program.system.SimulationTable[i].InterArrival,
+                    Program.system.SimulationTable[i].ArrivalTime,
+                    Program.system.SimulationTable[i].RandomService,
+                    Program.system.SimulationTable[i].AssignedServer.ID,
+                    Program.system.SimulationTable[i].StartTime,
+                    Program.system.SimulationTable[i].ServiceTime,
+                    Program.system.SimulationTable[i].EndTime,
+                    Program.system.SimulationTable[i].TimeInQueue);
         }
 
         #region HANDLING_FOOTER_NAVIGATION_BUTTONS

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MultiQueueSimulation.OOP;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace MultiQueueSimulation.CustomControls
         public ChartWindow()
         {
             InitializeComponent();
-            chart.ChartAreas[0].AxisY.Maximum = 2;
+            chart.ChartAreas[0].AxisY.Maximum = Defaults.MAX_Y_VALUE;
             seriesName = "Server Working Time";
         }
 

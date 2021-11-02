@@ -32,6 +32,7 @@ namespace MultiQueueModels
 
         ///////////// HELPERS ///////////// 
         public int numberOfCustomers { get; set; }
+        public int endSimulationTime { get; set; }
         public List<Server> idleServers { get; set; }
     }
 }
