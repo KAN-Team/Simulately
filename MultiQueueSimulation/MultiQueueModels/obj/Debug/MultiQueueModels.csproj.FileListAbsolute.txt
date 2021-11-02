@@ -34,15 +34,14 @@ F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Studen
 F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csprojResolveAssemblyReference.cache
 F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
 F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.dll
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.pdb
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.CoreCompileInputs.cache
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.dll
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.pdb
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.AssemblyReference.cache
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.CoreCompileInputs.cache
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.AssemblyReference.cache
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.dll
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.pdb
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.CoreCompileInputs.cache
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb

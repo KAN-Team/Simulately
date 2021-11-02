@@ -3,6 +3,8 @@ using MultiQueueSimulation.Forms;
 using MultiQueueSimulation.OOP;
 using System;
 using System.Drawing;
+using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -38,20 +40,32 @@ namespace MultiQueueSimulation
 
         private void loadFromFileBtn_Click(object sender, EventArgs e)
         {
+            string exeFile = (new Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+            string exeDir = Path.GetDirectoryName(exeFile);
+            string readmeFullPath = Path.Combine(exeDir, @"..\..\TestCases\ReadMe.txt");
+            readmeFullPath = readmeFullPath.Replace("%20", " ");
+            string fileFormatReadmeText = File.ReadAllText(readmeFullPath);
+
             using (OpenFileDialog dialog = new OpenFileDialog() { Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*", Multiselect = false })
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     string FilePath = dialog.FileName;
-                    string[] lines = System.IO.File.ReadAllLines(FilePath);
-                    setConfigurations(lines);
-                    setInterarrivalDistribution(lines);
+                    string[] lines = File.ReadAllLines(FilePath);
+                    try
+                    {
+                        setConfigurations(lines);
+                        setInterarrivalDistribution(lines);
 
-                    Program.system.Servers.Clear();
-                    for (int i = 0; i < Program.system.NumberOfServers; i++)
-                        setServerServiceTime(i + 1, lines);
+                        Program.system.Servers.Clear();
+                        for (int i = 0; i < Program.system.NumberOfServers; i++)
+                            setServerServiceTime(i + 1, lines);
 
-                    openSumulationTableForm();
+                        openSumulationTableForm();
+                    } catch
+                    {
+                        MessageBox.Show("Here is What the Input File Should look like !!\n\n" + fileFormatReadmeText, "Invalid File Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                     // Testing Data File which you get from the file
                     // TestSimulationSystem.testSimulationData();

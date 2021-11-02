@@ -84,21 +84,6 @@ F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Studen
 F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.GenerateResource.Cache
 F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
 F:\GoogleDriveSync\[2019-2020] Simulation\[2019-2020] Labs\Lab 2\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.exe.config
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.exe
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.pdb
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueModels.dll
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueModels.pdb
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.AssemblyReference.cache
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.FirstCustomInputWindow.resources
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.SecondCustomInputWindow.resources
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.WelcomeForm.resources
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Properties.Resources.resources
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.LoadFileWindow.resources
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.GenerateResource.cache
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CoreCompileInputs.cache
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.AssemblyReference.cache
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.FirstCustomInputWindow.resources
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.SecondCustomInputWindow.resources
@@ -116,8 +101,22 @@ C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueModels.pdb
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.SimulationTableForm.resources
 C:\Users\Eng_Kareem\Desktop\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.SimulationTableForm.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.exe.config
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.exe
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueSimulation.pdb
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueModels.dll
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\bin\Debug\MultiQueueModels.pdb
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.AssemblyReference.cache
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.CustomControls.ChartWindow.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.FirstCustomInputWindow.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.SecondCustomInputWindow.resources
 E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.ChartForm.resources
 E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.PerformanceMesuresForm.resources
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.CustomControls.ChartWindow.resources
-E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Forms.SimulationTableForm.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.WelcomeForm.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.Properties.Resources.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.LoadFileWindow.resources
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.GenerateResource.cache
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CoreCompileInputs.cache
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
+E:\zUniversity\Modeling and Simulation\Labs\Lab 2\Task 1\Template_Students\MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb

@@ -72,7 +72,7 @@ namespace MultiQueueSimulation
             // 
             // stoppingNumberTxt
             // 
-            this.stoppingNumberTxt.Location = new System.Drawing.Point(81, 29);
+            this.stoppingNumberTxt.Location = new System.Drawing.Point(81, 30);
             this.stoppingNumberTxt.Name = "stoppingNumberTxt";
             this.stoppingNumberTxt.Size = new System.Drawing.Size(198, 30);
             this.stoppingNumberTxt.TabIndex = 7;
@@ -100,7 +100,7 @@ namespace MultiQueueSimulation
             this.stoppingCriteriaCmb.Items.AddRange(new object[] {
             "Number of Customers",
             "Simulation End Time"});
-            this.stoppingCriteriaCmb.Location = new System.Drawing.Point(81, 29);
+            this.stoppingCriteriaCmb.Location = new System.Drawing.Point(81, 30);
             this.stoppingCriteriaCmb.Name = "stoppingCriteriaCmb";
             this.stoppingCriteriaCmb.Size = new System.Drawing.Size(198, 31);
             this.stoppingCriteriaCmb.TabIndex = 9;
@@ -157,14 +157,13 @@ namespace MultiQueueSimulation
             // 
             // numberOfServersTxt
             // 
-            this.numberOfServersTxt.Location = new System.Drawing.Point(81, 29);
+            this.numberOfServersTxt.Location = new System.Drawing.Point(81, 30);
             this.numberOfServersTxt.Name = "numberOfServersTxt";
             this.numberOfServersTxt.Size = new System.Drawing.Size(198, 30);
-            this.numberOfServersTxt.TabIndex = 7;
-            this.numberOfServersTxt.Text = "1";
+            this.numberOfServersTxt.TabIndex = 8;
+            this.numberOfServersTxt.Text = "2";
             this.numberOfServersTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numberOfServersTxt.TextChanged += new System.EventHandler(this.numberOfServersTxt_TextChanged);
-            this.numberOfServersTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberOfServersTxt_KeyPress);
             // 
             // FirstCustomInputWindow
             // 
@@ -192,7 +191,6 @@ namespace MultiQueueSimulation
 
         private System.Windows.Forms.Panel containerPanel;
         private System.Windows.Forms.GroupBox serversNumberGroup;
-        private System.Windows.Forms.TextBox numberOfServersTxt;
         private System.Windows.Forms.GroupBox selectionMethodGroup;
         private System.Windows.Forms.Label howToSelectLbl;
         private System.Windows.Forms.GroupBox StoppingNumberGroup;
@@ -200,5 +198,6 @@ namespace MultiQueueSimulation
         private System.Windows.Forms.GroupBox stoppingCriteriaGroup;
         private System.Windows.Forms.ComboBox selectionCmb;
         private System.Windows.Forms.ComboBox stoppingCriteriaCmb;
+        private System.Windows.Forms.TextBox numberOfServersTxt;
     }
 }

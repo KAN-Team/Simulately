@@ -16,7 +16,7 @@ namespace MultiQueueSimulation.OOP
         {
             simulationCaseList = new List<SimulationCase>();
             random = new Random();
-            Program.system.numberOfCustomers = 100;
+            Program.system.numberOfCustomers = Defaults.STOPPING_NUMBER;
             clockTimeArrival = 0;
             selectedServerID = -1;
 

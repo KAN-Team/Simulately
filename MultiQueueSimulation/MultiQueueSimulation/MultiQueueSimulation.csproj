@@ -95,6 +95,7 @@
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OOP\CustomerServerSimulator.cs" />
+    <Compile Include="OOP\Defaults.cs" />
     <Compile Include="OOP\HighestPrioritySelection.cs" />
     <Compile Include="OOP\LeastUtilizationSelection.cs" />
     <Compile Include="OOP\RandomSelection.cs" />

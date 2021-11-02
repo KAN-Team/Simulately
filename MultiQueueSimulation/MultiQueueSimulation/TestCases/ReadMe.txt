@@ -2,7 +2,7 @@
 // value of number of servers 
 
 StoppingNumber
-// stopping condition when reaching the maxnum number of customers or simulation endtime
+// stopping condition when reaching the maximum number of customers or simulation endtime
 
 StoppingCriteria
 // the criteria on which the simulation will end => Enums.StoppingCriteria.NumberOfCustomers or Enums.StoppingCriteria.SimulationEndTime
