@@ -18,7 +18,6 @@ namespace MultiQueueModels
             this.Probability = Probability;
         }
 
-
         public int Time { get; set; }
         public decimal Probability { get; set; }
         public decimal CummProbability { get; set; }

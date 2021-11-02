@@ -94,6 +94,11 @@
     <Compile Include="Forms\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OOP\CustomerServerSimulator.cs" />
+    <Compile Include="OOP\HighestPrioritySelection.cs" />
+    <Compile Include="OOP\LeastUtilizationSelection.cs" />
+    <Compile Include="OOP\RandomSelection.cs" />
+    <Compile Include="OOP\ServerSelectionMethod.cs" />
     <Compile Include="OOP\TestSimulationSystem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

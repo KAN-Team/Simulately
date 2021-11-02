@@ -47,6 +47,7 @@ namespace MultiQueueSimulation
                     setConfigurations(lines);
                     setInterarrivalDistribution(lines);
 
+                    Program.system.Servers.Clear();
                     for (int i = 0; i < Program.system.NumberOfServers; i++)
                         setServerServiceTime(i + 1, lines);
 
@@ -89,7 +90,6 @@ namespace MultiQueueSimulation
                 string[] timesAndProbs = lines[i].Split(separator, StringSplitOptions.RemoveEmptyEntries);
                 int time = int.Parse(timesAndProbs[0]);
                 decimal prob = (decimal)float.Parse(timesAndProbs[1]);
-
                 Program.system.InterarrivalDistribution.Add(new TimeDistribution(time, prob));
             }
 
@@ -97,6 +97,7 @@ namespace MultiQueueSimulation
 
         private void setServerServiceTime(int serverID, string[] lines)
         {
+            Server newServer = new Server(serverID);
             for (int i = FileLineIndex; i < lines.Length; i++)
             {
                 if (lines[i] == "") { FileLineIndex = i + 2; break; }
@@ -105,10 +106,10 @@ namespace MultiQueueSimulation
                 string[] timesAndProbs = lines[i].Split(separator, StringSplitOptions.RemoveEmptyEntries);
                 int time = int.Parse(timesAndProbs[0]);
                 decimal prob = (decimal)float.Parse(timesAndProbs[1]);
-                Server server = new Server(serverID, time, prob);
-                Program.system.Servers.Add(server);
-
+                newServer.TimeDistribution.Add(new TimeDistribution(time, prob));
             }
+
+            Program.system.Servers.Add(newServer);
         }
 
         public void setWelcomeForm(WelcomeForm welcomeForm)

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace MultiQueueModels
 {
     public class SimulationCase
     {
         public SimulationCase()
         {
-            this.AssignedServer = new Server();
+            AssignedServer = new Server();
         }
 
         public int CustomerNumber { get; set; }

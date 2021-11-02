@@ -22,8 +22,8 @@ namespace MultiQueueSimulation
             //MessageBox.Show(result);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new WelcomeForm());
-            Application.Run(new SimulationTableForm());
+            Application.Run(new WelcomeForm());
+            //Application.Run(new SimulationTableForm());
         }
     }
 }

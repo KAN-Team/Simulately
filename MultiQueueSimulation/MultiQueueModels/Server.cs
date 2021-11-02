@@ -16,14 +16,14 @@ namespace MultiQueueModels
         public Server(int ID)
         {
             this.ID = ID;
-            if (this.TimeDistribution == null)
+            if (TimeDistribution == null)
                 TimeDistribution = new List<TimeDistribution>();
         }
 
         public Server(int ID, int Time, decimal Prob)
         {
             this.ID = ID;
-            if (this.TimeDistribution == null)
+            if (TimeDistribution == null)
                 TimeDistribution = new List<TimeDistribution>();
             
             TimeDistribution.Add(new TimeDistribution(Time, Prob));

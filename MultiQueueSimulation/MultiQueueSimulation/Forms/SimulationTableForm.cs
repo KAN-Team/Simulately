@@ -1,4 +1,6 @@
-﻿using System.Threading;
+﻿using MultiQueueSimulation.OOP;
+using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MultiQueueSimulation.Forms
@@ -7,53 +9,32 @@ namespace MultiQueueSimulation.Forms
     {
 
         private Thread thread;
+        private readonly CustomerServerSimulator simulator;
 
         public SimulationTableForm()
         {
             InitializeComponent();
-            DisplayTable();
-            
+
+            simulator = new CustomerServerSimulator();
+            loadDataToGgv();
+            simulationDgv.Columns["customerNumber"].DefaultCellStyle.BackColor = Color.Goldenrod;
         }
 
-        private void DisplayTable()
+        private void loadDataToGgv()
         {
-
+            for (int i = 0; i < Program.system.numberOfCustomers; ++i)
+                simulationDgv.Rows.Add(
+                    simulator.simulationCaseList[i].CustomerNumber,
+                    simulator.simulationCaseList[i].RandomInterArrival,
+                    simulator.simulationCaseList[i].InterArrival,
+                    simulator.simulationCaseList[i].ArrivalTime,
+                    simulator.simulationCaseList[i].RandomService,
+                    simulator.simulationCaseList[i].AssignedServer.ID,
+                    simulator.simulationCaseList[i].StartTime,
+                    simulator.simulationCaseList[i].ServiceTime,
+                    simulator.simulationCaseList[i].EndTime,
+                    simulator.simulationCaseList[i].TimeInQueue);
         }
-
-        public void CalcInterarrivalDist()
-        {
-            decimal cumulative = 0;
-            int minNum = 1;
-            for(int i = 0; i < Program.system.InterarrivalDistribution.Count; ++i)
-            {
-                cumulative += Program.system.InterarrivalDistribution[i].Probability;
-                Program.system.InterarrivalDistribution[i].CummProbability = cumulative;
-
-                Program.system.InterarrivalDistribution[i].MinRange = minNum;
-                Program.system.InterarrivalDistribution[i].MaxRange = (int)(cumulative * 100);
-                minNum = Program.system.InterarrivalDistribution[i].MaxRange + 1;
-            }
-        }
-
-        public void CalcServerSeviceTime()
-        {
-            for (int j = 0; j < Program.system.NumberOfServers; ++j)
-            {
-                decimal cumulative = 0;
-                int minNum = 1;
-
-                for (int i = 0; i < Program.system.Servers[j].TimeDistribution.Count; ++i)
-                {
-                    cumulative += Program.system.Servers[j].TimeDistribution[i].Probability;
-                    Program.system.Servers[j].TimeDistribution[i].CummProbability = cumulative;
-
-                    Program.system.Servers[j].TimeDistribution[i].MinRange = minNum;
-                    Program.system.Servers[j].TimeDistribution[i].MaxRange = (int)(cumulative * 100);
-                    minNum = Program.system.Servers[j].TimeDistribution[i].MaxRange + 1;
-                }
-            }
-        }
-
 
         #region HANDLING_FOOTER_NAVIGATION_BUTTONS
         private void backToWelcomeBtn_Click(object sender, System.EventArgs e)

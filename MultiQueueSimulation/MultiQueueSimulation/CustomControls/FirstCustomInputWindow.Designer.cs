@@ -65,18 +65,19 @@ namespace MultiQueueSimulation
             this.StoppingNumberGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.StoppingNumberGroup.Location = new System.Drawing.Point(129, 363);
             this.StoppingNumberGroup.Name = "StoppingNumberGroup";
-            this.StoppingNumberGroup.Size = new System.Drawing.Size(321, 70);
+            this.StoppingNumberGroup.Size = new System.Drawing.Size(359, 70);
             this.StoppingNumberGroup.TabIndex = 10;
             this.StoppingNumberGroup.TabStop = false;
             this.StoppingNumberGroup.Text = "Stopping Number";
             // 
             // stoppingNumberTxt
             // 
-            this.stoppingNumberTxt.Location = new System.Drawing.Point(66, 29);
+            this.stoppingNumberTxt.Location = new System.Drawing.Point(81, 29);
             this.stoppingNumberTxt.Name = "stoppingNumberTxt";
             this.stoppingNumberTxt.Size = new System.Drawing.Size(198, 30);
             this.stoppingNumberTxt.TabIndex = 7;
             this.stoppingNumberTxt.Text = "2";
+            this.stoppingNumberTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.stoppingNumberTxt.TextChanged += new System.EventHandler(this.stoppingNumberTxt_TextChanged);
             this.stoppingNumberTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberOfServersTxt_KeyPress);
             // 
@@ -86,7 +87,7 @@ namespace MultiQueueSimulation
             this.stoppingCriteriaGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.stoppingCriteriaGroup.Location = new System.Drawing.Point(129, 263);
             this.stoppingCriteriaGroup.Name = "stoppingCriteriaGroup";
-            this.stoppingCriteriaGroup.Size = new System.Drawing.Size(321, 70);
+            this.stoppingCriteriaGroup.Size = new System.Drawing.Size(359, 70);
             this.stoppingCriteriaGroup.TabIndex = 10;
             this.stoppingCriteriaGroup.TabStop = false;
             this.stoppingCriteriaGroup.Text = "Stopping Criteria";
@@ -99,7 +100,7 @@ namespace MultiQueueSimulation
             this.stoppingCriteriaCmb.Items.AddRange(new object[] {
             "Number of Customers",
             "Simulation End Time"});
-            this.stoppingCriteriaCmb.Location = new System.Drawing.Point(66, 28);
+            this.stoppingCriteriaCmb.Location = new System.Drawing.Point(81, 29);
             this.stoppingCriteriaCmb.Name = "stoppingCriteriaCmb";
             this.stoppingCriteriaCmb.Size = new System.Drawing.Size(198, 31);
             this.stoppingCriteriaCmb.TabIndex = 9;
@@ -112,7 +113,7 @@ namespace MultiQueueSimulation
             this.selectionMethodGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.selectionMethodGroup.Location = new System.Drawing.Point(129, 145);
             this.selectionMethodGroup.Name = "selectionMethodGroup";
-            this.selectionMethodGroup.Size = new System.Drawing.Size(321, 88);
+            this.selectionMethodGroup.Size = new System.Drawing.Size(359, 88);
             this.selectionMethodGroup.TabIndex = 10;
             this.selectionMethodGroup.TabStop = false;
             this.selectionMethodGroup.Text = "Selection Method";
@@ -126,7 +127,7 @@ namespace MultiQueueSimulation
             "Highest Priority",
             "Random",
             "Least Utilization"});
-            this.selectionCmb.Location = new System.Drawing.Point(66, 45);
+            this.selectionCmb.Location = new System.Drawing.Point(81, 45);
             this.selectionCmb.Name = "selectionCmb";
             this.selectionCmb.Size = new System.Drawing.Size(198, 31);
             this.selectionCmb.TabIndex = 8;
@@ -139,9 +140,9 @@ namespace MultiQueueSimulation
             this.howToSelectLbl.ForeColor = System.Drawing.Color.Crimson;
             this.howToSelectLbl.Location = new System.Drawing.Point(6, 22);
             this.howToSelectLbl.Name = "howToSelectLbl";
-            this.howToSelectLbl.Size = new System.Drawing.Size(312, 16);
+            this.howToSelectLbl.Size = new System.Drawing.Size(351, 16);
             this.howToSelectLbl.TabIndex = 5;
-            this.howToSelectLbl.Text = "(How to select a server when both servers are available)";
+            this.howToSelectLbl.Text = "(How to select a server when more than one server is available)";
             // 
             // serversNumberGroup
             // 
@@ -149,18 +150,19 @@ namespace MultiQueueSimulation
             this.serversNumberGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.serversNumberGroup.Location = new System.Drawing.Point(129, 45);
             this.serversNumberGroup.Name = "serversNumberGroup";
-            this.serversNumberGroup.Size = new System.Drawing.Size(321, 70);
+            this.serversNumberGroup.Size = new System.Drawing.Size(359, 70);
             this.serversNumberGroup.TabIndex = 9;
             this.serversNumberGroup.TabStop = false;
             this.serversNumberGroup.Text = "Number of Servers";
             // 
             // numberOfServersTxt
             // 
-            this.numberOfServersTxt.Location = new System.Drawing.Point(66, 29);
+            this.numberOfServersTxt.Location = new System.Drawing.Point(81, 29);
             this.numberOfServersTxt.Name = "numberOfServersTxt";
             this.numberOfServersTxt.Size = new System.Drawing.Size(198, 30);
             this.numberOfServersTxt.TabIndex = 7;
             this.numberOfServersTxt.Text = "1";
+            this.numberOfServersTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numberOfServersTxt.TextChanged += new System.EventHandler(this.numberOfServersTxt_TextChanged);
             this.numberOfServersTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberOfServersTxt_KeyPress);
             // 
