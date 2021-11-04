@@ -71,10 +71,12 @@ namespace MultiQueueSimulation.CustomControls
             this.chart.Name = "chart";
             this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
             series1.Color = System.Drawing.Color.SteelBlue;
             series1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.Legend = "Legend1";
             series1.Name = "Server Working Time";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.chart.Series.Add(series1);
             this.chart.Size = new System.Drawing.Size(740, 380);
             this.chart.TabIndex = 0;

@@ -218,7 +218,7 @@ namespace MultiQueueSimulation
                         new Font("comic sans ms", 10, FontStyle.Bold);
         }
 
-        public void simulateData()
+        public bool simulateData()
         {
             toBeFocusedTxt.Focus();
             if (isValidDgvs())
@@ -227,9 +227,11 @@ namespace MultiQueueSimulation
                 setServerServiceTime();
 
                 openSumulationTableForm();
+
+                //TestSimulationSystem.testSimulationData();
+                return true;
             }
-            
-            //TestSimulationSystem.testSimulationData();
+            return false;
         }
 
         #region OPENING_SIMULATION_TABLE_FORM

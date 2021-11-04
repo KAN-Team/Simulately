@@ -11,6 +11,7 @@ namespace MultiQueueModels
         public Server()
         {
             TimeDistribution = new List<TimeDistribution>();
+            WorkingIntervals = new List<KeyValuePair<int, int>>();
         }
 
         public Server(int ID)
@@ -18,15 +19,8 @@ namespace MultiQueueModels
             this.ID = ID;
             if (TimeDistribution == null)
                 TimeDistribution = new List<TimeDistribution>();
-        }
-
-        public Server(int ID, int Time, decimal Prob)
-        {
-            this.ID = ID;
-            if (TimeDistribution == null)
-                TimeDistribution = new List<TimeDistribution>();
-            
-            TimeDistribution.Add(new TimeDistribution(Time, Prob));
+            if (WorkingIntervals == null)
+                WorkingIntervals = new List<KeyValuePair<int, int>>();
         }
 
         public int ID { get; set; }
@@ -39,5 +33,6 @@ namespace MultiQueueModels
         //optional if needed use them
         public int FinishTime { get; set; }
         public int TotalWorkingTime { get; set; }
+        public List<KeyValuePair<int, int>> WorkingIntervals { get; set; }
     }
 }

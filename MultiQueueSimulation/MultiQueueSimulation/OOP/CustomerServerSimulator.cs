@@ -11,6 +11,7 @@ namespace MultiQueueSimulation.OOP
         private int selectedServerID;
         private readonly Random random;
         private int clockTimeArrival;
+        private Server assignedServer;
 
         public CustomerServerSimulator()
         {
@@ -84,6 +85,11 @@ namespace MultiQueueSimulation.OOP
                 
                 if (isSimulationOver(i)) break;
             }
+
+            if (Program.system.StoppingCriteria == Enums.StoppingCriteria.NumberOfCustomers)
+                for (int i = 0; i < Program.system.Servers.Count; ++i)
+                    if (Program.system.Servers[i].FinishTime > Program.system.endSimulationTime)
+                        Program.system.endSimulationTime = Program.system.Servers[i].FinishTime;
         }
 
         private void setCustomerNumber(int i)
@@ -142,12 +148,13 @@ namespace MultiQueueSimulation.OOP
                 serverSelectionMethod = new LeastUtilizationSelection(Program.system.SimulationTable, i);
 
             selectedServerID = serverSelectionMethod.serverID;
-            Program.system.SimulationTable[i].AssignedServer = getServerWithID(selectedServerID);
+            assignedServer = getServerWithID(selectedServerID);
+            Program.system.SimulationTable[i].AssignedServer = assignedServer;
         }
 
         private void setServerTime(int i)
         {
-            int startTime = Math.Max(Program.system.SimulationTable[i].ArrivalTime, Program.system.SimulationTable[i].AssignedServer.FinishTime);
+            int startTime = Math.Max(Program.system.SimulationTable[i].ArrivalTime, assignedServer.FinishTime);
             int serviceTime = getServiceTime(i);
             int endTime = startTime + serviceTime;
 
@@ -155,23 +162,21 @@ namespace MultiQueueSimulation.OOP
             Program.system.SimulationTable[i].ServiceTime = serviceTime;
             Program.system.SimulationTable[i].EndTime = endTime;
 
-            Program.system.SimulationTable[i].AssignedServer.FinishTime = endTime;
-            Program.system.SimulationTable[i].AssignedServer.TotalWorkingTime += serviceTime;
-            Server assignedServer = getServerWithID(selectedServerID);
             assignedServer.FinishTime = endTime;
             assignedServer.TotalWorkingTime += serviceTime;
+            assignedServer.WorkingIntervals.Add(new KeyValuePair<int, int>(startTime, endTime));
         }
 
         private int getServiceTime(int i)
         {
-            for (int j = 0; j < Program.system.SimulationTable[i].AssignedServer.TimeDistribution.Count; j++)
+            for (int j = 0; j < assignedServer.TimeDistribution.Count; j++)
             {
-                int minRange = Program.system.SimulationTable[i].AssignedServer.TimeDistribution[j].MinRange;
-                int maxRange = Program.system.SimulationTable[i].AssignedServer.TimeDistribution[j].MaxRange;
+                int minRange = assignedServer.TimeDistribution[j].MinRange;
+                int maxRange = assignedServer.TimeDistribution[j].MaxRange;
                 int RandomService = Program.system.SimulationTable[i].RandomService;
 
                 if (RandomService >= minRange && RandomService <= maxRange)
-                    return Program.system.SimulationTable[i].AssignedServer.TimeDistribution[j].Time;
+                    return assignedServer.TimeDistribution[j].Time;
             }
             return 0;
         }

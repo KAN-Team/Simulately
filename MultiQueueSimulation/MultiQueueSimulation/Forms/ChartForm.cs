@@ -1,5 +1,6 @@
 ﻿using MultiQueueSimulation.CustomControls;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -8,10 +9,37 @@ namespace MultiQueueSimulation.Forms
     public partial class ChartForm : Form
     {
         private Thread thread;
-
+        private List<ChartWindow> chartWindowList;
+        private int activeWindow;
+        private int screenWidth;
+        private bool isSlidingLeft;
+        private bool isSlidingRight;
         public ChartForm()
         {
             InitializeComponent();
+            chartWindowList = new List<ChartWindow>();
+            activeWindow = 0;
+            screenWidth = Screen.FromControl(this).Bounds.Width;
+            isSlidingLeft = isSlidingRight = false;
+        }
+        private void ChartForm_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Program.system.NumberOfServers; ++i)
+            {
+                ChartWindow chartWindow = new ChartWindow(Program.system.Servers[i].ID);
+                chartContainerPanel.Controls.Add(chartWindow);
+                chartWindow.Left = 0;
+                chartWindow.Top = 0;
+                chartWindow.Width = chartContainerPanel.Width;
+                chartWindow.Height = chartContainerPanel.Height;
+                chartWindow.BringToFront();
+                chartWindowList.Add(chartWindow);
+            }
+
+            nextPic.BringToFront();
+            backPic.BringToFront();
+            for (int i = 1; i < Program.system.NumberOfServers; ++i)
+                chartWindowList[i].Left = screenWidth;
         }
 
         #region HANDLING_FOOTER_NAVIGATION_BUTTONS
@@ -64,17 +92,54 @@ namespace MultiQueueSimulation.Forms
         }
         #endregion
 
-        private void ChartForm_Load(object sender, EventArgs e)
+        #region HANDLING_SLIDING_BUTTONS
+        private void backPic_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 1; ++i)
+            if (activeWindow > 0)
             {
-                ChartWindow chartWindow = new ChartWindow();
-                chartWindow.addServerWithID(i + 1);
-                chartWindow.addDataToPlot(); // send data as a parameter
-                chartWindow.Left = 0;
-                chartWindow.Top = 0;
-                chartWindow.Dock = DockStyle.Fill;
-                chartContainerPanel.Controls.Add(chartWindow);
+                activeWindow--;
+                isSlidingRight = true;
+            }
+        }
+
+        private void nextPic_Click(object sender, EventArgs e)
+        {
+            if (activeWindow < Program.system.NumberOfServers - 1)
+            {
+                activeWindow++;
+                isSlidingLeft = true;
+            }
+        }
+        #endregion
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            int sliding_speed = 80;
+
+            if (isSlidingLeft)
+            {
+                if (chartWindowList[activeWindow].Left > 0)
+                {
+                    if (chartWindowList[activeWindow].Left < sliding_speed)
+                        chartWindowList[activeWindow].Left = 0;
+                    else
+                        chartWindowList[activeWindow].Left -= sliding_speed;
+                }
+
+                else
+                    isSlidingLeft = false;
+            }
+
+            else if (isSlidingRight)
+            {
+                if (chartWindowList[activeWindow + 1].Left < screenWidth)
+                {
+                    if (chartWindowList[activeWindow + 1].Left + sliding_speed > screenWidth)
+                        chartWindowList[activeWindow + 1].Left = screenWidth;
+                    else
+                        chartWindowList[activeWindow + 1].Left += sliding_speed;
+                }
+                else
+                    isSlidingRight = false;
             }
         }
     }

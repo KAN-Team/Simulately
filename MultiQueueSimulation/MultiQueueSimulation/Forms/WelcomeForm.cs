@@ -25,6 +25,7 @@ namespace MultiQueueSimulation
 
         public WelcomeForm()
         {
+            Program.system = new MultiQueueModels.SimulationSystem();
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             activeWindow = 0;
@@ -123,7 +124,9 @@ namespace MultiQueueSimulation
 
             else if (activeWindow == 4) // Simulation Table Form
             {
-                secondCustomInputWindow.simulateData();
+                bool isOpened = secondCustomInputWindow.simulateData();
+                if (!isOpened)
+                    activeWindow--;
             }
 
             if (activeWindow == 1 && (loadFileWindow.Left > 0 || firstCustomInputWindow.Left < Width))

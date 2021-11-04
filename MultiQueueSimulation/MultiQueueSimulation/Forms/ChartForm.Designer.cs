@@ -29,13 +29,20 @@ namespace MultiQueueSimulation.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChartForm));
             this.footerPanel = new System.Windows.Forms.Panel();
             this.showMesuresBtn = new System.Windows.Forms.Button();
             this.backToSimulation = new System.Windows.Forms.Button();
             this.backToWelcomeBtn = new System.Windows.Forms.Button();
             this.chartContainerPanel = new System.Windows.Forms.Panel();
+            this.backPic = new System.Windows.Forms.PictureBox();
+            this.nextPic = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.footerPanel.SuspendLayout();
+            this.chartContainerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nextPic)).BeginInit();
             this.SuspendLayout();
             // 
             // footerPanel
@@ -103,10 +110,46 @@ namespace MultiQueueSimulation.Forms
             this.chartContainerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartContainerPanel.Controls.Add(this.backPic);
+            this.chartContainerPanel.Controls.Add(this.nextPic);
             this.chartContainerPanel.Location = new System.Drawing.Point(0, 0);
             this.chartContainerPanel.Name = "chartContainerPanel";
             this.chartContainerPanel.Size = new System.Drawing.Size(785, 415);
             this.chartContainerPanel.TabIndex = 3;
+            // 
+            // backPic
+            // 
+            this.backPic.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.backPic.BackColor = System.Drawing.Color.Transparent;
+            this.backPic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backPic.Image = ((System.Drawing.Image)(resources.GetObject("backPic.Image")));
+            this.backPic.Location = new System.Drawing.Point(50, 192);
+            this.backPic.Name = "backPic";
+            this.backPic.Size = new System.Drawing.Size(30, 30);
+            this.backPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.backPic.TabIndex = 5;
+            this.backPic.TabStop = false;
+            this.backPic.Click += new System.EventHandler(this.backPic_Click);
+            // 
+            // nextPic
+            // 
+            this.nextPic.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.nextPic.BackColor = System.Drawing.Color.Transparent;
+            this.nextPic.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nextPic.Image = ((System.Drawing.Image)(resources.GetObject("nextPic.Image")));
+            this.nextPic.Location = new System.Drawing.Point(705, 192);
+            this.nextPic.Name = "nextPic";
+            this.nextPic.Size = new System.Drawing.Size(30, 30);
+            this.nextPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.nextPic.TabIndex = 4;
+            this.nextPic.TabStop = false;
+            this.nextPic.Click += new System.EventHandler(this.nextPic_Click);
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 50;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // ChartForm
             // 
@@ -123,6 +166,9 @@ namespace MultiQueueSimulation.Forms
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ChartForm_Load);
             this.footerPanel.ResumeLayout(false);
+            this.chartContainerPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.backPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nextPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +180,8 @@ namespace MultiQueueSimulation.Forms
         private System.Windows.Forms.Button backToWelcomeBtn;
         private System.Windows.Forms.Button showMesuresBtn;
         private System.Windows.Forms.Panel chartContainerPanel;
+        private System.Windows.Forms.PictureBox backPic;
+        private System.Windows.Forms.PictureBox nextPic;
+        private System.Windows.Forms.Timer timer;
     }
 }

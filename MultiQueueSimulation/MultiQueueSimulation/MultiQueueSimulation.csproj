@@ -158,7 +158,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestCases\ReadMe.txt" />
+    <Content Include="TestCases\TestCase0 %28Invalid File Format%29.txt" />
     <Content Include="TestCases\TestCase1.txt" />
+    <Content Include="TestCases\TestCase2.txt" />
+    <Content Include="TestCases\TestCase3.txt" />
+    <Content Include="TestCases\TestCase4 %28Highest Priority%29.txt" />
+    <Content Include="TestCases\TestCase5 %28Random Selection%29.txt" />
+    <Content Include="TestCases\TestCase6 %28Least Utilization%29.txt" />
+    <Content Include="TestCases\TestCase7 %28Simulation End Time%29.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MultiQueueModels\MultiQueueModels.csproj">
