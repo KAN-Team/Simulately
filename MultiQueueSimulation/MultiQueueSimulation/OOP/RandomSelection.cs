@@ -24,6 +24,7 @@ namespace MultiQueueSimulation.OOP
             // There will be delay...
             else
             {
+                Program.system.waitedCustomers.Add(Program.system.SimulationTable[i]);
                 List<Server> eligibleServers = new List<Server>();
                 int nearestFinishDiff = int.MaxValue;
                 for (int j = 0; j < Program.system.Servers.Count; ++j)

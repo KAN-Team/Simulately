@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace MultiQueueSimulation.Forms
 {
@@ -15,6 +7,18 @@ namespace MultiQueueSimulation.Forms
         public PerformanceMesuresForm()
         {
             InitializeComponent();
+
+            averageWaitingTimeAnsLbl.Text = Program.system.PerformanceMeasures.AverageWaitingTime.ToString();
+            probabilityWaitAnsLbl.Text = Program.system.PerformanceMeasures.WaitingProbability.ToString();
+            maxQueueLengthAnsLbl.Text = Program.system.PerformanceMeasures.MaxQueueLength.ToString();
+        
+            for (int i = 0; i < Program.system.NumberOfServers; ++i)
+                performanceDgv.Rows.Add(
+                    Program.system.Servers[i].ID,
+                    Program.system.Servers[i].IdleProbability,
+                    Program.system.Servers[i].AverageServiceTime,
+                    Program.system.Servers[i].Utilization
+                    );
         }
     }
 }

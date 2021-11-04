@@ -15,6 +15,7 @@ namespace MultiQueueModels
             this.PerformanceMeasures = new PerformanceMeasures();
             this.SimulationTable = new List<SimulationCase>();
             this.idleServers = new List<Server>();
+            this.waitedCustomers = new List<SimulationCase>();
         }
 
         ///////////// INPUTS ///////////// 
@@ -34,5 +35,7 @@ namespace MultiQueueModels
         public int numberOfCustomers { get; set; }
         public int endSimulationTime { get; set; }
         public List<Server> idleServers { get; set; }
+        public List<SimulationCase> waitedCustomers { get; set; }
+        public static bool needsCopy { get; set; }
     }
 }

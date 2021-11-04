@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MultiQueueModels;
+using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -25,7 +26,8 @@ namespace MultiQueueSimulation
 
         public WelcomeForm()
         {
-            Program.system = new MultiQueueModels.SimulationSystem();
+            Program.system = new SimulationSystem();
+            SimulationSystem.needsCopy = false;
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             activeWindow = 0;
