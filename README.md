@@ -100,3 +100,56 @@ Simulately is a full simulation desktop system that simulate customer service fo
 </details>
 
 
+
+
+
+<details>
+
+  <summary> InValid Inputs</summary>
+
+<p>
+
+### 1.Invalid input file Formate 
+
+
+- missing number of servers
+
+![12](https://user-images.githubusercontent.com/52586356/140434041-dd97db46-015b-486f-883d-85c552d05b3d.png)
+
+- choosing in-valid format
+
+![13](https://user-images.githubusercontent.com/52586356/140434153-13759788-9de4-471c-b669-10d4e114d0cb.png)
+
+- Valid format Warning Message
+
+![14](https://user-images.githubusercontent.com/52586356/140434212-e73fd644-bdfb-4a83-aecc-8d1812b7bc78.png)
+
+
+</p>
+
+
+
+<p>
+
+### 2.Invalid Manual input
+
+- There must be at least 2 servers to simulate.
+
+![15](https://user-images.githubusercontent.com/52586356/140434277-b98ce9c9-1407-4f0b-b22a-1649a0761ce4.png)
+
+- There must be at least 2 customers OR 2 clock to simulate
+
+![16](https://user-images.githubusercontent.com/52586356/140434711-6c2d79a5-8684-44b4-8e84-c90bfbac1fe5.png)
+
+- sum of Probability must be equal 1 
+
+![17](https://user-images.githubusercontent.com/52586356/140434814-4618fb94-7b21-471d-869e-20273838559a.png)
+
+![18](https://user-images.githubusercontent.com/52586356/140434832-cebae250-5e7e-440c-8763-c56ab55633ff.png)
+
+
+</p>
+
+
+</details>
+
