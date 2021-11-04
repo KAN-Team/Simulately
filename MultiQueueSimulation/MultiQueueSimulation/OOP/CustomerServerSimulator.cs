@@ -106,10 +106,7 @@ namespace MultiQueueSimulation.OOP
 
         private void generateRandomDigitsForCustomers(int i)
         {
-            if (i != 0)
-                system.SimulationTable[i].RandomInterArrival = random.Next(1, 100);
-            else
-                system.SimulationTable[i].RandomInterArrival = -1;
+            system.SimulationTable[i].RandomInterArrival = random.Next(1, 100);
         }
 
         private void setTimeBetweenArrivals(int i)
@@ -243,7 +240,7 @@ namespace MultiQueueSimulation.OOP
             int maxLength = 0;
             for (int i = 0; i < system.waitedCustomers.Count; ++i)
             {
-                int tempLength = 0;
+                int tempLength = 1;
                 for (int j = i+1; j < system.waitedCustomers.Count; ++j)
                 {
                     if (system.waitedCustomers[i].StartTime > system.waitedCustomers[j].ArrivalTime)
@@ -273,7 +270,10 @@ namespace MultiQueueSimulation.OOP
         private void setServersAverageServiceTime()
         {
             for (int i = 0; i < system.NumberOfServers; ++i)
-                system.Servers[i].AverageServiceTime = (decimal)system.Servers[i].TotalWorkingTime / system.numberOfCustomers;
+            {
+                decimal totalWorkingTime = system.Servers[i].TotalWorkingTime;
+                system.Servers[i].AverageServiceTime = totalWorkingTime / system.numberOfCustomers;
+            }
         }
         private void setServersUtilization()
         {

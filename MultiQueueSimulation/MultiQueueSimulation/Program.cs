@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using MultiQueueTesting;
 using MultiQueueModels;
-using MultiQueueSimulation.Forms;
 
 namespace MultiQueueSimulation
 {
@@ -13,17 +12,16 @@ namespace MultiQueueSimulation
         /// </summary>
          
         // Applying Singleton Design Pattern on SimulationSystem Object
-        public static SimulationSystem system = new SimulationSystem();
+        public static SimulationSystem system;
 
         [STAThread]
         static void Main()
         {
-            //string result = TestingManager.Test(system, Constants.FileNames.TestCase1);
-            //MessageBox.Show(result);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WelcomeForm());
-            //Application.Run(new SimulationTableForm());
+            /*string result = TestingManager.Test(system, Constants.FileNames.TestCase2);
+            MessageBox.Show(result);*/
         }
     }
 }
