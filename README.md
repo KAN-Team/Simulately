@@ -153,3 +153,11 @@ Simulately is a full simulation desktop system that simulate customer service fo
 
 </details>
 
+
+# References
+
+- [System Performance Measurements](MultiQueueSimulation/MultiQueueSimulation/Assets/performance_mesures.png) 
+
+- [.Net Framework 4.5.1](https://www.microsoft.com/ar-sa/download/details.aspx?id=40779)
+
+- [Visual studio](https://visualstudio.microsoft.com/downloads/)
