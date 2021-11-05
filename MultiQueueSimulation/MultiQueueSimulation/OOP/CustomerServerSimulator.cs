@@ -33,7 +33,7 @@ namespace MultiQueueSimulation.OOP
                 system.numberOfCustomers = int.MaxValue;
                 system.endSimulationTime = Math.Max(system.endSimulationTime, system.StoppingNumber);
             }
-
+            
             calcInterarrivalDist();
             calcServiceDist();
             simulateTable();
@@ -154,6 +154,8 @@ namespace MultiQueueSimulation.OOP
             selectedServerID = serverSelectionMethod.serverID;
             assignedServer = getServerWithID(selectedServerID);
             system.SimulationTable[i].AssignedServer = assignedServer;
+
+            assignedServer.NumberOfCustomersServed++;
         }
 
         private void setServerTime(int i)
@@ -258,21 +260,22 @@ namespace MultiQueueSimulation.OOP
         {
             for (int i = 0; i < system.NumberOfServers; ++i)
             {
-                int idleTime = 0, lastFinish = 0;
-                for (int j = 0; j < system.Servers[i].WorkingIntervals.Count; ++j)
-                {
-                    idleTime += (system.Servers[i].WorkingIntervals[j].Key - lastFinish);
-                    lastFinish = system.Servers[i].WorkingIntervals[j].Value;
-                }
-                system.Servers[i].IdleProbability = (decimal)idleTime / system.endSimulationTime;
+                decimal totalIdleTime = system.endSimulationTime - system.Servers[i].TotalWorkingTime;
+                system.Servers[i].IdleProbability = totalIdleTime / system.endSimulationTime;
             }
         }
         private void setServersAverageServiceTime()
         {
             for (int i = 0; i < system.NumberOfServers; ++i)
             {
-                decimal totalWorkingTime = system.Servers[i].TotalWorkingTime;
-                system.Servers[i].AverageServiceTime = totalWorkingTime / system.numberOfCustomers;
+                int customersServed = system.Servers[i].NumberOfCustomersServed;
+                if (customersServed != 0)
+                {
+                    decimal totalWorkingTime = system.Servers[i].TotalWorkingTime;
+                    system.Servers[i].AverageServiceTime = totalWorkingTime / customersServed;
+                }
+                else
+                    system.Servers[i].AverageServiceTime = 0;
             }
         }
         private void setServersUtilization()

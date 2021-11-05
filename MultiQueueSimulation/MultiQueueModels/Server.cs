@@ -33,6 +33,7 @@ namespace MultiQueueModels
         //optional if needed use them
         public int FinishTime { get; set; }
         public int TotalWorkingTime { get; set; }
+        public int NumberOfCustomersServed { get; set; }
         public List<KeyValuePair<int, int>> WorkingIntervals { get; set; }
     }
 }

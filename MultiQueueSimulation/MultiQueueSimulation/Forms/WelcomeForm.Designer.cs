@@ -33,6 +33,9 @@
             this.nextPic = new System.Windows.Forms.PictureBox();
             this.backPic = new System.Windows.Forms.PictureBox();
             this.welcomePanel = new System.Windows.Forms.Panel();
+            this.secondCustomInputWindow = new MultiQueueSimulation.SecondCustomInputWindow();
+            this.loadFileWindow = new MultiQueueSimulation.LoadFileWindow();
+            this.firstCustomInputWindow = new MultiQueueSimulation.FirstCustomInputWindow();
             this.abanoubLbl = new System.Windows.Forms.Label();
             this.nadaLbl = new System.Windows.Forms.Label();
             this.horizontalSeparatorPanel = new System.Windows.Forms.Panel();
@@ -44,9 +47,6 @@
             this.closePic = new System.Windows.Forms.PictureBox();
             this.kareemLbl = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.secondCustomInputWindow = new MultiQueueSimulation.SecondCustomInputWindow();
-            this.loadFileWindow = new MultiQueueSimulation.LoadFileWindow();
-            this.firstCustomInputWindow = new MultiQueueSimulation.FirstCustomInputWindow();
             ((System.ComponentModel.ISupportInitialize)(this.nextPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPic)).BeginInit();
             this.welcomePanel.SuspendLayout();
@@ -104,6 +104,36 @@
             this.welcomePanel.Name = "welcomePanel";
             this.welcomePanel.Size = new System.Drawing.Size(600, 500);
             this.welcomePanel.TabIndex = 5;
+            // 
+            // secondCustomInputWindow
+            // 
+            this.secondCustomInputWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.secondCustomInputWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.secondCustomInputWindow.Location = new System.Drawing.Point(600, 0);
+            this.secondCustomInputWindow.Margin = new System.Windows.Forms.Padding(5);
+            this.secondCustomInputWindow.Name = "secondCustomInputWindow";
+            this.secondCustomInputWindow.Size = new System.Drawing.Size(600, 500);
+            this.secondCustomInputWindow.TabIndex = 22;
+            // 
+            // loadFileWindow
+            // 
+            this.loadFileWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.loadFileWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadFileWindow.Location = new System.Drawing.Point(600, 0);
+            this.loadFileWindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.loadFileWindow.Name = "loadFileWindow";
+            this.loadFileWindow.Size = new System.Drawing.Size(600, 500);
+            this.loadFileWindow.TabIndex = 21;
+            // 
+            // firstCustomInputWindow
+            // 
+            this.firstCustomInputWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.firstCustomInputWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstCustomInputWindow.Location = new System.Drawing.Point(600, 0);
+            this.firstCustomInputWindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.firstCustomInputWindow.Name = "firstCustomInputWindow";
+            this.firstCustomInputWindow.Size = new System.Drawing.Size(600, 500);
+            this.firstCustomInputWindow.TabIndex = 20;
             // 
             // abanoubLbl
             // 
@@ -232,36 +262,6 @@
             this.timer.Enabled = true;
             this.timer.Interval = 1;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // secondCustomInputWindow
-            // 
-            this.secondCustomInputWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.secondCustomInputWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.secondCustomInputWindow.Location = new System.Drawing.Point(600, 0);
-            this.secondCustomInputWindow.Margin = new System.Windows.Forms.Padding(5);
-            this.secondCustomInputWindow.Name = "secondCustomInputWindow";
-            this.secondCustomInputWindow.Size = new System.Drawing.Size(600, 500);
-            this.secondCustomInputWindow.TabIndex = 22;
-            // 
-            // loadFileWindow
-            // 
-            this.loadFileWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.loadFileWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadFileWindow.Location = new System.Drawing.Point(600, 0);
-            this.loadFileWindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.loadFileWindow.Name = "loadFileWindow";
-            this.loadFileWindow.Size = new System.Drawing.Size(600, 500);
-            this.loadFileWindow.TabIndex = 21;
-            // 
-            // firstCustomInputWindow
-            // 
-            this.firstCustomInputWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.firstCustomInputWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstCustomInputWindow.Location = new System.Drawing.Point(600, 0);
-            this.firstCustomInputWindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.firstCustomInputWindow.Name = "firstCustomInputWindow";
-            this.firstCustomInputWindow.Size = new System.Drawing.Size(600, 500);
-            this.firstCustomInputWindow.TabIndex = 20;
             // 
             // WelcomeForm
             // 
