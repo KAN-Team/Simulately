@@ -93,10 +93,9 @@ namespace MultiQueueSimulation.OOP
                 if (isSimulationOver(i)) break;
             }
 
-            if (system.StoppingCriteria == Enums.StoppingCriteria.NumberOfCustomers)
-                for (int i = 0; i < system.Servers.Count; ++i)
-                    if (system.Servers[i].FinishTime > system.endSimulationTime)
-                        system.endSimulationTime = system.Servers[i].FinishTime;
+            for (int i = 0; i < system.Servers.Count; ++i)
+                if (system.Servers[i].FinishTime > system.endSimulationTime)
+                    system.endSimulationTime = system.Servers[i].FinishTime;
         }
 
         private void setCustomerNumber(int i)
@@ -200,13 +199,28 @@ namespace MultiQueueSimulation.OOP
         private bool isSimulationOver(int i)
         {
             if (system.StoppingCriteria == Enums.StoppingCriteria.SimulationEndTime)
-                if (clockTimeArrival >= system.endSimulationTime)
+                if (clockTimeArrival > system.endSimulationTime)
                 {
+                    manageServer(i);
                     system.SimulationTable.RemoveAt(i);
                     system.numberOfCustomers = i;
                     return true;
                 }
             return false;
+        }
+
+        private void manageServer(int i)
+        {
+            int lastInterval = system.SimulationTable[i].AssignedServer.WorkingIntervals.Count - 1;
+            if (lastInterval > 0)
+                system.SimulationTable[i].AssignedServer.FinishTime = system.SimulationTable[i].AssignedServer.WorkingIntervals[lastInterval - 1].Value;
+            else
+                system.SimulationTable[i].AssignedServer.FinishTime = 0;
+            if (system.waitedCustomers[system.waitedCustomers.Count - 1].CustomerNumber == system.SimulationTable[i].CustomerNumber)
+                system.waitedCustomers.RemoveAt(system.waitedCustomers.Count - 1);
+            system.SimulationTable[i].AssignedServer.TotalWorkingTime -= system.SimulationTable[i].ServiceTime;
+            system.SimulationTable[i].AssignedServer.NumberOfCustomersServed--;
+            system.SimulationTable[i].AssignedServer.WorkingIntervals.RemoveAt(lastInterval);
         }
         #endregion
 
@@ -214,7 +228,7 @@ namespace MultiQueueSimulation.OOP
         private void calcPerformanceMeasures()
         {
             setAverageWaitingTime();
-            setWaitProbability();
+            setWaitingProbability();
             setMaximumQueueLength();
 
             setServersIdleProbability();
@@ -224,16 +238,16 @@ namespace MultiQueueSimulation.OOP
         
         private void setAverageWaitingTime()
         {
-            double waitingTimeSum = 0;
-            int cases = system.SimulationTable.Count;
+            decimal waitingTimeSum = 0;
+            int cases = system.numberOfCustomers;
             for (int i = 0; i < cases; ++i)
                 waitingTimeSum += system.SimulationTable[i].TimeInQueue;
             
-            system.PerformanceMeasures.AverageWaitingTime = (decimal) (waitingTimeSum / cases);
+            system.PerformanceMeasures.AverageWaitingTime = waitingTimeSum / cases;
         }
-        private void setWaitProbability()
+        private void setWaitingProbability()
         {
-            decimal waitProbability = (decimal)(system.waitedCustomers.Count) / system.SimulationTable.Count;
+            decimal waitProbability = (decimal)(system.waitedCustomers.Count) / system.numberOfCustomers;
 
             system.PerformanceMeasures.WaitingProbability = waitProbability;
         }

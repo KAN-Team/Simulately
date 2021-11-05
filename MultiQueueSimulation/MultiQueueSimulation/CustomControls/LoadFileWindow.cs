@@ -40,11 +40,19 @@ namespace MultiQueueSimulation
 
         private void loadFromFileBtn_Click(object sender, EventArgs e)
         {
-            string exeFile = (new Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-            string exeDir = Path.GetDirectoryName(exeFile);
-            string readmeFullPath = Path.Combine(exeDir, @"..\..\TestCases\ReadMe.txt");
-            readmeFullPath = readmeFullPath.Replace("%20", " ");
-            string fileFormatReadmeText = File.ReadAllText(readmeFullPath);
+            string fileFormatReadmeText = "";
+            try
+            {
+                string exeFile = (new Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+                string exeDir = Path.GetDirectoryName(exeFile);
+                string readmeFullPath = Path.Combine(exeDir, @"..\..\TestCases\ReadMe.txt");
+                readmeFullPath = readmeFullPath.Replace("%20", " ");
+                fileFormatReadmeText = File.ReadAllText(readmeFullPath);
+            }
+            catch
+            {
+                fileFormatReadmeText = "Unavilable...";
+            }
 
             using (OpenFileDialog dialog = new OpenFileDialog() { Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*", Multiselect = false })
             {

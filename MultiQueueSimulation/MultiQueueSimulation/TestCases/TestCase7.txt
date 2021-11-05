@@ -5,7 +5,7 @@ StoppingNumber
 100
 
 StoppingCriteria
-1
+2
 
 SelectionMethod
 1
