@@ -1,5 +1,6 @@
 ﻿using MultiQueueModels;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -57,6 +58,23 @@ namespace MultiQueueSimulation
                 activeWindow--;
 
             activateWindow();
+        }
+        #endregion
+
+        #region GITHUB
+        private void gitHubLinkLbl_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Kareem100/Simulately");
+        }
+
+        private void gitHubLinkLbl_MouseEnter(object sender, EventArgs e)
+        {
+            gitHubLinkLbl.Font = new Font("comic sans ms", 14, FontStyle.Underline | FontStyle.Italic);
+        }
+
+        private void gitHubLinkLbl_MouseLeave(object sender, EventArgs e)
+        {
+            gitHubLinkLbl.Font = new Font("Monotype Corsiva", 14, FontStyle.Bold | FontStyle.Italic);
         }
         #endregion
 
@@ -159,6 +177,5 @@ namespace MultiQueueSimulation
         {
             return secondCustomInputWindow;
         }
-
     }
 }

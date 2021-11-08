@@ -14,6 +14,41 @@ namespace MultiQueueSimulation
             InitializeComponent();
         }
 
+        private void Form_Initiator()
+        {
+            selectionCmb.SelectedIndex = Defaults.SELECTION_METHOD - 1;
+            stoppingCriteriaCmb.SelectedIndex = Defaults.STOPPING_CRITERIA - 1;
+            switch (Defaults.SELECTION_METHOD)
+            {
+                case 1:
+                    Program.system.SelectionMethod = Enums.SelectionMethod.HighestPriority;
+                    break;
+                case 2:
+                    Program.system.SelectionMethod = Enums.SelectionMethod.Random;
+                    break;
+                case 3:
+                    Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
+                    break;
+            }
+            switch (Defaults.STOPPING_CRITERIA)
+            {
+                case 1:
+                    Program.system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
+                    break;
+                case 2:
+                    Program.system.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
+                    break;
+            }
+
+            Program.system.NumberOfServers = Defaults.NUMBER_Of_SERVERS;
+            numberOfServersTxt.Text = Defaults.NUMBER_Of_SERVERS.ToString();
+            for (int i = 0; i < Defaults.NUMBER_Of_SERVERS; ++i)
+                Program.system.Servers.Add(new Server(i + 1));
+
+            Program.system.StoppingNumber = Defaults.STOPPING_NUMBER;
+            stoppingNumberTxt.Text = Defaults.STOPPING_NUMBER.ToString();
+        }
+
         #region HANDLING_INSTANT_VALUE_CHANGES
         private void numberOfServersTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -71,41 +106,6 @@ namespace MultiQueueSimulation
                 Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
         }
         #endregion
-
-        private void Form_Initiator()
-        {
-            selectionCmb.SelectedIndex = Defaults.SELECTION_METHOD - 1;
-            stoppingCriteriaCmb.SelectedIndex = Defaults.STOPPING_CRITERIA - 1;
-            switch (Defaults.SELECTION_METHOD)
-            {
-                case 1:
-                    Program.system.SelectionMethod = Enums.SelectionMethod.HighestPriority;
-                    break;
-                case 2:
-                    Program.system.SelectionMethod = Enums.SelectionMethod.Random;
-                    break;
-                case 3:
-                    Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
-                    break;
-            }
-            switch (Defaults.STOPPING_CRITERIA)
-            {
-                case 1:
-                    Program.system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
-                    break;
-                case 2:
-                    Program.system.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
-                    break;
-            }
-
-            Program.system.NumberOfServers = Defaults.NUMBER_Of_SERVERS;
-            numberOfServersTxt.Text = Defaults.NUMBER_Of_SERVERS.ToString();
-            for (int i = 0; i < Defaults.NUMBER_Of_SERVERS; ++i)
-                Program.system.Servers.Add(new Server(i + 1));
-
-            Program.system.StoppingNumber = Defaults.STOPPING_NUMBER;
-            stoppingNumberTxt.Text = Defaults.STOPPING_NUMBER.ToString();
-        }
 
         public void setWelcomeForm(WelcomeForm welcomeForm)
         {

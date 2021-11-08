@@ -123,7 +123,6 @@ namespace MultiQueueSimulation
             for (int j = 0; j < sumOfProbabilitiesList.Count; ++j)
                 if (sumOfProbabilitiesList[j] != 1)
                 {
-                    MessageBox.Show("PROB SUM " + sumOfProbabilitiesList[j]);
                     MessageBox.Show("Sum of Probabilities Must be Equal (1) !!\n--> Check Server " + (j + 1) + " Column <--", "ServiceTime Table Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }

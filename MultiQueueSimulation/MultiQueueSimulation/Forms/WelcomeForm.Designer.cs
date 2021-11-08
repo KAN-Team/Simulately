@@ -33,6 +33,8 @@
             this.nextPic = new System.Windows.Forms.PictureBox();
             this.backPic = new System.Windows.Forms.PictureBox();
             this.welcomePanel = new System.Windows.Forms.Panel();
+            this.gitHubPic = new System.Windows.Forms.PictureBox();
+            this.gitHubLinkLbl = new System.Windows.Forms.Label();
             this.secondCustomInputWindow = new MultiQueueSimulation.SecondCustomInputWindow();
             this.loadFileWindow = new MultiQueueSimulation.LoadFileWindow();
             this.firstCustomInputWindow = new MultiQueueSimulation.FirstCustomInputWindow();
@@ -50,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nextPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPic)).BeginInit();
             this.welcomePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gitHubPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePic)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +87,8 @@
             // 
             this.welcomePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("welcomePanel.BackgroundImage")));
             this.welcomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.welcomePanel.Controls.Add(this.gitHubPic);
+            this.welcomePanel.Controls.Add(this.gitHubLinkLbl);
             this.welcomePanel.Controls.Add(this.secondCustomInputWindow);
             this.welcomePanel.Controls.Add(this.loadFileWindow);
             this.welcomePanel.Controls.Add(this.firstCustomInputWindow);
@@ -104,6 +109,34 @@
             this.welcomePanel.Name = "welcomePanel";
             this.welcomePanel.Size = new System.Drawing.Size(600, 500);
             this.welcomePanel.TabIndex = 5;
+            // 
+            // gitHubPic
+            // 
+            this.gitHubPic.BackColor = System.Drawing.Color.Transparent;
+            this.gitHubPic.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gitHubPic.Image = ((System.Drawing.Image)(resources.GetObject("gitHubPic.Image")));
+            this.gitHubPic.Location = new System.Drawing.Point(282, 354);
+            this.gitHubPic.Name = "gitHubPic";
+            this.gitHubPic.Size = new System.Drawing.Size(40, 40);
+            this.gitHubPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gitHubPic.TabIndex = 24;
+            this.gitHubPic.TabStop = false;
+            // 
+            // gitHubLinkLbl
+            // 
+            this.gitHubLinkLbl.AutoSize = true;
+            this.gitHubLinkLbl.BackColor = System.Drawing.Color.Transparent;
+            this.gitHubLinkLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gitHubLinkLbl.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gitHubLinkLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(149)))), ((int)(((byte)(155)))));
+            this.gitHubLinkLbl.Location = new System.Drawing.Point(130, 397);
+            this.gitHubLinkLbl.Name = "gitHubLinkLbl";
+            this.gitHubLinkLbl.Size = new System.Drawing.Size(338, 22);
+            this.gitHubLinkLbl.TabIndex = 23;
+            this.gitHubLinkLbl.Text = "https://github.com/Kareem100/Simulately";
+            this.gitHubLinkLbl.Click += new System.EventHandler(this.gitHubLinkLbl_Click);
+            this.gitHubLinkLbl.MouseEnter += new System.EventHandler(this.gitHubLinkLbl_MouseEnter);
+            this.gitHubLinkLbl.MouseLeave += new System.EventHandler(this.gitHubLinkLbl_MouseLeave);
             // 
             // secondCustomInputWindow
             // 
@@ -280,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.backPic)).EndInit();
             this.welcomePanel.ResumeLayout(false);
             this.welcomePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gitHubPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closePic)).EndInit();
             this.ResumeLayout(false);
@@ -304,6 +338,8 @@
         private SecondCustomInputWindow secondCustomInputWindow;
         private LoadFileWindow loadFileWindow;
         private FirstCustomInputWindow firstCustomInputWindow;
+        private System.Windows.Forms.Label gitHubLinkLbl;
+        private System.Windows.Forms.PictureBox gitHubPic;
     }
 }
 

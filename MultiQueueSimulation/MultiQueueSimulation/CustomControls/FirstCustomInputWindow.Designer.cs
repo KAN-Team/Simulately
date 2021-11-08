@@ -164,6 +164,7 @@ namespace MultiQueueSimulation
             this.numberOfServersTxt.Text = "2";
             this.numberOfServersTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numberOfServersTxt.TextChanged += new System.EventHandler(this.numberOfServersTxt_TextChanged);
+            this.numberOfServersTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numberOfServersTxt_KeyPress);
             // 
             // FirstCustomInputWindow
             // 

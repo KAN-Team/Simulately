@@ -21,8 +21,8 @@ namespace MultiQueueSimulation
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WelcomeForm());
 
-            /*System.Threading.Thread.Sleep(500);
-            string result = TestingManager.Test(system, Constants.FileNames.TestCase8);
+            System.Threading.Thread.Sleep(500);
+            /*string result = TestingManager.Test(system, Constants.FileNames.TestCase8);
             MessageBox.Show(result);*/
         }
     }
