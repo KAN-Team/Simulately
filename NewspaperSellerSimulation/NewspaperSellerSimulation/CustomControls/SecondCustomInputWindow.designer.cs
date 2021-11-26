@@ -38,17 +38,17 @@ namespace MultiQueueSimulation
             this.containerPanel = new System.Windows.Forms.Panel();
             this.validateBtn = new System.Windows.Forms.Button();
             this.demandDGV = new System.Windows.Forms.DataGridView();
-            this.serviceTimeLbl = new System.Windows.Forms.Label();
-            this.dayTypeDGV = new System.Windows.Forms.DataGridView();
-            this.interarrivalLbl = new System.Windows.Forms.Label();
-            this.toBeFocusedTxt = new System.Windows.Forms.TextBox();
-            this.good = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fair = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.demand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.good2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fair2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceTimeLbl = new System.Windows.Forms.Label();
+            this.dayTypeDGV = new System.Windows.Forms.DataGridView();
+            this.good = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fair = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.poor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.interarrivalLbl = new System.Windows.Forms.Label();
+            this.toBeFocusedTxt = new System.Windows.Forms.TextBox();
             this.containerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demandDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayTypeDGV)).BeginInit();
@@ -78,7 +78,6 @@ namespace MultiQueueSimulation
             this.validateBtn.TabIndex = 8;
             this.validateBtn.Text = "Validate";
             this.validateBtn.UseVisualStyleBackColor = true;
-            this.validateBtn.Visible = false;
             this.validateBtn.Click += new System.EventHandler(this.validateBtn_Click);
             // 
             // demandDGV
@@ -123,7 +122,27 @@ namespace MultiQueueSimulation
             this.demandDGV.RowHeadersVisible = false;
             this.demandDGV.Size = new System.Drawing.Size(574, 337);
             this.demandDGV.TabIndex = 7;
-            this.demandDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
+            this.demandDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dayTypeDGV_EditingControlShowing);
+            // 
+            // demand
+            // 
+            this.demand.HeaderText = "Demand";
+            this.demand.Name = "demand";
+            // 
+            // good2
+            // 
+            this.good2.HeaderText = "Good Prob";
+            this.good2.Name = "good2";
+            // 
+            // fair2
+            // 
+            this.fair2.HeaderText = "Fair Prob";
+            this.fair2.Name = "fair2";
+            // 
+            // poor2
+            // 
+            this.poor2.HeaderText = "Poor Prob";
+            this.poor2.Name = "poor2";
             // 
             // serviceTimeLbl
             // 
@@ -178,8 +197,23 @@ namespace MultiQueueSimulation
             this.dayTypeDGV.RowHeadersVisible = false;
             this.dayTypeDGV.Size = new System.Drawing.Size(574, 60);
             this.dayTypeDGV.TabIndex = 5;
-            this.dayTypeDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_EditingControlShowing);
+            this.dayTypeDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dayTypeDGV_EditingControlShowing);
             this.dayTypeDGV.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dayTypeDGV_UserAddedRow);
+            // 
+            // good
+            // 
+            this.good.HeaderText = "Good Prob";
+            this.good.Name = "good";
+            // 
+            // fair
+            // 
+            this.fair.HeaderText = "Fair Prob";
+            this.fair.Name = "fair";
+            // 
+            // poor
+            // 
+            this.poor.HeaderText = "Poor Prob";
+            this.poor.Name = "poor";
             // 
             // interarrivalLbl
             // 
@@ -198,41 +232,6 @@ namespace MultiQueueSimulation
             this.toBeFocusedTxt.Name = "toBeFocusedTxt";
             this.toBeFocusedTxt.Size = new System.Drawing.Size(10, 30);
             this.toBeFocusedTxt.TabIndex = 9;
-            // 
-            // good
-            // 
-            this.good.HeaderText = "Good Prob";
-            this.good.Name = "good";
-            // 
-            // fair
-            // 
-            this.fair.HeaderText = "Fair Prob";
-            this.fair.Name = "fair";
-            // 
-            // poor
-            // 
-            this.poor.HeaderText = "Poor Prob";
-            this.poor.Name = "poor";
-            // 
-            // demand
-            // 
-            this.demand.HeaderText = "Demand";
-            this.demand.Name = "demand";
-            // 
-            // good2
-            // 
-            this.good2.HeaderText = "Good Prob";
-            this.good2.Name = "good2";
-            // 
-            // fair2
-            // 
-            this.fair2.HeaderText = "Fair Prob";
-            this.fair2.Name = "fair2";
-            // 
-            // poor2
-            // 
-            this.poor2.HeaderText = "Poor Prob";
-            this.poor2.Name = "poor2";
             // 
             // SecondCustomInputWindow
             // 

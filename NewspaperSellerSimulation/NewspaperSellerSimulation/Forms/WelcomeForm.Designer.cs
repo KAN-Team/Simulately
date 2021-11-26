@@ -216,7 +216,7 @@ namespace NewspaperSellerSimulation.Forms
             this.closePic.BackColor = System.Drawing.Color.Transparent;
             this.closePic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePic.Image = ((System.Drawing.Image)(resources.GetObject("closePic.Image")));
-            this.closePic.Location = new System.Drawing.Point(562, 6);
+            this.closePic.Location = new System.Drawing.Point(565, 5);
             this.closePic.Name = "closePic";
             this.closePic.Size = new System.Drawing.Size(30, 30);
             this.closePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -12,7 +12,7 @@ namespace NewspaperSellerSimulation.SimulationCore
         public NewspaperSimulator()
         {
             random = new Random();
-            System = Program.system;
+            System = Program.mSystem;
 
             calcDayTypeDist();
             calcDemandDist();

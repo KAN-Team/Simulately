@@ -47,8 +47,7 @@ namespace MultiQueueSimulation.Forms
             this.showMesuresBtn = new System.Windows.Forms.Button();
             this.backToWelcomeBtn = new System.Windows.Forms.Button();
             this.DailyCostPannel = new System.Windows.Forms.Panel();
-            this.DailyCost_Label = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dailyCostLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.simulationDgv)).BeginInit();
             this.footerPanel.SuspendLayout();
             this.DailyCostPannel.SuspendLayout();
@@ -178,12 +177,12 @@ namespace MultiQueueSimulation.Forms
             // 
             // showMesuresBtn
             // 
-            this.showMesuresBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showMesuresBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.showMesuresBtn.BackColor = System.Drawing.Color.Crimson;
             this.showMesuresBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showMesuresBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showMesuresBtn.ForeColor = System.Drawing.Color.White;
-            this.showMesuresBtn.Location = new System.Drawing.Point(421, 2);
+            this.showMesuresBtn.Location = new System.Drawing.Point(394, 2);
             this.showMesuresBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.showMesuresBtn.Name = "showMesuresBtn";
             this.showMesuresBtn.Size = new System.Drawing.Size(240, 50);
@@ -199,7 +198,7 @@ namespace MultiQueueSimulation.Forms
             this.backToWelcomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backToWelcomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backToWelcomeBtn.ForeColor = System.Drawing.Color.White;
-            this.backToWelcomeBtn.Location = new System.Drawing.Point(100, 2);
+            this.backToWelcomeBtn.Location = new System.Drawing.Point(153, 2);
             this.backToWelcomeBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backToWelcomeBtn.Name = "backToWelcomeBtn";
             this.backToWelcomeBtn.Size = new System.Drawing.Size(240, 50);
@@ -211,39 +210,29 @@ namespace MultiQueueSimulation.Forms
             // DailyCostPannel
             // 
             this.DailyCostPannel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.DailyCostPannel.Controls.Add(this.DailyCost_Label);
-            this.DailyCostPannel.Controls.Add(this.label1);
+            this.DailyCostPannel.Controls.Add(this.dailyCostLbl);
             this.DailyCostPannel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DailyCostPannel.Location = new System.Drawing.Point(0, 380);
+            this.DailyCostPannel.Location = new System.Drawing.Point(0, 381);
             this.DailyCostPannel.Name = "DailyCostPannel";
-            this.DailyCostPannel.Size = new System.Drawing.Size(784, 41);
+            this.DailyCostPannel.Size = new System.Drawing.Size(784, 40);
             this.DailyCostPannel.TabIndex = 2;
             // 
-            // DailyCost_Label
+            // dailyCostLbl
             // 
-            this.DailyCost_Label.AutoSize = true;
-            this.DailyCost_Label.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold);
-            this.DailyCost_Label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DailyCost_Label.Location = new System.Drawing.Point(140, 7);
-            this.DailyCost_Label.Name = "DailyCost_Label";
-            this.DailyCost_Label.Size = new System.Drawing.Size(20, 27);
-            this.DailyCost_Label.TabIndex = 1;
-            this.DailyCost_Label.Text = " ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Daily cost = ";
+            this.dailyCostLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(247)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
+            this.dailyCostLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dailyCostLbl.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dailyCostLbl.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dailyCostLbl.Location = new System.Drawing.Point(0, 0);
+            this.dailyCostLbl.Name = "dailyCostLbl";
+            this.dailyCostLbl.Size = new System.Drawing.Size(784, 40);
+            this.dailyCostLbl.TabIndex = 0;
+            this.dailyCostLbl.Text = "Daily Cost = ";
+            this.dailyCostLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SimulationTableForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 476);
             this.Controls.Add(this.DailyCostPannel);
@@ -259,7 +248,6 @@ namespace MultiQueueSimulation.Forms
             ((System.ComponentModel.ISupportInitialize)(this.simulationDgv)).EndInit();
             this.footerPanel.ResumeLayout(false);
             this.DailyCostPannel.ResumeLayout(false);
-            this.DailyCostPannel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -280,7 +268,6 @@ namespace MultiQueueSimulation.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn SalvageFromSaleOfScrap;
         private System.Windows.Forms.DataGridViewTextBoxColumn dailyProfit;
         private System.Windows.Forms.Panel DailyCostPannel;
-        private System.Windows.Forms.Label DailyCost_Label;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label dailyCostLbl;
     }
 }

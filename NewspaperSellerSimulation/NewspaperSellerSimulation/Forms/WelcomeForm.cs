@@ -28,6 +28,7 @@ namespace NewspaperSellerSimulation.Forms
         private int activeWindow;
         private bool isSlidingLeft;
         private bool isSlidingRight;
+        private SecondCustomInputWindow secondCustomInputWindow;
 
         public WelcomeForm()
         {
@@ -50,7 +51,7 @@ namespace NewspaperSellerSimulation.Forms
             firstCustomInputWindow.Top = 0;
             Controls.Add(firstCustomInputWindow);
             firstCustomInputWindow.BringToFront();
-            SecondCustomInputWindow secondCustomInputWindow = new SecondCustomInputWindow();
+            secondCustomInputWindow = new SecondCustomInputWindow();
             secondCustomInputWindow.Left = Width;
             secondCustomInputWindow.Top = 0;
             Controls.Add(secondCustomInputWindow);
@@ -81,6 +82,11 @@ namespace NewspaperSellerSimulation.Forms
             {
                 activeWindow++;
                 isSlidingLeft = true;
+            }
+
+            else if (activeWindow == windowsList.Count - 1)
+            {
+                secondCustomInputWindow.openSumulationTableForm(this);
             }
         }
 

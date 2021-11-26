@@ -21,20 +21,19 @@ namespace MultiQueueSimulation.Forms
 
         private void loadDataToGgv()
         {
-            //DailyCost_Label = System.SimulationTable[i].DailyCost;
-            for (int i = 0; i < Program.system.NumOfRecords; ++i)
+            dailyCostLbl.Text = "Daily Cost = " + Program.mSystem.NumOfNewspapers + " * " + Program.mSystem.PurchasePrice + " = " + Program.mSystem.SimulationTable[0].DailyCost;
+            for (int i = 0; i < Program.mSystem.NumOfRecords; ++i)
             {
-                DailyCost_Label.Text = Program.system.NumOfNewspapers + " * " + Program.system.PurchasePrice + " = " + Program.system.SimulationTable[i].DailyCost;
                 simulationDgv.Rows.Add(
-                   Program.system.SimulationTable[i].DayNo,
-                   Program.system.SimulationTable[i].RandomNewsDayType,
-                   Program.system.SimulationTable[i].NewsDayType,
-                   Program.system.SimulationTable[i].RandomDemand,
-                   Program.system.SimulationTable[i].Demand,
-                   Program.system.SimulationTable[i].SalesProfit,
-                   Program.system.SimulationTable[i].LostProfit,
-                   Program.system.SimulationTable[i].ScrapProfit,
-                   Program.system.SimulationTable[i].DailyNetProfit);
+                   Program.mSystem.SimulationTable[i].DayNo,
+                   Program.mSystem.SimulationTable[i].RandomNewsDayType,
+                   Program.mSystem.SimulationTable[i].NewsDayType,
+                   Program.mSystem.SimulationTable[i].RandomDemand,
+                   Program.mSystem.SimulationTable[i].Demand,
+                   Program.mSystem.SimulationTable[i].SalesProfit,
+                   Program.mSystem.SimulationTable[i].LostProfit,
+                   Program.mSystem.SimulationTable[i].ScrapProfit,
+                   Program.mSystem.SimulationTable[i].DailyNetProfit);
             }
         }
 
@@ -76,7 +75,5 @@ namespace MultiQueueSimulation.Forms
             Application.Run(new PerformanceMesuresForm());
         }
         #endregion
-
-
     }
 }

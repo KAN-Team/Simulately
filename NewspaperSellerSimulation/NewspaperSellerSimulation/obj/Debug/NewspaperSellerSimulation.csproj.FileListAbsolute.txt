@@ -147,3 +147,4 @@ C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\N
 C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.CopyComplete
 C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.exe
 C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.pdb
+E:\Projects\[GitHub]\Desktop\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.CopyComplete
