@@ -12,7 +12,7 @@ namespace NewspaperSellerSimulation.SimulationCore
         public NewspaperSimulator()
         {
             random = new Random();
-            System = Program.System;
+            System = Program.system;
 
             calcDayTypeDist();
             calcDemandDist();
@@ -135,27 +135,55 @@ namespace NewspaperSellerSimulation.SimulationCore
 
         private void setDailyCost(int i)
         {
-            System.SimulationTable[i].DailyCost = 0;
+           System.SimulationTable[i].DailyCost = System.NumOfNewspapers * System.PurchasePrice;
         }
 
         private void setSalesProfit(int i)
-        {
-            System.SimulationTable[i].SalesProfit = 0;
+        { 
+            if (System.SimulationTable[i].Demand <= System.NumOfNewspapers)
+            {
+                System.SimulationTable[i].SalesProfit = System.SimulationTable[i].Demand * System.SellingPrice;
+            }
+            else
+            {
+                System.SimulationTable[i].SalesProfit = System.NumOfNewspapers * System.SellingPrice;
+            }
         }
 
         private void setLostProfit(int i)
         {
-            System.SimulationTable[i].LostProfit = 0;
+            if (System.SimulationTable[i].Demand > System.NumOfNewspapers)
+            {
+                decimal ExcessDemand = System.SimulationTable[i].Demand - System.NumOfNewspapers;
+                decimal ProfitForPiece = System.SellingPrice - System.PurchasePrice;
+                System.SimulationTable[i].LostProfit = ProfitForPiece*ExcessDemand;
+            }
+            else
+            {
+              System.SimulationTable[i].LostProfit = 0;
+            }
         }
 
         private void setScrapProfit(int i)
         {
+            if (System.SimulationTable[i].Demand < System.NumOfNewspapers)
+            {
+                decimal scrap = System.NumOfNewspapers - System.SimulationTable[i].Demand;
+                System.SimulationTable[i].ScrapProfit = scrap * System.ScrapPrice;
+            }
+            else
+            {
             System.SimulationTable[i].ScrapProfit = 0;
+            }
         }
 
         private void setDailyNetProfit(int i)
         {
-            System.SimulationTable[i].DailyNetProfit = 0;
+            System.SimulationTable[i].DailyNetProfit = 
+                 System.SimulationTable[i].SalesProfit 
+               - System.SimulationTable[i].DailyCost 
+               - System.SimulationTable[i].LostProfit 
+               + System.SimulationTable[i].ScrapProfit;
         }
         #endregion
 
@@ -173,31 +201,64 @@ namespace NewspaperSellerSimulation.SimulationCore
 
         private void calcTotalSalesProfit()
         {
-            
+            decimal CostSum = 0;
+            for (int i = 0; i < System.NumOfRecords; i++)
+            {
+                CostSum += System.SimulationTable[i].SalesProfit;
+            }
+            System.PerformanceMeasures.TotalSalesProfit = CostSum;
         }
         private void calcTotalCost()
         {
-            
+            decimal TotalCost = System.NumOfNewspapers * System.PurchasePrice * System.NumOfRecords ;
+            System.PerformanceMeasures.TotalCost = TotalCost;
         }
         private void calcTotalLostProfit()
         {
-            
+            decimal LostProfitSum = 0;
+            for (int i = 0; i < System.NumOfRecords; i++)
+            {
+                LostProfitSum += System.SimulationTable[i].LostProfit;
+            }
+            System.PerformanceMeasures.TotalLostProfit = LostProfitSum;
         }
         private void calcTotalScrapProfit()
         {
-            
+            decimal ScrapPrpfitSum = 0;
+            for (int i = 0; i < System.NumOfRecords; i++)
+            {
+                ScrapPrpfitSum += System.SimulationTable[i].ScrapProfit;
+            }
+            System.PerformanceMeasures.TotalScrapProfit = ScrapPrpfitSum;
         }
         private void calcTotalNetProfit()
         {
-            
+            decimal NetProfit = 0;
+            for (int i = 0; i < System.NumOfRecords; i++)
+            {
+                NetProfit += System.SimulationTable[i].DailyNetProfit;
+            }
+            System.PerformanceMeasures.TotalNetProfit = NetProfit;
         }
         private void calcDaysWithMoreDemand()
         {
-
+            int ExcessDemandCount = 0;
+            for (int i = 0; i < System.NumOfRecords; i++)
+            {
+                if (System.SimulationTable[i].LostProfit != 0)
+                    ExcessDemandCount++;
+            }
+            System.PerformanceMeasures.DaysWithMoreDemand = ExcessDemandCount;
         }
         private void calcDaysWithUnsoldPapers()
         {
-
+            int ScrapCount = 0;
+            for (int i = 0; i < System.NumOfRecords; i++)
+            {
+                if (System.SimulationTable[i].ScrapProfit != 0)
+                    ScrapCount++;
+            }
+            System.PerformanceMeasures.DaysWithUnsoldPapers = ScrapCount;
         }
         #endregion
     }

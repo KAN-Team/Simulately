@@ -28,5 +28,6 @@ namespace NewspaperSellerModels
         ///////////// OUTPUTS /////////////
         public List<SimulationCase> SimulationTable { get; set; }
         public PerformanceMeasures PerformanceMeasures { get; set; }
+        public object Threading { get; set; }
     }
 }

@@ -81,11 +81,11 @@ namespace MultiQueueSimulation
         #region HELPER_METHODS
         private void setConfigurations(string[] lines)
         {
-            Program.System.NumOfNewspapers = int.Parse(lines[1]);
-            Program.System.NumOfRecords = int.Parse(lines[4]);
-            Program.System.PurchasePrice = decimal.Parse(lines[7]);
-            Program.System.ScrapPrice = decimal.Parse(lines[10]);
-            Program.System.SellingPrice = decimal.Parse(lines[13]);
+            Program.system.NumOfNewspapers = int.Parse(lines[1]);
+            Program.system.NumOfRecords = int.Parse(lines[4]);
+            Program.system.PurchasePrice = decimal.Parse(lines[7]);
+            Program.system.ScrapPrice = decimal.Parse(lines[10]);
+            Program.system.SellingPrice = decimal.Parse(lines[13]);
         }
 
         private void setDayTypeDistributions(string[] lines)
@@ -95,9 +95,9 @@ namespace MultiQueueSimulation
             decimal goodDayProb = (decimal)float.Parse(daysAndProbs[0]);
             decimal fairDayProb = (decimal)float.Parse(daysAndProbs[1]);
             decimal poorDayProb = (decimal)float.Parse(daysAndProbs[2]);
-            Program.System.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodDayProb));
-            Program.System.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairDayProb));
-            Program.System.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorDayProb));
+            Program.system.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodDayProb));
+            Program.system.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairDayProb));
+            Program.system.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorDayProb));
         }
 
         private void setDemandDistributions(string[] lines)
@@ -118,7 +118,7 @@ namespace MultiQueueSimulation
                 DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodProb));
                 DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairProb));
                 DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorProb));
-                Program.System.DemandDistributions.Add(new DemandDistribution(demand, DayTypeDistributions));
+                Program.system.DemandDistributions.Add(new DemandDistribution(demand, DayTypeDistributions));
             }
         }
         #endregion

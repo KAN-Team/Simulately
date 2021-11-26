@@ -21,18 +21,21 @@ namespace MultiQueueSimulation.Forms
 
         private void loadDataToGgv()
         {
-            for (int i = 0; i < Program.System.NumOfRecords; ++i)
-                 simulationDgv.Rows.Add(
-                    Program.System.SimulationTable[i].DayNo,
-                    Program.System.SimulationTable[i].RandomNewsDayType,
-                    Program.System.SimulationTable[i].NewsDayType,
-                    Program.System.SimulationTable[i].RandomDemand,
-                    Program.System.SimulationTable[i].Demand,
-                    Program.System.SimulationTable[i].DailyCost,
-                    Program.System.SimulationTable[i].SalesProfit,
-                    Program.System.SimulationTable[i].LostProfit,
-                    Program.System.SimulationTable[i].ScrapProfit,
-                    Program.System.SimulationTable[i].DailyNetProfit);
+            //DailyCost_Label = System.SimulationTable[i].DailyCost;
+            for (int i = 0; i < Program.system.NumOfRecords; ++i)
+            {
+                DailyCost_Label.Text = Program.system.NumOfNewspapers + " * " + Program.system.PurchasePrice + " = " + Program.system.SimulationTable[i].DailyCost;
+                simulationDgv.Rows.Add(
+                   Program.system.SimulationTable[i].DayNo,
+                   Program.system.SimulationTable[i].RandomNewsDayType,
+                   Program.system.SimulationTable[i].NewsDayType,
+                   Program.system.SimulationTable[i].RandomDemand,
+                   Program.system.SimulationTable[i].Demand,
+                   Program.system.SimulationTable[i].SalesProfit,
+                   Program.system.SimulationTable[i].LostProfit,
+                   Program.system.SimulationTable[i].ScrapProfit,
+                   Program.system.SimulationTable[i].DailyNetProfit);
+            }
         }
 
         #region HANDLING_FOOTER_NAVIGATION_BUTTONS
@@ -73,6 +76,7 @@ namespace MultiQueueSimulation.Forms
             Application.Run(new PerformanceMesuresForm());
         }
         #endregion
+
 
     }
 }

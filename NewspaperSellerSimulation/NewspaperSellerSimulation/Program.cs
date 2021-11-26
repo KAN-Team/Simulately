@@ -12,7 +12,7 @@ namespace NewspaperSellerSimulation
     static class Program
     {
         // Applying Singleton Design Pattern on SimulationSystem Object
-        public static SimulationSystem System;
+        public static SimulationSystem system;
 
         /// <summary>
         /// The main entry point for the application.
@@ -22,12 +22,12 @@ namespace NewspaperSellerSimulation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            System = new SimulationSystem();
+            system = new SimulationSystem();
             Application.Run(new WelcomeForm());
             
-            /*System.Threading.Thread.Sleep(500);
+            System .Threading.Thread.Sleep(500);
             string result = TestingManager.Test(system, Constants.FileNames.TestCase1);
-            MessageBox.Show(result);*/
+            MessageBox.Show(result);
         }
     }
 }

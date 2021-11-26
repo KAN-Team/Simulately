@@ -34,9 +34,6 @@ namespace MultiQueueSimulation.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulationTableForm));
             this.simulationDgv = new System.Windows.Forms.DataGridView();
-            this.footerPanel = new System.Windows.Forms.Panel();
-            this.showMesuresBtn = new System.Windows.Forms.Button();
-            this.backToWelcomeBtn = new System.Windows.Forms.Button();
             this.dayNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.randomDigitsForNewsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeOfNewsDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +43,15 @@ namespace MultiQueueSimulation.Forms
             this.lostProfitFromExcessDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalvageFromSaleOfScrap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dailyProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.footerPanel = new System.Windows.Forms.Panel();
+            this.showMesuresBtn = new System.Windows.Forms.Button();
+            this.backToWelcomeBtn = new System.Windows.Forms.Button();
+            this.DailyCostPannel = new System.Windows.Forms.Panel();
+            this.DailyCost_Label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.simulationDgv)).BeginInit();
             this.footerPanel.SuspendLayout();
+            this.DailyCostPannel.SuspendLayout();
             this.SuspendLayout();
             // 
             // simulationDgv
@@ -89,13 +93,77 @@ namespace MultiQueueSimulation.Forms
             this.simulationDgv.Name = "simulationDgv";
             this.simulationDgv.ReadOnly = true;
             this.simulationDgv.RowHeadersVisible = false;
+            this.simulationDgv.RowHeadersWidth = 51;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.simulationDgv.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.simulationDgv.RowTemplate.Height = 30;
-            this.simulationDgv.Size = new System.Drawing.Size(785, 415);
+            this.simulationDgv.Size = new System.Drawing.Size(785, 383);
             this.simulationDgv.TabIndex = 0;
+            // 
+            // dayNumber
+            // 
+            this.dayNumber.HeaderText = "Day Number";
+            this.dayNumber.MinimumWidth = 6;
+            this.dayNumber.Name = "dayNumber";
+            this.dayNumber.ReadOnly = true;
+            // 
+            // randomDigitsForNewsType
+            // 
+            this.randomDigitsForNewsType.HeaderText = "Random Digits For Type of Newsday";
+            this.randomDigitsForNewsType.MinimumWidth = 6;
+            this.randomDigitsForNewsType.Name = "randomDigitsForNewsType";
+            this.randomDigitsForNewsType.ReadOnly = true;
+            // 
+            // typeOfNewsDay
+            // 
+            this.typeOfNewsDay.HeaderText = "Type of Newsday";
+            this.typeOfNewsDay.MinimumWidth = 6;
+            this.typeOfNewsDay.Name = "typeOfNewsDay";
+            this.typeOfNewsDay.ReadOnly = true;
+            // 
+            // randomDigitsForDemand
+            // 
+            this.randomDigitsForDemand.HeaderText = "Random Digits for Demand";
+            this.randomDigitsForDemand.MinimumWidth = 6;
+            this.randomDigitsForDemand.Name = "randomDigitsForDemand";
+            this.randomDigitsForDemand.ReadOnly = true;
+            // 
+            // demand
+            // 
+            this.demand.HeaderText = "Demand";
+            this.demand.MinimumWidth = 6;
+            this.demand.Name = "demand";
+            this.demand.ReadOnly = true;
+            // 
+            // RevenueFromSales
+            // 
+            this.RevenueFromSales.HeaderText = "Revenue from Sales";
+            this.RevenueFromSales.MinimumWidth = 6;
+            this.RevenueFromSales.Name = "RevenueFromSales";
+            this.RevenueFromSales.ReadOnly = true;
+            // 
+            // lostProfitFromExcessDemand
+            // 
+            this.lostProfitFromExcessDemand.HeaderText = "Lost Profit from Excess Demand";
+            this.lostProfitFromExcessDemand.MinimumWidth = 6;
+            this.lostProfitFromExcessDemand.Name = "lostProfitFromExcessDemand";
+            this.lostProfitFromExcessDemand.ReadOnly = true;
+            // 
+            // SalvageFromSaleOfScrap
+            // 
+            this.SalvageFromSaleOfScrap.HeaderText = "Salvage from Sale of Scrap";
+            this.SalvageFromSaleOfScrap.MinimumWidth = 6;
+            this.SalvageFromSaleOfScrap.Name = "SalvageFromSaleOfScrap";
+            this.SalvageFromSaleOfScrap.ReadOnly = true;
+            // 
+            // dailyProfit
+            // 
+            this.dailyProfit.HeaderText = "Daily Profit";
+            this.dailyProfit.MinimumWidth = 6;
+            this.dailyProfit.Name = "dailyProfit";
+            this.dailyProfit.ReadOnly = true;
             // 
             // footerPanel
             // 
@@ -103,9 +171,9 @@ namespace MultiQueueSimulation.Forms
             this.footerPanel.Controls.Add(this.showMesuresBtn);
             this.footerPanel.Controls.Add(this.backToWelcomeBtn);
             this.footerPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.footerPanel.Location = new System.Drawing.Point(0, 416);
+            this.footerPanel.Location = new System.Drawing.Point(0, 421);
             this.footerPanel.Name = "footerPanel";
-            this.footerPanel.Size = new System.Drawing.Size(784, 60);
+            this.footerPanel.Size = new System.Drawing.Size(784, 55);
             this.footerPanel.TabIndex = 1;
             // 
             // showMesuresBtn
@@ -115,7 +183,7 @@ namespace MultiQueueSimulation.Forms
             this.showMesuresBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showMesuresBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.showMesuresBtn.ForeColor = System.Drawing.Color.White;
-            this.showMesuresBtn.Location = new System.Drawing.Point(421, 5);
+            this.showMesuresBtn.Location = new System.Drawing.Point(421, 2);
             this.showMesuresBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.showMesuresBtn.Name = "showMesuresBtn";
             this.showMesuresBtn.Size = new System.Drawing.Size(240, 50);
@@ -131,7 +199,7 @@ namespace MultiQueueSimulation.Forms
             this.backToWelcomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backToWelcomeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backToWelcomeBtn.ForeColor = System.Drawing.Color.White;
-            this.backToWelcomeBtn.Location = new System.Drawing.Point(100, 5);
+            this.backToWelcomeBtn.Location = new System.Drawing.Point(100, 2);
             this.backToWelcomeBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backToWelcomeBtn.Name = "backToWelcomeBtn";
             this.backToWelcomeBtn.Size = new System.Drawing.Size(240, 50);
@@ -140,65 +208,45 @@ namespace MultiQueueSimulation.Forms
             this.backToWelcomeBtn.UseVisualStyleBackColor = false;
             this.backToWelcomeBtn.Click += new System.EventHandler(this.backToWelcomeBtn_Click);
             // 
-            // dayNumber
+            // DailyCostPannel
             // 
-            this.dayNumber.HeaderText = "Day Number";
-            this.dayNumber.Name = "dayNumber";
-            this.dayNumber.ReadOnly = true;
+            this.DailyCostPannel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
+            this.DailyCostPannel.Controls.Add(this.DailyCost_Label);
+            this.DailyCostPannel.Controls.Add(this.label1);
+            this.DailyCostPannel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DailyCostPannel.Location = new System.Drawing.Point(0, 380);
+            this.DailyCostPannel.Name = "DailyCostPannel";
+            this.DailyCostPannel.Size = new System.Drawing.Size(784, 41);
+            this.DailyCostPannel.TabIndex = 2;
             // 
-            // randomDigitsForNewsType
+            // DailyCost_Label
             // 
-            this.randomDigitsForNewsType.HeaderText = "Random Digits For Type of Newsday";
-            this.randomDigitsForNewsType.Name = "randomDigitsForNewsType";
-            this.randomDigitsForNewsType.ReadOnly = true;
+            this.DailyCost_Label.AutoSize = true;
+            this.DailyCost_Label.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold);
+            this.DailyCost_Label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DailyCost_Label.Location = new System.Drawing.Point(140, 7);
+            this.DailyCost_Label.Name = "DailyCost_Label";
+            this.DailyCost_Label.Size = new System.Drawing.Size(20, 27);
+            this.DailyCost_Label.TabIndex = 1;
+            this.DailyCost_Label.Text = " ";
             // 
-            // typeOfNewsDay
+            // label1
             // 
-            this.typeOfNewsDay.HeaderText = "Type of Newsday";
-            this.typeOfNewsDay.Name = "typeOfNewsDay";
-            this.typeOfNewsDay.ReadOnly = true;
-            // 
-            // randomDigitsForDemand
-            // 
-            this.randomDigitsForDemand.HeaderText = "Random Digits for Demand";
-            this.randomDigitsForDemand.Name = "randomDigitsForDemand";
-            this.randomDigitsForDemand.ReadOnly = true;
-            // 
-            // demand
-            // 
-            this.demand.HeaderText = "Demand";
-            this.demand.Name = "demand";
-            this.demand.ReadOnly = true;
-            // 
-            // RevenueFromSales
-            // 
-            this.RevenueFromSales.HeaderText = "Revenue from Sales";
-            this.RevenueFromSales.Name = "RevenueFromSales";
-            this.RevenueFromSales.ReadOnly = true;
-            // 
-            // lostProfitFromExcessDemand
-            // 
-            this.lostProfitFromExcessDemand.HeaderText = "Lost Profit from Excess Demand";
-            this.lostProfitFromExcessDemand.Name = "lostProfitFromExcessDemand";
-            this.lostProfitFromExcessDemand.ReadOnly = true;
-            // 
-            // SalvageFromSaleOfScrap
-            // 
-            this.SalvageFromSaleOfScrap.HeaderText = "Salvage from Sale of Scrap";
-            this.SalvageFromSaleOfScrap.Name = "SalvageFromSaleOfScrap";
-            this.SalvageFromSaleOfScrap.ReadOnly = true;
-            // 
-            // dailyProfit
-            // 
-            this.dailyProfit.HeaderText = "Daily Profit";
-            this.dailyProfit.Name = "dailyProfit";
-            this.dailyProfit.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(12, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 27);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Daily cost = ";
             // 
             // SimulationTableForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 476);
+            this.Controls.Add(this.DailyCostPannel);
             this.Controls.Add(this.footerPanel);
             this.Controls.Add(this.simulationDgv);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,6 +258,8 @@ namespace MultiQueueSimulation.Forms
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.simulationDgv)).EndInit();
             this.footerPanel.ResumeLayout(false);
+            this.DailyCostPannel.ResumeLayout(false);
+            this.DailyCostPannel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -229,5 +279,8 @@ namespace MultiQueueSimulation.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn lostProfitFromExcessDemand;
         private System.Windows.Forms.DataGridViewTextBoxColumn SalvageFromSaleOfScrap;
         private System.Windows.Forms.DataGridViewTextBoxColumn dailyProfit;
+        private System.Windows.Forms.Panel DailyCostPannel;
+        private System.Windows.Forms.Label DailyCost_Label;
+        private System.Windows.Forms.Label label1;
     }
 }
