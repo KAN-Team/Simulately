@@ -127,3 +127,5 @@ E:\Projects\[GitHub]\Desktop\Simulately\NewspaperSellerSimulation\NewspaperSelle
 E:\Projects\[GitHub]\Desktop\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\MultiQueueSimulation.FirstCustomInputWindow.resources
 E:\Projects\[GitHub]\Desktop\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\MultiQueueSimulation.LoadFileWindow.resources
 E:\Projects\[GitHub]\Desktop\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\MultiQueueSimulation.SecondCustomInputWindow.resources
+E:\Projects\[GitHub]\Desktop\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\MultiQueueSimulation.Forms.PerformanceMesuresForm.resources
+E:\Projects\[GitHub]\Desktop\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\MultiQueueSimulation.Forms.SimulationTableForm.resources

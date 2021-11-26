@@ -69,6 +69,18 @@
     <Compile Include="CustomControls\SecondCustomInputWindow.designer.cs">
       <DependentUpon>SecondCustomInputWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PerformanceMesuresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PerformanceMesuresForm.designer.cs">
+      <DependentUpon>PerformanceMesuresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SimulationTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SimulationTableForm.designer.cs">
+      <DependentUpon>SimulationTableForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimulationCore\Defaults.cs" />
+    <Compile Include="SimulationCore\NewspaperSimulator.cs" />
     <Compile Include="SimulationCore\TestSimulationSystem.cs" />
     <EmbeddedResource Include="CustomControls\FirstCustomInputWindow.resx">
       <DependentUpon>FirstCustomInputWindow.cs</DependentUpon>
@@ -86,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\SecondCustomInputWindow.resx">
       <DependentUpon>SecondCustomInputWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PerformanceMesuresForm.resx">
+      <DependentUpon>PerformanceMesuresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SimulationTableForm.resx">
+      <DependentUpon>SimulationTableForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>

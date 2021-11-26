@@ -1,7 +1,7 @@
-﻿using NewspaperSellerModels;
+﻿using MultiQueueSimulation.Forms;
+using NewspaperSellerModels;
 using NewspaperSellerSimulation;
 using NewspaperSellerSimulation.Forms;
-using NewspaperSellerSimulation.SimulationCore;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -139,7 +139,7 @@ namespace MultiQueueSimulation
 
         private void openSimulationForm(object obj)
         {
-            //Application.Run(new SimulationTableForm());
+            Application.Run(new SimulationTableForm());
         }
         #endregion
 

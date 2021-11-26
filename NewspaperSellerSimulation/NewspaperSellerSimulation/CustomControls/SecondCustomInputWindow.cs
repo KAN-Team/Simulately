@@ -112,5 +112,9 @@ namespace MultiQueueSimulation
         }
         #endregion
 
+        private void dayTypeDGV_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            dayTypeDGV.AllowUserToAddRows = false;
+        }
     }
 }
