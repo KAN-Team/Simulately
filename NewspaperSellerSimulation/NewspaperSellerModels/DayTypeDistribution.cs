@@ -8,6 +8,13 @@ namespace NewspaperSellerModels
 {
     public class DayTypeDistribution
     {
+        public DayTypeDistribution() {}
+        public DayTypeDistribution(Enums.DayType dayType, decimal probability)
+        {
+            DayType = dayType;
+            Probability = probability;
+        }
+
         public Enums.DayType DayType { get; set; }
         public decimal Probability { get; set; }
         public decimal CummProbability { get; set; }

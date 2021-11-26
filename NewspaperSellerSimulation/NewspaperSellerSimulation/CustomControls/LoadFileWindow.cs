@@ -1,6 +1,9 @@
-﻿using MultiQueueModels;
-using MultiQueueSimulation.Forms;
+﻿using NewspaperSellerModels;
+using NewspaperSellerSimulation;
+using NewspaperSellerSimulation.Forms;
+using NewspaperSellerSimulation.SimulationCore;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -26,7 +29,6 @@ namespace MultiQueueSimulation
         // =====================================================================//
 
         private WelcomeForm welcomeForm;
-        private int FileLineIndex;
         private Thread thread;
 
         public LoadFileWindow()
@@ -34,7 +36,6 @@ namespace MultiQueueSimulation
             InitializeComponent();
 
             containerPanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
-            FileLineIndex = 0;
         }
 
         private void loadFromFileBtn_Click(object sender, EventArgs e)
@@ -62,11 +63,8 @@ namespace MultiQueueSimulation
                     try
                     {
                         setConfigurations(lines);
-                        setInterarrivalDistribution(lines);
-
-                        Program.system.Servers.Clear();
-                        for (int i = 0; i < Program.system.NumberOfServers; i++)
-                            setServerServiceTime(i + 1, lines);
+                        setDayTypeDistributions(lines);
+                        setDemandDistributions(lines);
 
                         openSumulationTableForm();
                     } catch
@@ -74,7 +72,7 @@ namespace MultiQueueSimulation
                         MessageBox.Show("Here is What the Input File Should look like !!\n\n" + fileFormatReadmeText, "Invalid File Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    // Testing Data File which you get from the file
+                    // Testing Data which we get from the input file.
                     // TestSimulationSystem.testSimulationData();
                 }
             }
@@ -83,63 +81,54 @@ namespace MultiQueueSimulation
         #region HELPER_METHODS
         private void setConfigurations(string[] lines)
         {
-            Program.system.NumberOfServers = int.Parse(lines[1]);
-            Program.system.StoppingNumber = int.Parse(lines[4]);
-            int stoppintCriteriaID = int.Parse(lines[7]);
-            int ServerSelectionID = int.Parse(lines[10]);
-
-            if (stoppintCriteriaID == 1)
-                Program.system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
-            else
-                Program.system.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
-
-            if (ServerSelectionID == 1)
-                Program.system.SelectionMethod = Enums.SelectionMethod.HighestPriority;
-            else if (ServerSelectionID == 2)
-                Program.system.SelectionMethod = Enums.SelectionMethod.Random;
-            else
-                Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
+            Program.System.NumOfNewspapers = int.Parse(lines[1]);
+            Program.System.NumOfRecords = int.Parse(lines[4]);
+            Program.System.PurchasePrice = decimal.Parse(lines[7]);
+            Program.System.ScrapPrice = decimal.Parse(lines[10]);
+            Program.System.SellingPrice = decimal.Parse(lines[13]);
         }
 
-        private void setInterarrivalDistribution(string[] lines)
+        private void setDayTypeDistributions(string[] lines)
         {
-            for (int i = 13; i < lines.Length; i++)
+            char[] separator = { ',', ' ' };
+            string[] daysAndProbs = lines[16].Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            decimal goodDayProb = (decimal)float.Parse(daysAndProbs[0]);
+            decimal fairDayProb = (decimal)float.Parse(daysAndProbs[1]);
+            decimal poorDayProb = (decimal)float.Parse(daysAndProbs[2]);
+            Program.System.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodDayProb));
+            Program.System.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairDayProb));
+            Program.System.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorDayProb));
+        }
+
+        private void setDemandDistributions(string[] lines)
+        {
+            List<DayTypeDistribution> DayTypeDistributions;
+            for (int i = 19; i < lines.Length; i++)
             {
-                if (lines[i] == "") { FileLineIndex = i + 2; break; }
+                if (lines[i] == "") break;
 
                 char[] separator = { ',', ' ' };
-                string[] timesAndProbs = lines[i].Split(separator, StringSplitOptions.RemoveEmptyEntries);
-                int time = int.Parse(timesAndProbs[0]);
-                decimal prob = (decimal)float.Parse(timesAndProbs[1]);
-                Program.system.InterarrivalDistribution.Add(new TimeDistribution(time, prob));
+                string[] inputLine = lines[i].Split(separator, StringSplitOptions.RemoveEmptyEntries);
+                int demand = int.Parse(inputLine[0]);
+                decimal goodProb = decimal.Parse(inputLine[1]);
+                decimal fairProb = decimal.Parse(inputLine[2]);
+                decimal poorProb = decimal.Parse(inputLine[3]);
+
+                DayTypeDistributions = new List<DayTypeDistribution>();
+                DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodProb));
+                DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairProb));
+                DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorProb));
+                Program.System.DemandDistributions.Add(new DemandDistribution(demand, DayTypeDistributions));
             }
-
-        }
-
-        private void setServerServiceTime(int serverID, string[] lines)
-        {
-            Server newServer = new Server(serverID);
-            for (int i = FileLineIndex; i < lines.Length; i++)
-            {
-                if (lines[i] == "") { FileLineIndex = i + 2; break; }
-
-                char[] separator = { ',', ' ' };
-                string[] timesAndProbs = lines[i].Split(separator, StringSplitOptions.RemoveEmptyEntries);
-                int time = int.Parse(timesAndProbs[0]);
-                decimal prob = (decimal)float.Parse(timesAndProbs[1]);
-                newServer.TimeDistribution.Add(new TimeDistribution(time, prob));
-            }
-
-            Program.system.Servers.Add(newServer);
-        }
-
-        public void setWelcomeForm(WelcomeForm welcomeForm)
-        {
-            this.welcomeForm = welcomeForm;
         }
         #endregion
 
         #region OPENING_SIMULATION_TABLE_FORM
+        public void setWelcomeForm(WelcomeForm welcomeForm)
+        {
+            this.welcomeForm = welcomeForm;
+        }
+
         private void openSumulationTableForm()
         {
             thread = new Thread(openSimulationForm);
@@ -150,7 +139,7 @@ namespace MultiQueueSimulation
 
         private void openSimulationForm(object obj)
         {
-            Application.Run(new SimulationTableForm());
+            //Application.Run(new SimulationTableForm());
         }
         #endregion
 

@@ -12,6 +12,15 @@ namespace NewspaperSellerModels
         {
             DayTypeDistributions = new List<DayTypeDistribution>();
         }
+        public DemandDistribution(int demand, List<DayTypeDistribution> dayTypeDistributions)
+        {
+            if (DayTypeDistributions == null)
+                DayTypeDistributions = new List<DayTypeDistribution>();
+
+            Demand = demand;
+            DayTypeDistributions = dayTypeDistributions;
+        }
+
         public int Demand { get; set; }
         public List<DayTypeDistribution> DayTypeDistributions { get; set; }
     }
