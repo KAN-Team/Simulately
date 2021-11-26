@@ -20,7 +20,7 @@ namespace MultiQueueSimulation.OOP
                 return; 
 
             random = new Random();
-            system = Program.system;
+            system = Program.mSystem;
             system.numberOfCustomers = Defaults.STOPPING_NUMBER;
             system.endSimulationTime = Defaults.STOPPING_NUMBER;
             clockTimeArrival = 0;

@@ -1,6 +1,5 @@
 ﻿using MultiQueueModels;
 using MultiQueueSimulation.Forms;
-using MultiQueueSimulation.OOP;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -28,7 +27,7 @@ namespace MultiQueueSimulation
                 if (count == interarrivalDgv.Rows.Count-1) break;
                 int time = int.Parse(row.Cells[0].Value.ToString());
                 decimal prob = (decimal)float.Parse(row.Cells[1].Value.ToString());
-                Program.system.InterarrivalDistribution.Add(new TimeDistribution(time, prob));
+                Program.mSystem.InterarrivalDistribution.Add(new TimeDistribution(time, prob));
                 count++;
             }
         }
@@ -39,11 +38,11 @@ namespace MultiQueueSimulation
             foreach (DataGridViewRow row in serviceTimeDgv.Rows)
             {
                 if (count == serviceTimeDgv.Rows.Count - 1) break;
-                for(int i = 0; i < Program.system.NumberOfServers*2; i+=2)
+                for(int i = 0; i < Program.mSystem.NumberOfServers*2; i+=2)
                 {
                     int time = int.Parse(row.Cells[i].Value.ToString());
                     decimal prob = (decimal)float.Parse(row.Cells[i+1].Value.ToString());
-                    Program.system.Servers[i/2].TimeDistribution.Add(new TimeDistribution(time, prob));
+                    Program.mSystem.Servers[i/2].TimeDistribution.Add(new TimeDistribution(time, prob));
                 }
                 count++;
             }
@@ -205,7 +204,7 @@ namespace MultiQueueSimulation
         public void initializeServersColumns()
         {
             DataTable dataTable = new DataTable();
-            for (int i = 0; i < Program.system.NumberOfServers; ++i)
+            for (int i = 0; i < Program.mSystem.NumberOfServers; ++i)
             {
                 dataTable.Columns.Add("Server " + (i + 1) + "\nService Time");
                 dataTable.Columns.Add("Server " + (i + 1) + "\nProbability");

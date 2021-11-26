@@ -8,16 +8,16 @@ namespace MultiQueueSimulation.Forms
         {
             InitializeComponent();
 
-            averageWaitingTimeAnsLbl.Text = Program.system.PerformanceMeasures.AverageWaitingTime.ToString();
-            probabilityWaitAnsLbl.Text = Program.system.PerformanceMeasures.WaitingProbability.ToString();
-            maxQueueLengthAnsLbl.Text = Program.system.PerformanceMeasures.MaxQueueLength.ToString();
+            averageWaitingTimeAnsLbl.Text = Program.mSystem.PerformanceMeasures.AverageWaitingTime.ToString();
+            probabilityWaitAnsLbl.Text = Program.mSystem.PerformanceMeasures.WaitingProbability.ToString();
+            maxQueueLengthAnsLbl.Text = Program.mSystem.PerformanceMeasures.MaxQueueLength.ToString();
         
-            for (int i = 0; i < Program.system.NumberOfServers; ++i)
+            for (int i = 0; i < Program.mSystem.NumberOfServers; ++i)
                 performanceDgv.Rows.Add(
-                    Program.system.Servers[i].ID,
-                    Program.system.Servers[i].IdleProbability,
-                    Program.system.Servers[i].AverageServiceTime,
-                    Program.system.Servers[i].Utilization
+                    Program.mSystem.Servers[i].ID,
+                    Program.mSystem.Servers[i].IdleProbability,
+                    Program.mSystem.Servers[i].AverageServiceTime,
+                    Program.mSystem.Servers[i].Utilization
                     );
         }
     }

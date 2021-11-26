@@ -21,31 +21,31 @@ namespace MultiQueueSimulation
             switch (Defaults.SELECTION_METHOD)
             {
                 case 1:
-                    Program.system.SelectionMethod = Enums.SelectionMethod.HighestPriority;
+                    Program.mSystem.SelectionMethod = Enums.SelectionMethod.HighestPriority;
                     break;
                 case 2:
-                    Program.system.SelectionMethod = Enums.SelectionMethod.Random;
+                    Program.mSystem.SelectionMethod = Enums.SelectionMethod.Random;
                     break;
                 case 3:
-                    Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
+                    Program.mSystem.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
                     break;
             }
             switch (Defaults.STOPPING_CRITERIA)
             {
                 case 1:
-                    Program.system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
+                    Program.mSystem.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
                     break;
                 case 2:
-                    Program.system.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
+                    Program.mSystem.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
                     break;
             }
 
-            Program.system.NumberOfServers = Defaults.NUMBER_Of_SERVERS;
+            Program.mSystem.NumberOfServers = Defaults.NUMBER_Of_SERVERS;
             numberOfServersTxt.Text = Defaults.NUMBER_Of_SERVERS.ToString();
             for (int i = 0; i < Defaults.NUMBER_Of_SERVERS; ++i)
-                Program.system.Servers.Add(new Server(i + 1));
+                Program.mSystem.Servers.Add(new Server(i + 1));
 
-            Program.system.StoppingNumber = Defaults.STOPPING_NUMBER;
+            Program.mSystem.StoppingNumber = Defaults.STOPPING_NUMBER;
             stoppingNumberTxt.Text = Defaults.STOPPING_NUMBER.ToString();
         }
 
@@ -62,14 +62,14 @@ namespace MultiQueueSimulation
             {
                 MessageBox.Show("There Must be at Least " + (Defaults.NUMBER_Of_SERVERS) + " Servers to Simulate.", "Number of Servers Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 numberOfServersTxt.Text = Defaults.NUMBER_Of_SERVERS.ToString();
-                Program.system.NumberOfServers = Defaults.NUMBER_Of_SERVERS;
+                Program.mSystem.NumberOfServers = Defaults.NUMBER_Of_SERVERS;
             }
             else
             {
-                Program.system.NumberOfServers = int.Parse(numberOfServersTxt.Text.ToString());
-                Program.system.Servers.Clear();
-                for (int i = 0; i < Program.system.NumberOfServers; ++i)
-                    Program.system.Servers.Add(new Server(i + 1));
+                Program.mSystem.NumberOfServers = int.Parse(numberOfServersTxt.Text.ToString());
+                Program.mSystem.Servers.Clear();
+                for (int i = 0; i < Program.mSystem.NumberOfServers; ++i)
+                    Program.mSystem.Servers.Add(new Server(i + 1));
             }
 
             welcomeForm.getSecondCustomInput().initializeServersColumns();
@@ -83,27 +83,27 @@ namespace MultiQueueSimulation
                 stoppingNumberTxt.Text = Defaults.STOPPING_NUMBER.ToString();
             }
             else
-                Program.system.StoppingNumber = int.Parse(stoppingNumberTxt.Text.ToString());
+                Program.mSystem.StoppingNumber = int.Parse(stoppingNumberTxt.Text.ToString());
         }
 
         private void stoppingCriteriaCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
             int stoppintCriteriaID = stoppingCriteriaCmb.SelectedIndex;
             if (stoppintCriteriaID == 0)
-                Program.system.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
+                Program.mSystem.StoppingCriteria = Enums.StoppingCriteria.NumberOfCustomers;
             else
-                Program.system.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
+                Program.mSystem.StoppingCriteria = Enums.StoppingCriteria.SimulationEndTime;
         }
 
         private void selectionCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
             int ServerSelectionID = selectionCmb.SelectedIndex;
             if (ServerSelectionID == 0)
-                Program.system.SelectionMethod = Enums.SelectionMethod.HighestPriority;
+                Program.mSystem.SelectionMethod = Enums.SelectionMethod.HighestPriority;
             else if (ServerSelectionID == 1)
-                Program.system.SelectionMethod = Enums.SelectionMethod.Random;
+                Program.mSystem.SelectionMethod = Enums.SelectionMethod.Random;
             else 
-                Program.system.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
+                Program.mSystem.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
         }
         #endregion
 

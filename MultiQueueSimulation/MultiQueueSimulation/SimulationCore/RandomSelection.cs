@@ -15,29 +15,29 @@ namespace MultiQueueSimulation.OOP
         public override void DetermineServer(int i)
         {
             Random random = new Random();
-            if (Program.system.idleServers.Count != 0)
+            if (Program.mSystem.idleServers.Count != 0)
             {
-                int randomChoice = random.Next(0, Program.system.idleServers.Count-1);
-                serverID = Program.system.idleServers[randomChoice].ID;
+                int randomChoice = random.Next(0, Program.mSystem.idleServers.Count-1);
+                serverID = Program.mSystem.idleServers[randomChoice].ID;
             }
 
             // There will be delay...
             else
             {
-                Program.system.waitedCustomers.Add(Program.system.SimulationTable[i]);
+                Program.mSystem.waitedCustomers.Add(Program.mSystem.SimulationTable[i]);
                 List<Server> eligibleServers = new List<Server>();
                 int nearestFinishDiff = int.MaxValue;
-                for (int j = 0; j < Program.system.Servers.Count; ++j)
-                    if (Program.system.Servers[j].FinishTime - simulationCaseList[i].ArrivalTime < nearestFinishDiff)
+                for (int j = 0; j < Program.mSystem.Servers.Count; ++j)
+                    if (Program.mSystem.Servers[j].FinishTime - simulationCaseList[i].ArrivalTime < nearestFinishDiff)
                     {
                         eligibleServers.Clear();
-                        eligibleServers.Add(Program.system.Servers[j]);
-                        nearestFinishDiff = Program.system.Servers[j].FinishTime - simulationCaseList[i].ArrivalTime;
+                        eligibleServers.Add(Program.mSystem.Servers[j]);
+                        nearestFinishDiff = Program.mSystem.Servers[j].FinishTime - simulationCaseList[i].ArrivalTime;
                         simulationCaseList[i].TimeInQueue = nearestFinishDiff;
-                        serverID = Program.system.Servers[j].ID;
+                        serverID = Program.mSystem.Servers[j].ID;
                     }
-                    else if (Program.system.Servers[j].FinishTime - simulationCaseList[i].ArrivalTime == nearestFinishDiff)
-                        eligibleServers.Add(Program.system.Servers[j]);
+                    else if (Program.mSystem.Servers[j].FinishTime - simulationCaseList[i].ArrivalTime == nearestFinishDiff)
+                        eligibleServers.Add(Program.mSystem.Servers[j]);
 
                 int randomChoice = random.Next(0, eligibleServers.Count - 1);
                 serverID = eligibleServers[randomChoice].ID;

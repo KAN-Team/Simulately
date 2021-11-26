@@ -12,7 +12,7 @@ namespace MultiQueueSimulation
         /// </summary>
          
         // Applying Singleton Design Pattern on SimulationSystem Object
-        public static SimulationSystem system;
+        public static SimulationSystem mSystem;
 
         [STAThread]
         static void Main()
@@ -21,8 +21,8 @@ namespace MultiQueueSimulation
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new WelcomeForm());
 
-            System.Threading.Thread.Sleep(500);
-            /*string result = TestingManager.Test(system, Constants.FileNames.TestCase8);
+            /*System.Threading.Thread.Sleep(500);
+            string result = TestingManager.Test(mSystem, Constants.FileNames.TestCase1);
             MessageBox.Show(result);*/
         }
     }

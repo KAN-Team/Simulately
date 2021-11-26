@@ -1,6 +1,5 @@
 ﻿using MultiQueueModels;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace MultiQueueSimulation.OOP
 {
@@ -19,12 +18,12 @@ namespace MultiQueueSimulation.OOP
       
         private void calculateServiceTimeForAllServers(int i)
         {
-            Program.system.idleServers.Clear();
+            Program.mSystem.idleServers.Clear();
 
             // Extracting new Idle Servers
-            for (int j = 0; j < Program.system.NumberOfServers; ++j)
-                if (simulationCaseList[i].ArrivalTime >= Program.system.Servers[j].FinishTime)
-                    Program.system.idleServers.Add(Program.system.Servers[j]);
+            for (int j = 0; j < Program.mSystem.NumberOfServers; ++j)
+                if (simulationCaseList[i].ArrivalTime >= Program.mSystem.Servers[j].FinishTime)
+                    Program.mSystem.idleServers.Add(Program.mSystem.Servers[j]);
         }
 
         public abstract void DetermineServer(int i);

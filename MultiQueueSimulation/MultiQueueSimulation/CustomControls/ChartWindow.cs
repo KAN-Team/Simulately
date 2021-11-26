@@ -18,7 +18,7 @@ namespace MultiQueueSimulation.CustomControls
             chart.ChartAreas[0].AxisY.Maximum = Defaults.MAX_Y_VALUE;
             seriesName = "Server Working Time";
 
-            if (Program.system.endSimulationTime < 50)
+            if (Program.mSystem.endSimulationTime < 50)
                 chart.ChartAreas.FirstOrDefault().AxisX.Interval = 1;
 
             server = getServerWithID(serverID);
@@ -43,7 +43,7 @@ namespace MultiQueueSimulation.CustomControls
                 addPoint(KVP.Value, 1);
                 addPoint(KVP.Value, 0);
             }
-            chart.Series[seriesName].Points.AddXY(Program.system.endSimulationTime, 0);
+            chart.Series[seriesName].Points.AddXY(Program.mSystem.endSimulationTime, 0);
         }
 
         private void addPoint(double x, double y)
@@ -56,9 +56,9 @@ namespace MultiQueueSimulation.CustomControls
 
         private Server getServerWithID(int ID)
         {
-            for (int i = 0; i < Program.system.Servers.Count; ++i)
-                if (Program.system.Servers[i].ID == ID)
-                    return Program.system.Servers[i];
+            for (int i = 0; i < Program.mSystem.Servers.Count; ++i)
+                if (Program.mSystem.Servers[i].ID == ID)
+                    return Program.mSystem.Servers[i];
 
             MessageBox.Show("No Server Found with ID = " + ID, "getServer METHOD in ChartWindow", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return null;

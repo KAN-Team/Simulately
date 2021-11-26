@@ -1,5 +1,4 @@
-﻿
-namespace MultiQueueSimulation.OOP
+﻿namespace MultiQueueSimulation.OOP
 {
     class Defaults
     {

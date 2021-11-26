@@ -27,7 +27,7 @@ namespace MultiQueueSimulation
 
         public WelcomeForm()
         {
-            Program.system = new SimulationSystem();
+            Program.mSystem = new SimulationSystem();
             SimulationSystem.needsCopy = false;
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));

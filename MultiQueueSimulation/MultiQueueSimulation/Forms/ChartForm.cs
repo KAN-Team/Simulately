@@ -24,9 +24,9 @@ namespace MultiQueueSimulation.Forms
         }
         private void ChartForm_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < Program.system.NumberOfServers; ++i)
+            for (int i = 0; i < Program.mSystem.NumberOfServers; ++i)
             {
-                ChartWindow chartWindow = new ChartWindow(Program.system.Servers[i].ID);
+                ChartWindow chartWindow = new ChartWindow(Program.mSystem.Servers[i].ID);
                 chartContainerPanel.Controls.Add(chartWindow);
                 chartWindow.Left = 0;
                 chartWindow.Top = 0;
@@ -38,7 +38,7 @@ namespace MultiQueueSimulation.Forms
 
             nextPic.BringToFront();
             backPic.BringToFront();
-            for (int i = 1; i < Program.system.NumberOfServers; ++i)
+            for (int i = 1; i < Program.mSystem.NumberOfServers; ++i)
                 chartWindowList[i].Left = screenWidth;
         }
 
@@ -104,7 +104,7 @@ namespace MultiQueueSimulation.Forms
 
         private void nextPic_Click(object sender, EventArgs e)
         {
-            if (activeWindow < Program.system.NumberOfServers - 1)
+            if (activeWindow < Program.mSystem.NumberOfServers - 1)
             {
                 activeWindow++;
                 isSlidingLeft = true;

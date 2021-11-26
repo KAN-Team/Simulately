@@ -1,5 +1,4 @@
 ﻿using MultiQueueSimulation.OOP;
-using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -20,18 +19,18 @@ namespace MultiQueueSimulation.Forms
 
         private void loadDataToGgv()
         {
-            for (int i = 0; i < Program.system.numberOfCustomers; ++i)
+            for (int i = 0; i < Program.mSystem.numberOfCustomers; ++i)
                 simulationDgv.Rows.Add(
-                    Program.system.SimulationTable[i].CustomerNumber,
-                    Program.system.SimulationTable[i].RandomInterArrival,
-                    Program.system.SimulationTable[i].InterArrival,
-                    Program.system.SimulationTable[i].ArrivalTime,
-                    Program.system.SimulationTable[i].RandomService,
-                    Program.system.SimulationTable[i].AssignedServer.ID,
-                    Program.system.SimulationTable[i].StartTime,
-                    Program.system.SimulationTable[i].ServiceTime,
-                    Program.system.SimulationTable[i].EndTime,
-                    Program.system.SimulationTable[i].TimeInQueue);
+                    Program.mSystem.SimulationTable[i].CustomerNumber,
+                    Program.mSystem.SimulationTable[i].RandomInterArrival,
+                    Program.mSystem.SimulationTable[i].InterArrival,
+                    Program.mSystem.SimulationTable[i].ArrivalTime,
+                    Program.mSystem.SimulationTable[i].RandomService,
+                    Program.mSystem.SimulationTable[i].AssignedServer.ID,
+                    Program.mSystem.SimulationTable[i].StartTime,
+                    Program.mSystem.SimulationTable[i].ServiceTime,
+                    Program.mSystem.SimulationTable[i].EndTime,
+                    Program.mSystem.SimulationTable[i].TimeInQueue);
         }
 
         #region HANDLING_FOOTER_NAVIGATION_BUTTONS

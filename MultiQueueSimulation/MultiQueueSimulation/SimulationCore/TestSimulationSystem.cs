@@ -6,30 +6,30 @@ namespace MultiQueueSimulation.OOP
     {
         public static void testSimulationData()
         {
-            string showConfigurations = Program.system.NumberOfServers + " "
-                 + Program.system.StoppingNumber + " "
-                 + Program.system.StoppingCriteria + " "
-                 + Program.system.SelectionMethod;
+            string showConfigurations = Program.mSystem.NumberOfServers + " "
+                 + Program.mSystem.StoppingNumber + " "
+                 + Program.mSystem.StoppingCriteria + " "
+                 + Program.mSystem.SelectionMethod;
 
             string showInterarrivalTime = "";
-            for (int i = 0; i < Program.system.InterarrivalDistribution.Count; ++i)
+            for (int i = 0; i < Program.mSystem.InterarrivalDistribution.Count; ++i)
             {
                 showInterarrivalTime += " [Time] ";
-                showInterarrivalTime += Program.system.InterarrivalDistribution[i].Time.ToString();
+                showInterarrivalTime += Program.mSystem.InterarrivalDistribution[i].Time.ToString();
                 showInterarrivalTime += " [Prob] ";
-                showInterarrivalTime += Program.system.InterarrivalDistribution[i].Probability.ToString();
+                showInterarrivalTime += Program.mSystem.InterarrivalDistribution[i].Probability.ToString();
             }
 
             string showServerServiceTime = "";
-            for (int i = 0; i < Program.system.Servers.Count; ++i)
+            for (int i = 0; i < Program.mSystem.Servers.Count; ++i)
             {
-                showServerServiceTime += "\nServer -> " + Program.system.Servers[i].ID + "\n";
-                for (int j = 0; j < Program.system.Servers[i].TimeDistribution.Count; ++j)
+                showServerServiceTime += "\nServer -> " + Program.mSystem.Servers[i].ID + "\n";
+                for (int j = 0; j < Program.mSystem.Servers[i].TimeDistribution.Count; ++j)
                 {
                     showServerServiceTime += " [Time] ";
-                    showServerServiceTime += Program.system.Servers[i].TimeDistribution[j].Time.ToString();
+                    showServerServiceTime += Program.mSystem.Servers[i].TimeDistribution[j].Time.ToString();
                     showServerServiceTime += " [Prob] ";
-                    showServerServiceTime += Program.system.Servers[i].TimeDistribution[j].Probability.ToString();
+                    showServerServiceTime += Program.mSystem.Servers[i].TimeDistribution[j].Probability.ToString();
                 }
             }
 
