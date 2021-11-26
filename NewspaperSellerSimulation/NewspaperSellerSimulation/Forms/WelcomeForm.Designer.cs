@@ -270,6 +270,7 @@ namespace NewspaperSellerSimulation.Forms
             this.Controls.Add(this.nextPic);
             this.Controls.Add(this.welcomePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WelcomeForm";
