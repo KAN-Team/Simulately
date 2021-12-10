@@ -35,14 +35,17 @@ namespace InventorySimulation.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulationTableForm));
             this.simulationDgv = new System.Windows.Forms.DataGridView();
             this.dayNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.randomDigitsForNewsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeOfNewsDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cycle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayWithinCycle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beginningInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.randomDigitsForDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leadDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RevenueFromSales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lostProfitFromExcessDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SalvageFromSaleOfScrap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dailyProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.demand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endingInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shortageQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.randomDigitsForLeadTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leadTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daysUntilOrderArrives = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.footerPanel = new System.Windows.Forms.Panel();
             this.showMesuresBtn = new System.Windows.Forms.Button();
             this.backToWelcomeBtn = new System.Windows.Forms.Button();
@@ -73,14 +76,17 @@ namespace InventorySimulation.Forms
             this.simulationDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.simulationDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dayNumber,
-            this.randomDigitsForNewsType,
-            this.typeOfNewsDay,
+            this.cycle,
+            this.dayWithinCycle,
+            this.beginningInventory,
             this.randomDigitsForDemand,
-            this.leadDays,
-            this.RevenueFromSales,
-            this.lostProfitFromExcessDemand,
-            this.SalvageFromSaleOfScrap,
-            this.dailyProfit});
+            this.demand,
+            this.endingInventory,
+            this.shortageQuantity,
+            this.orderQuantity,
+            this.randomDigitsForLeadTime,
+            this.leadTime,
+            this.daysUntilOrderArrives});
             this.simulationDgv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.simulationDgv.EnableHeadersVisualStyles = false;
             this.simulationDgv.GridColor = System.Drawing.Color.Silver;
@@ -97,6 +103,7 @@ namespace InventorySimulation.Forms
             this.simulationDgv.RowTemplate.Height = 30;
             this.simulationDgv.Size = new System.Drawing.Size(785, 424);
             this.simulationDgv.TabIndex = 0;
+            this.simulationDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.simulationDgv_CellContentClick);
             // 
             // dayNumber
             // 
@@ -105,61 +112,82 @@ namespace InventorySimulation.Forms
             this.dayNumber.Name = "dayNumber";
             this.dayNumber.ReadOnly = true;
             // 
-            // randomDigitsForNewsType
+            // Cycle
             // 
-            this.randomDigitsForNewsType.HeaderText = "Random Digits For Type of Newsday";
-            this.randomDigitsForNewsType.MinimumWidth = 6;
-            this.randomDigitsForNewsType.Name = "randomDigitsForNewsType";
-            this.randomDigitsForNewsType.ReadOnly = true;
+            this.cycle.HeaderText = "Cycle";
+            this.cycle.MinimumWidth = 6;
+            this.cycle.Name = "cycle";
+            this.cycle.ReadOnly = true;
             // 
-            // typeOfNewsDay
+            // dayWithinCycle
             // 
-            this.typeOfNewsDay.HeaderText = "Type of Newsday";
-            this.typeOfNewsDay.MinimumWidth = 6;
-            this.typeOfNewsDay.Name = "typeOfNewsDay";
-            this.typeOfNewsDay.ReadOnly = true;
+            this.dayWithinCycle.HeaderText = "Day Within Cycle";
+            this.dayWithinCycle.MinimumWidth = 6;
+            this.dayWithinCycle.Name = "dayWithinCycle";
+            this.dayWithinCycle.ReadOnly = true;
             // 
             // randomDigitsForDemand
             // 
-            this.randomDigitsForDemand.HeaderText = "Random Digits for leadDays";
+            this.randomDigitsForDemand.HeaderText = "Random Digits for Demand";
             this.randomDigitsForDemand.MinimumWidth = 6;
             this.randomDigitsForDemand.Name = "randomDigitsForDemand";
             this.randomDigitsForDemand.ReadOnly = true;
             // 
-            // leadDays
+            // beginningInventory
             // 
-            this.leadDays.HeaderText = "leadDays";
-            this.leadDays.MinimumWidth = 6;
-            this.leadDays.Name = "leadDays";
-            this.leadDays.ReadOnly = true;
+            this.beginningInventory.HeaderText = "Beginning Inventory";
+            this.beginningInventory.MinimumWidth = 6;
+            this.beginningInventory.Name = "beginningInventory";
+            this.beginningInventory.ReadOnly = true;
             // 
-            // RevenueFromSales
+            // demand
             // 
-            this.RevenueFromSales.HeaderText = "Revenue from Sales";
-            this.RevenueFromSales.MinimumWidth = 6;
-            this.RevenueFromSales.Name = "RevenueFromSales";
-            this.RevenueFromSales.ReadOnly = true;
+            this.demand.HeaderText = "Demand";
+            this.demand.MinimumWidth = 6;
+            this.demand.Name = "demand";
+            this.demand.ReadOnly = true;
             // 
-            // lostProfitFromExcessDemand
+            // endingInventory
             // 
-            this.lostProfitFromExcessDemand.HeaderText = "Lost Profit from Excess leadDays";
-            this.lostProfitFromExcessDemand.MinimumWidth = 6;
-            this.lostProfitFromExcessDemand.Name = "lostProfitFromExcessDemand";
-            this.lostProfitFromExcessDemand.ReadOnly = true;
+            this.endingInventory.HeaderText = "Ending Inventory";
+            this.endingInventory.MinimumWidth = 6;
+            this.endingInventory.Name = "endingInventory";
+            this.endingInventory.ReadOnly = true;
             // 
-            // SalvageFromSaleOfScrap
+            // shortageQuantity
             // 
-            this.SalvageFromSaleOfScrap.HeaderText = "Salvage from Sale of Scrap";
-            this.SalvageFromSaleOfScrap.MinimumWidth = 6;
-            this.SalvageFromSaleOfScrap.Name = "SalvageFromSaleOfScrap";
-            this.SalvageFromSaleOfScrap.ReadOnly = true;
+            this.shortageQuantity.HeaderText = "Shortage Quantity";
+            this.shortageQuantity.MinimumWidth = 6;
+            this.shortageQuantity.Name = "shortageQuantity";
+            this.shortageQuantity.ReadOnly = true;
             // 
-            // dailyProfit
+            // orderQuantity
             // 
-            this.dailyProfit.HeaderText = "Daily Profit";
-            this.dailyProfit.MinimumWidth = 6;
-            this.dailyProfit.Name = "dailyProfit";
-            this.dailyProfit.ReadOnly = true;
+            this.orderQuantity.HeaderText = "Order Quantity";
+            this.orderQuantity.MinimumWidth = 6;
+            this.orderQuantity.Name = "orderQuantity";
+            this.orderQuantity.ReadOnly = true;
+            // 
+            // randomDigitsForLeadTime
+            // 
+            this.randomDigitsForLeadTime.HeaderText = "Random Digits For Lead Time";
+            this.randomDigitsForLeadTime.MinimumWidth = 6;
+            this.randomDigitsForLeadTime.Name = "randomDigitsForLeadTime";
+            this.randomDigitsForLeadTime.ReadOnly = true;
+            // 
+            // leadTime
+            // 
+            this.leadTime.HeaderText = "Lead Time (Days)";
+            this.leadTime.MinimumWidth = 6;
+            this.leadTime.Name = "leadTime";
+            this.leadTime.ReadOnly = true;
+            // 
+            // daysUntilOrderArrives
+            // 
+            this.daysUntilOrderArrives.HeaderText = "Days Until Order Arrives";
+            this.daysUntilOrderArrives.MinimumWidth = 6;
+            this.daysUntilOrderArrives.Name = "daysUntilOrderArrives";
+            this.daysUntilOrderArrives.ReadOnly = true;
             // 
             // footerPanel
             // 
@@ -218,6 +246,7 @@ namespace InventorySimulation.Forms
             this.Name = "SimulationTableForm";
             this.Text = "Simulation Table";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.SimulationTableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.simulationDgv)).EndInit();
             this.footerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -231,13 +260,16 @@ namespace InventorySimulation.Forms
         private System.Windows.Forms.Button backToWelcomeBtn;
         private System.Windows.Forms.Button showMesuresBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn randomDigitsForNewsType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeOfNewsDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cycle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayWithinCycle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn beginningInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn randomDigitsForDemand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn leadDays;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RevenueFromSales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lostProfitFromExcessDemand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SalvageFromSaleOfScrap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dailyProfit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn demand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endingInventory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shortageQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn randomDigitsForLeadTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leadTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn daysUntilOrderArrives;
     }
 }

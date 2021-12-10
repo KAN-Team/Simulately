@@ -72,5 +72,15 @@ namespace InventorySimulation.Forms
             Application.Run(new PerformanceMesuresForm());
         }
         #endregion
+
+        private void simulationDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SimulationTableForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
