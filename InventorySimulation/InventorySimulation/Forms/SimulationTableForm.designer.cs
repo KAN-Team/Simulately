@@ -38,7 +38,7 @@ namespace InventorySimulation.Forms
             this.randomDigitsForNewsType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeOfNewsDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.randomDigitsForDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.demand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leadDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RevenueFromSales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lostProfitFromExcessDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalvageFromSaleOfScrap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,7 +76,7 @@ namespace InventorySimulation.Forms
             this.randomDigitsForNewsType,
             this.typeOfNewsDay,
             this.randomDigitsForDemand,
-            this.demand,
+            this.leadDays,
             this.RevenueFromSales,
             this.lostProfitFromExcessDemand,
             this.SalvageFromSaleOfScrap,
@@ -121,17 +121,17 @@ namespace InventorySimulation.Forms
             // 
             // randomDigitsForDemand
             // 
-            this.randomDigitsForDemand.HeaderText = "Random Digits for Demand";
+            this.randomDigitsForDemand.HeaderText = "Random Digits for leadDays";
             this.randomDigitsForDemand.MinimumWidth = 6;
             this.randomDigitsForDemand.Name = "randomDigitsForDemand";
             this.randomDigitsForDemand.ReadOnly = true;
             // 
-            // demand
+            // leadDays
             // 
-            this.demand.HeaderText = "Demand";
-            this.demand.MinimumWidth = 6;
-            this.demand.Name = "demand";
-            this.demand.ReadOnly = true;
+            this.leadDays.HeaderText = "leadDays";
+            this.leadDays.MinimumWidth = 6;
+            this.leadDays.Name = "leadDays";
+            this.leadDays.ReadOnly = true;
             // 
             // RevenueFromSales
             // 
@@ -142,7 +142,7 @@ namespace InventorySimulation.Forms
             // 
             // lostProfitFromExcessDemand
             // 
-            this.lostProfitFromExcessDemand.HeaderText = "Lost Profit from Excess Demand";
+            this.lostProfitFromExcessDemand.HeaderText = "Lost Profit from Excess leadDays";
             this.lostProfitFromExcessDemand.MinimumWidth = 6;
             this.lostProfitFromExcessDemand.Name = "lostProfitFromExcessDemand";
             this.lostProfitFromExcessDemand.ReadOnly = true;
@@ -234,7 +234,7 @@ namespace InventorySimulation.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn randomDigitsForNewsType;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeOfNewsDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn randomDigitsForDemand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn demand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leadDays;
         private System.Windows.Forms.DataGridViewTextBoxColumn RevenueFromSales;
         private System.Windows.Forms.DataGridViewTextBoxColumn lostProfitFromExcessDemand;
         private System.Windows.Forms.DataGridViewTextBoxColumn SalvageFromSaleOfScrap;

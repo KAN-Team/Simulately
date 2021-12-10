@@ -28,7 +28,7 @@ namespace NewspaperSellerSimulation.SimulationCore
             //string showDemandDistributions = "";
             //for (int i = 0; i < Program.mSystem.DemandDistributions.Count; ++i)
             //{
-            //    showDemandDistributions += "\nDemand -> " + Program.mSystem.DemandDistributions[i].Demand + "\n\n";
+            //    showDemandDistributions += "\nDemand -> " + Program.mSystem.DemandDistributions[i].leadDays + "\n\n";
             //    for (int j = 0; j < 3; ++j)
             //    {
             //        showDemandDistributions += "[Day Type] -> ";

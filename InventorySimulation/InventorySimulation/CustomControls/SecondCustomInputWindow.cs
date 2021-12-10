@@ -18,9 +18,9 @@ namespace InventorySimulation
         private bool isValidDgvs()
         {
             // Validate DayType table
-            DataGridViewRow row = dayTypeDGV.Rows[0];
+            DataGridViewRow row = leadDaysDGV.Rows[0];
             decimal sumOfProbabilities = 0;
-            for (int col = 0; col < dayTypeDGV.ColumnCount; ++col)
+            for (int col = 0; col < leadDaysDGV.ColumnCount; ++col)
             {
                 if (row.Cells[col].Value == null) row.Cells[col].Value = "";
                 if (row.Cells[col].Value.ToString().Equals(""))
@@ -37,7 +37,7 @@ namespace InventorySimulation
                 return false;
             }
 
-            // Validate Demand table
+            // Validate leadDays table
             List<decimal> sumOfProbabilitiesList = new List<decimal>(new decimal[3]);
             for (int i = demandDGV.Rows.Count - 2; i >= 0; --i)
             {
@@ -65,7 +65,7 @@ namespace InventorySimulation
                     if (row.Cells[col].Value == null) row.Cells[col].Value = "";
                     if (row.Cells[col].Value.ToString().Equals(""))
                     {
-                        MessageBox.Show("Please Fill the Empty Fields !!", "Demand Table Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Fill the Empty Fields !!", "leadDays Table Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
@@ -79,13 +79,13 @@ namespace InventorySimulation
                 {
                     string type;
                     if (j == 0)
-                        type = "Good Prob";
+                        type = "demand Prob";
                     else if (j == 1)
-                        type = "Fair Prob";
+                        type = "probability Prob";
                     else
                         type = "Poor Prob";
 
-                    MessageBox.Show("Sum of Probabilities Must be Equal (1) !!\n--> Check Column #" + (j + 2) + " " + type + " <--", "Demand Table Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Sum of Probabilities Must be Equal (1) !!\n--> Check Column #" + (j + 2) + " " + type + " <--", "leadDays Table Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 
@@ -96,7 +96,7 @@ namespace InventorySimulation
         private void dayTypeDGV_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            if (sender == demandDGV && dgv.CurrentCell.ColumnIndex == 0) // Demand Column
+            if (sender == demandDGV && dgv.CurrentCell.ColumnIndex == 0) // leadDays Column
             {
                 TextBox tb = e.Control as TextBox;
                 if (tb != null)
@@ -156,33 +156,38 @@ namespace InventorySimulation
 
         private void dayTypeDGV_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
-            dayTypeDGV.AllowUserToAddRows = false;
+            leadDaysDGV.AllowUserToAddRows = false;
+        }
+
+        private void DemandDGV_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            demandDGV.AllowUserToAddRows = false;
         }
 
         private void getDataReadyForSimulation()
         {
             // Storing DayType Distributions values...
-            //decimal goodProb = decimal.Parse(dayTypeDGV.Rows[0].Cells[0].Value.ToString());
-            //decimal fairProb = decimal.Parse(dayTypeDGV.Rows[0].Cells[1].Value.ToString());
-            //decimal poorProb = decimal.Parse(dayTypeDGV.Rows[0].Cells[2].Value.ToString());
-            //Program.mSystem.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodProb));
-            //Program.mSystem.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairProb));
+            //decimal goodProb = decimal.Parse(leadDaysDGV.Rows[0].Cells[0].Value.ToString());
+            //decimal fairProb = decimal.Parse(leadDaysDGV.Rows[0].Cells[1].Value.ToString());
+            //decimal poorProb = decimal.Parse(leadDaysDGV.Rows[0].Cells[2].Value.ToString());
+            //Program.mSystem.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.demand, goodProb));
+            //Program.mSystem.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.probability, fairProb));
             //Program.mSystem.DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorProb));
 
-            //// Storing Demand Distributions values...
+            //// Storing leadDays Distributions values...
             //foreach (DataGridViewRow row in demandDGV.Rows)
             //{
             //    if (row.Cells[0].Value == null) break;
-            //    int demand = int.Parse(row.Cells[0].Value.ToString());
+            //    int leadDays = int.Parse(row.Cells[0].Value.ToString());
             //    goodProb = decimal.Parse(row.Cells[1].Value.ToString());
             //    fairProb = decimal.Parse(row.Cells[2].Value.ToString());
             //    poorProb = decimal.Parse(row.Cells[3].Value.ToString());
             //    List<DayTypeDistribution> dayTypeDistributions = new List<DayTypeDistribution>();
-            //    dayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodProb));
-            //    dayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairProb));
+            //    dayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.demand, goodProb));
+            //    dayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.probability, fairProb));
             //    dayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorProb));
 
-            //    Program.mSystem.DemandDistributions.Add(new DemandDistribution(demand, dayTypeDistributions));
+            //    Program.mSystem.DemandDistributions.Add(new DemandDistribution(leadDays, dayTypeDistributions));
             //}
         }
         #endregion

@@ -27,3 +27,9 @@ E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventoryModels\obj\
 E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.csproj.CoreCompileInputs.cache
 E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.dll
 E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.pdb
+E:\GitHub\Simulately\InventorySimulation\InventoryModels\bin\Debug\InventoryModels.dll
+E:\GitHub\Simulately\InventorySimulation\InventoryModels\bin\Debug\InventoryModels.pdb
+E:\GitHub\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.csproj.AssemblyReference.cache
+E:\GitHub\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.csproj.CoreCompileInputs.cache
+E:\GitHub\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.dll
+E:\GitHub\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.pdb

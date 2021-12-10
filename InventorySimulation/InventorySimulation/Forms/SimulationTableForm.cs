@@ -26,7 +26,7 @@ namespace InventorySimulation.Forms
             //       Program.mSystem.SimulationTable[i].RandomNewsDayType,
             //       Program.mSystem.SimulationTable[i].NewsDayType,
             //       Program.mSystem.SimulationTable[i].RandomDemand,
-            //       Program.mSystem.SimulationTable[i].Demand,
+            //       Program.mSystem.SimulationTable[i].leadDays,
             //       Program.mSystem.SimulationTable[i].SalesProfit,
             //       Program.mSystem.SimulationTable[i].LostProfit,
             //       Program.mSystem.SimulationTable[i].ScrapProfit,

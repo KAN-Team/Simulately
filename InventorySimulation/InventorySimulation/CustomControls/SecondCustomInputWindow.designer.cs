@@ -38,20 +38,17 @@ namespace InventorySimulation
             this.containerPanel = new System.Windows.Forms.Panel();
             this.validateBtn = new System.Windows.Forms.Button();
             this.demandDGV = new System.Windows.Forms.DataGridView();
-            this.demand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.good2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fair2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leadDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probability2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceTimeLbl = new System.Windows.Forms.Label();
+            this.leadDaysDGV = new System.Windows.Forms.DataGridView();
+            this.demand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.interarrivalLbl = new System.Windows.Forms.Label();
             this.toBeFocusedTxt = new System.Windows.Forms.TextBox();
-            this.poor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fair = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.good = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dayTypeDGV = new System.Windows.Forms.DataGridView();
             this.containerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demandDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dayTypeDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leadDaysDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // containerPanel
@@ -60,7 +57,7 @@ namespace InventorySimulation
             this.containerPanel.Controls.Add(this.validateBtn);
             this.containerPanel.Controls.Add(this.demandDGV);
             this.containerPanel.Controls.Add(this.serviceTimeLbl);
-            this.containerPanel.Controls.Add(this.dayTypeDGV);
+            this.containerPanel.Controls.Add(this.leadDaysDGV);
             this.containerPanel.Controls.Add(this.interarrivalLbl);
             this.containerPanel.Controls.Add(this.toBeFocusedTxt);
             this.containerPanel.Location = new System.Drawing.Point(10, 10);
@@ -72,7 +69,7 @@ namespace InventorySimulation
             // validateBtn
             // 
             this.validateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.validateBtn.Location = new System.Drawing.Point(61, 100);
+            this.validateBtn.Location = new System.Drawing.Point(53, 218);
             this.validateBtn.Name = "validateBtn";
             this.validateBtn.Size = new System.Drawing.Size(90, 32);
             this.validateBtn.TabIndex = 8;
@@ -95,10 +92,8 @@ namespace InventorySimulation
             this.demandDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.demandDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.demandDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.demand,
-            this.good2,
-            this.fair2,
-            this.poor2});
+            this.leadDays,
+            this.probability2});
             this.demandDGV.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -108,7 +103,7 @@ namespace InventorySimulation
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.demandDGV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.demandDGV.Location = new System.Drawing.Point(3, 138);
+            this.demandDGV.Location = new System.Drawing.Point(3, 257);
             this.demandDGV.Name = "demandDGV";
             this.demandDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -120,41 +115,85 @@ namespace InventorySimulation
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.demandDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.demandDGV.RowHeadersVisible = false;
-            this.demandDGV.Size = new System.Drawing.Size(574, 337);
+            this.demandDGV.Size = new System.Drawing.Size(574, 218);
             this.demandDGV.TabIndex = 7;
             this.demandDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.demandDGV_CellContentClick);
             this.demandDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dayTypeDGV_EditingControlShowing);
             // 
-            // demand
+            // leadDays
             // 
-            this.demand.HeaderText = "Demand";
-            this.demand.Name = "demand";
+            this.leadDays.HeaderText = "Lead Days";
+            this.leadDays.Name = "leadDays";
             // 
-            // good2
+            // probability2
             // 
-            this.good2.HeaderText = "Good Prob";
-            this.good2.Name = "good2";
-            // 
-            // fair2
-            // 
-            this.fair2.HeaderText = "Fair Prob";
-            this.fair2.Name = "fair2";
-            // 
-            // poor2
-            // 
-            this.poor2.HeaderText = "Poor Prob";
-            this.poor2.Name = "poor2";
+            this.probability2.HeaderText = "Probability";
+            this.probability2.Name = "probability2";
             // 
             // serviceTimeLbl
             // 
             this.serviceTimeLbl.AutoSize = true;
             this.serviceTimeLbl.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviceTimeLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.serviceTimeLbl.Location = new System.Drawing.Point(197, 105);
+            this.serviceTimeLbl.Location = new System.Drawing.Point(190, 223);
             this.serviceTimeLbl.Name = "serviceTimeLbl";
             this.serviceTimeLbl.Size = new System.Drawing.Size(188, 23);
             this.serviceTimeLbl.TabIndex = 6;
             this.serviceTimeLbl.Text = "Lead Days Distribution";
+            // 
+            // leadDaysDGV
+            // 
+            this.leadDaysDGV.AllowUserToDeleteRows = false;
+            this.leadDaysDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.leadDaysDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.leadDaysDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.leadDaysDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.leadDaysDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.leadDaysDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.demand,
+            this.probability});
+            this.leadDaysDGV.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.leadDaysDGV.DefaultCellStyle = dataGridViewCellStyle5;
+            this.leadDaysDGV.Location = new System.Drawing.Point(3, 36);
+            this.leadDaysDGV.Name = "leadDaysDGV";
+            this.leadDaysDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.leadDaysDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.leadDaysDGV.RowHeadersVisible = false;
+            this.leadDaysDGV.Size = new System.Drawing.Size(574, 176);
+            this.leadDaysDGV.TabIndex = 5;
+            this.leadDaysDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dayTypeDGV_CellContentClick);
+            this.leadDaysDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dayTypeDGV_EditingControlShowing);
+            // 
+            // demand
+            // 
+            this.demand.HeaderText = "Demand";
+            this.demand.Name = "demand";
+            // 
+            // probability
+            // 
+            this.probability.HeaderText = "Probability";
+            this.probability.Name = "probability";
             // 
             // interarrivalLbl
             // 
@@ -175,67 +214,6 @@ namespace InventorySimulation
             this.toBeFocusedTxt.Size = new System.Drawing.Size(10, 30);
             this.toBeFocusedTxt.TabIndex = 9;
             // 
-            // poor
-            // 
-            this.poor.HeaderText = "Poor Prob";
-            this.poor.Name = "poor";
-            // 
-            // fair
-            // 
-            this.fair.HeaderText = "Fair Prob";
-            this.fair.Name = "fair";
-            // 
-            // good
-            // 
-            this.good.HeaderText = "Good Prob";
-            this.good.Name = "good";
-            // 
-            // dayTypeDGV
-            // 
-            this.dayTypeDGV.AllowUserToDeleteRows = false;
-            this.dayTypeDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dayTypeDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dayTypeDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dayTypeDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dayTypeDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dayTypeDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.good,
-            this.fair,
-            this.poor});
-            this.dayTypeDGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dayTypeDGV.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dayTypeDGV.Location = new System.Drawing.Point(3, 36);
-            this.dayTypeDGV.Name = "dayTypeDGV";
-            this.dayTypeDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dayTypeDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dayTypeDGV.RowHeadersVisible = false;
-            this.dayTypeDGV.Size = new System.Drawing.Size(574, 60);
-            this.dayTypeDGV.TabIndex = 5;
-            this.dayTypeDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dayTypeDGV_CellContentClick);
-            this.dayTypeDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dayTypeDGV_EditingControlShowing);
-            this.dayTypeDGV.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dayTypeDGV_UserAddedRow);
-            // 
             // SecondCustomInputWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -249,7 +227,7 @@ namespace InventorySimulation
             this.containerPanel.ResumeLayout(false);
             this.containerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demandDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dayTypeDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leadDaysDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -258,17 +236,14 @@ namespace InventorySimulation
 
         private System.Windows.Forms.Panel containerPanel;
         private System.Windows.Forms.Label interarrivalLbl;
-        private System.Windows.Forms.DataGridView demandDGV;
         private System.Windows.Forms.Label serviceTimeLbl;
         private System.Windows.Forms.Button validateBtn;
         private System.Windows.Forms.TextBox toBeFocusedTxt;
+        private System.Windows.Forms.DataGridView demandDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn demand;
-        private System.Windows.Forms.DataGridViewTextBoxColumn good2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fair2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poor2;
-        private System.Windows.Forms.DataGridView dayTypeDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn good;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fair;
-        private System.Windows.Forms.DataGridViewTextBoxColumn poor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn probability;
+        private System.Windows.Forms.DataGridView leadDaysDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn leadDays;
+        private System.Windows.Forms.DataGridViewTextBoxColumn probability2;
     }
 }
