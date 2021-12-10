@@ -42,3 +42,9 @@ C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\N
 C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
 C:\Users\LENOVO\OneDrive\Documents\githup\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb
+E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.dll
+E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.pdb
+E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.AssemblyReference.cache
+E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
+E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
+E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb

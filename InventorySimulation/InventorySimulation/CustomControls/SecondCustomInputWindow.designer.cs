@@ -43,12 +43,12 @@ namespace InventorySimulation
             this.fair2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serviceTimeLbl = new System.Windows.Forms.Label();
-            this.dayTypeDGV = new System.Windows.Forms.DataGridView();
-            this.good = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fair = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.poor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.interarrivalLbl = new System.Windows.Forms.Label();
             this.toBeFocusedTxt = new System.Windows.Forms.TextBox();
+            this.poor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fair = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.good = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayTypeDGV = new System.Windows.Forms.DataGridView();
             this.containerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.demandDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dayTypeDGV)).BeginInit();
@@ -122,6 +122,7 @@ namespace InventorySimulation
             this.demandDGV.RowHeadersVisible = false;
             this.demandDGV.Size = new System.Drawing.Size(574, 337);
             this.demandDGV.TabIndex = 7;
+            this.demandDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.demandDGV_CellContentClick);
             this.demandDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dayTypeDGV_EditingControlShowing);
             // 
             // demand
@@ -151,9 +152,43 @@ namespace InventorySimulation
             this.serviceTimeLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.serviceTimeLbl.Location = new System.Drawing.Point(197, 105);
             this.serviceTimeLbl.Name = "serviceTimeLbl";
-            this.serviceTimeLbl.Size = new System.Drawing.Size(174, 23);
+            this.serviceTimeLbl.Size = new System.Drawing.Size(188, 23);
             this.serviceTimeLbl.TabIndex = 6;
-            this.serviceTimeLbl.Text = "Demand Distributions";
+            this.serviceTimeLbl.Text = "Lead Days Distribution";
+            // 
+            // interarrivalLbl
+            // 
+            this.interarrivalLbl.AutoSize = true;
+            this.interarrivalLbl.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interarrivalLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.interarrivalLbl.Location = new System.Drawing.Point(190, 10);
+            this.interarrivalLbl.Name = "interarrivalLbl";
+            this.interarrivalLbl.Size = new System.Drawing.Size(166, 23);
+            this.interarrivalLbl.TabIndex = 1;
+            this.interarrivalLbl.Text = "Demand Distribution";
+            this.interarrivalLbl.Click += new System.EventHandler(this.interarrivalLbl_Click);
+            // 
+            // toBeFocusedTxt
+            // 
+            this.toBeFocusedTxt.Location = new System.Drawing.Point(12, 36);
+            this.toBeFocusedTxt.Name = "toBeFocusedTxt";
+            this.toBeFocusedTxt.Size = new System.Drawing.Size(10, 30);
+            this.toBeFocusedTxt.TabIndex = 9;
+            // 
+            // poor
+            // 
+            this.poor.HeaderText = "Poor Prob";
+            this.poor.Name = "poor";
+            // 
+            // fair
+            // 
+            this.fair.HeaderText = "Fair Prob";
+            this.fair.Name = "fair";
+            // 
+            // good
+            // 
+            this.good.HeaderText = "Good Prob";
+            this.good.Name = "good";
             // 
             // dayTypeDGV
             // 
@@ -197,41 +232,9 @@ namespace InventorySimulation
             this.dayTypeDGV.RowHeadersVisible = false;
             this.dayTypeDGV.Size = new System.Drawing.Size(574, 60);
             this.dayTypeDGV.TabIndex = 5;
+            this.dayTypeDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dayTypeDGV_CellContentClick);
             this.dayTypeDGV.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dayTypeDGV_EditingControlShowing);
             this.dayTypeDGV.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dayTypeDGV_UserAddedRow);
-            // 
-            // good
-            // 
-            this.good.HeaderText = "Good Prob";
-            this.good.Name = "good";
-            // 
-            // fair
-            // 
-            this.fair.HeaderText = "Fair Prob";
-            this.fair.Name = "fair";
-            // 
-            // poor
-            // 
-            this.poor.HeaderText = "Poor Prob";
-            this.poor.Name = "poor";
-            // 
-            // interarrivalLbl
-            // 
-            this.interarrivalLbl.AutoSize = true;
-            this.interarrivalLbl.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interarrivalLbl.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.interarrivalLbl.Location = new System.Drawing.Point(190, 10);
-            this.interarrivalLbl.Name = "interarrivalLbl";
-            this.interarrivalLbl.Size = new System.Drawing.Size(183, 23);
-            this.interarrivalLbl.TabIndex = 1;
-            this.interarrivalLbl.Text = "DayType Distributions";
-            // 
-            // toBeFocusedTxt
-            // 
-            this.toBeFocusedTxt.Location = new System.Drawing.Point(12, 36);
-            this.toBeFocusedTxt.Name = "toBeFocusedTxt";
-            this.toBeFocusedTxt.Size = new System.Drawing.Size(10, 30);
-            this.toBeFocusedTxt.TabIndex = 9;
             // 
             // SecondCustomInputWindow
             // 
@@ -255,7 +258,6 @@ namespace InventorySimulation
 
         private System.Windows.Forms.Panel containerPanel;
         private System.Windows.Forms.Label interarrivalLbl;
-        private System.Windows.Forms.DataGridView dayTypeDGV;
         private System.Windows.Forms.DataGridView demandDGV;
         private System.Windows.Forms.Label serviceTimeLbl;
         private System.Windows.Forms.Button validateBtn;
@@ -264,6 +266,7 @@ namespace InventorySimulation
         private System.Windows.Forms.DataGridViewTextBoxColumn good2;
         private System.Windows.Forms.DataGridViewTextBoxColumn fair2;
         private System.Windows.Forms.DataGridViewTextBoxColumn poor2;
+        private System.Windows.Forms.DataGridView dayTypeDGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn good;
         private System.Windows.Forms.DataGridViewTextBoxColumn fair;
         private System.Windows.Forms.DataGridViewTextBoxColumn poor;

@@ -155,5 +155,9 @@ namespace InventorySimulation.Forms
         }
         #endregion
 
+        private void welcomePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

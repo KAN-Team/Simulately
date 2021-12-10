@@ -206,5 +206,19 @@ namespace InventorySimulation
         }
         #endregion
 
+        private void demandDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void interarrivalLbl_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void dayTypeDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

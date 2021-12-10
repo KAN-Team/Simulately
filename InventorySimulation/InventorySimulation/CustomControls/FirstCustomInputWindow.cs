@@ -14,11 +14,12 @@ namespace InventorySimulation
 
         private void setDefaults()
         {
-            numberOfNewspapersTxt.Text = Defaults.NUMBER_OF_NEWSPAPERS.ToString();
-            numberOfRecordsTxt.Text = Defaults.NUMBER_OF_RECORDS.ToString();
-            purchasePriceTxt.Text = Defaults.PURCHASE_PRICE.ToString();
-            scrapPriceTxt.Text = Defaults.SCRAP_PRICE.ToString();
-            sellingPriceTxt.Text = Defaults.SELLING_PRICE.ToString();
+            orderUpToTxt.Text = Defaults.ORDER_UP_TO.ToString();
+            reviewPeriodTxt.Text = Defaults.REVIEW_PERIOD.ToString();
+            startInventoryQuantityTxt.Text = Defaults.START_INVENTORY_QUANTITY.ToString();
+            startLeadDaysTxt.Text = Defaults.START_LEAD_DAYS.ToString();
+            startOrderQuantityTxt.Text = Defaults.START_ORDER_QUANTITY.ToString();
+            numberOfDaysTxt.Text = Defaults.NUMBER_OF_DAYS.ToString();
         }
 
         #region HANDLING_INSTANT_VALUE_CHANGES
@@ -41,7 +42,7 @@ namespace InventorySimulation
 
         private void numberOfNewspapersTxt_TextChanged(object sender, EventArgs e)
         {
-            //Program.mSystem.NumOfNewspapers = int.Parse(numberOfNewspapersTxt.Text);
+            //Program.mSystem.NumOfNewspapers = int.Parse(OrderUpToTxt.Text);
             //Program.mSystem.NumOfRecords = int.Parse(numberOfRecordsTxt.Text);
             //Program.mSystem.PurchasePrice = decimal.Parse(purchasePriceTxt.Text);
             //Program.mSystem.ScrapPrice = decimal.Parse(scrapPriceTxt.Text);
@@ -49,5 +50,24 @@ namespace InventorySimulation
         }
         #endregion
 
+        private void containerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void newspapersNumGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scrapPriceGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

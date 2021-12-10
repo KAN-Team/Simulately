@@ -2,19 +2,22 @@
 {
     class Defaults
     {
-        // Number of Newspapers to Simulate on.
-        public static readonly int NUMBER_OF_NEWSPAPERS = 70;
+        // Number of levels "orderUpTo" to Simulate on.
+        public static readonly int ORDER_UP_TO = 11;
 
-        // Number of Days to Simulate.
-        public static readonly int NUMBER_OF_RECORDS = 20;
+        // Review Period to Simulate.
+        public static readonly int REVIEW_PERIOD = 5;
 
-        // The Price by which the Newspaper Seller buys.
-        public static readonly decimal PURCHASE_PRICE = (decimal)0.33;
+        // The start inventory quantity.
+        public static readonly int START_INVENTORY_QUANTITY = 3;
 
-        // The Price of Newspapers that are not Sold at the end of the day.
-        public static readonly decimal SCRAP_PRICE = (decimal)0.05;
+        // The start lead days.
+        public static readonly int START_LEAD_DAYS = 2;
 
-        // The Price by which the Newspapers Seller sells.
-        public static readonly decimal SELLING_PRICE = (decimal)0.5;
+        // The start order quantity.
+        public static readonly int START_ORDER_QUANTITY = 8;
+
+        // The total number of days.
+        public static readonly int NUMBER_OF_DAYS = 25;
     }
 }
