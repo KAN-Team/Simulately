@@ -257,6 +257,7 @@ namespace NewspaperSellerSimulation.Forms
             this.welcomePanel.Name = "welcomePanel";
             this.welcomePanel.Size = new System.Drawing.Size(600, 500);
             this.welcomePanel.TabIndex = 6;
+            this.welcomePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.welcomePanel_Paint);
             // 
             // WelcomeForm
             // 

@@ -41,7 +41,7 @@
     extensible. For a given mimetype the value must be set accordingly:
     
     Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+    that the ResXResourceWriter will GenerateRandom, however the reader can 
     read any of the formats listed below.
     
     mimetype: application/x-microsoft.net.object.binary.base64

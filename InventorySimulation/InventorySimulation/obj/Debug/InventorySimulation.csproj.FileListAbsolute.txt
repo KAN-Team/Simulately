@@ -65,20 +65,77 @@ C:\Users\Osama\Dropbox\Simulation 2017-2018\[Simulation & Modeling 2017-2018] St
 D:\[1] University Work\[0] Ain Shams Work\My Stuff\Simulation'\[Simulation & Modeling 2017-2018] Students\lab 11\[students]_template\inventorysimulation\InventorySimulation\bin\Debug\InventorySimulation.exe.config
 D:\[1] University Work\[0] Ain Shams Work\My Stuff\Simulation'\[Simulation & Modeling 2017-2018] Students\lab 11\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.exe
 D:\[1] University Work\[0] Ain Shams Work\My Stuff\Simulation'\[Simulation & Modeling 2017-2018] Students\lab 11\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.pdb
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.csproj.AssemblyReference.cache
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.FirstCustomInputWindow.resources
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.LoadFileWindow.resources
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.SecondCustomInputWindow.resources
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.Forms.PerformanceMesuresForm.resources
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.Forms.SimulationTableForm.resources
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.Forms.WelcomeForm.resources
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.Properties.Resources.resources
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.csproj.GenerateResource.cache
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.csproj.CoreCompileInputs.cache
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.exe
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\obj\Debug\InventorySimulation.pdb
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\bin\Debug\InventorySimulation.exe.config
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\bin\Debug\InventorySimulation.exe
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\bin\Debug\InventorySimulation.pdb
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\bin\Debug\InventoryModels.dll
-E:\Projects\[GitHub]\Desktop\Simulately\InventorySimulation\InventorySimulation\bin\Debug\InventoryModels.pdb
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\bin\Debug\InventorySimulation.exe.config
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\bin\Debug\InventorySimulation.exe
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\bin\Debug\InventorySimulation.pdb
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\bin\Debug\InventoryModels.dll
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\bin\Debug\InventoryModels.pdb
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.csprojAssemblyReference.cache
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.Form1.resources
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.Properties.Resources.resources
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.csproj.GenerateResource.cache
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.csproj.CoreCompileInputs.cache
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.csproj.CopyComplete
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.exe
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Labs\Lab4\[students]_template\inventorysimulation\InventorySimulation\obj\Debug\InventorySimulation.pdb
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\bin\Debug\InventorySimulation.exe.config
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\bin\Debug\InventorySimulation.exe
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\bin\Debug\InventorySimulation.pdb
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\bin\Debug\InventoryModels.dll
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\bin\Debug\InventoryModels.pdb
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.csproj.AssemblyReference.cache
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.Form1.resources
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.Properties.Resources.resources
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.csproj.GenerateResource.cache
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.csproj.CoreCompileInputs.cache
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.exe
+E:\My Study\Study 4th Year\Tasks\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.pdb
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\bin\Debug\InventorySimulation.exe.config
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\bin\Debug\InventorySimulation.exe
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\bin\Debug\InventorySimulation.pdb
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\bin\Debug\InventoryModels.dll
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\bin\Debug\InventoryModels.pdb
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.csprojAssemblyReference.cache
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.Form1.resources
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.Properties.Resources.resources
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.csproj.GenerateResource.cache
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.csproj.CoreCompileInputs.cache
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.csproj.CopyComplete
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.exe
+E:\Work\FCIS\4th Year\CS\Modeling and Simulation\Tasks\Modelling-Task-3\Modelling-Task-3\Modelling-Task-3\InventorySimulation\obj\Debug\InventorySimulation.pdb
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\obj\Debug\InventorySimulation.csproj.AssemblyReference.cache
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\obj\Debug\InventorySimulation.Form1.resources
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\obj\Debug\InventorySimulation.Properties.Resources.resources
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\obj\Debug\InventorySimulation.csproj.GenerateResource.cache
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\obj\Debug\InventorySimulation.csproj.CoreCompileInputs.cache
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\obj\Debug\InventorySimulation.exe
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\obj\Debug\InventorySimulation.pdb
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\bin\Debug\InventorySimulation.exe.config
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\bin\Debug\InventorySimulation.exe
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\bin\Debug\InventorySimulation.pdb
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\bin\Debug\InventoryModels.dll
+C:\Users\abano\Downloads\Modelling-Task-3-Yeimsf\Modelling-Task-3-Yeimsf\InventorySimulation\bin\Debug\InventoryModels.pdb
+C:\Users\abano\Desktop\Modellig\InventorySimulation\bin\Debug\InventorySimulation.exe.config
+C:\Users\abano\Desktop\Modellig\InventorySimulation\bin\Debug\InventorySimulation.exe
+C:\Users\abano\Desktop\Modellig\InventorySimulation\bin\Debug\InventorySimulation.pdb
+C:\Users\abano\Desktop\Modellig\InventorySimulation\bin\Debug\InventoryModels.dll
+C:\Users\abano\Desktop\Modellig\InventorySimulation\bin\Debug\InventoryModels.pdb
+C:\Users\abano\Desktop\Modellig\InventorySimulation\obj\Debug\InventorySimulation.csproj.AssemblyReference.cache
+C:\Users\abano\Desktop\Modellig\InventorySimulation\obj\Debug\InventorySimulation.Form1.resources
+C:\Users\abano\Desktop\Modellig\InventorySimulation\obj\Debug\InventorySimulation.Properties.Resources.resources
+C:\Users\abano\Desktop\Modellig\InventorySimulation\obj\Debug\InventorySimulation.csproj.GenerateResource.cache
+C:\Users\abano\Desktop\Modellig\InventorySimulation\obj\Debug\InventorySimulation.csproj.CoreCompileInputs.cache
+C:\Users\abano\Desktop\Modellig\InventorySimulation\obj\Debug\InventorySimulation.exe
+C:\Users\abano\Desktop\Modellig\InventorySimulation\obj\Debug\InventorySimulation.pdb
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\bin\Debug\InventorySimulation.exe.config
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\bin\Debug\InventorySimulation.exe
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\bin\Debug\InventorySimulation.pdb
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\bin\Debug\InventoryModels.dll
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\bin\Debug\InventoryModels.pdb
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\obj\Debug\InventorySimulation.csproj.AssemblyReference.cache
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\obj\Debug\InventorySimulation.Form1.resources
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\obj\Debug\InventorySimulation.Properties.Resources.resources
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\obj\Debug\InventorySimulation.csproj.GenerateResource.cache
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\obj\Debug\InventorySimulation.csproj.CoreCompileInputs.cache
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\obj\Debug\InventorySimulation.exe
+E:\GitHub\Simulately\InventorySimulation\Inventory Task 3\InventorySimulation\obj\Debug\InventorySimulation.pdb
