@@ -13,7 +13,7 @@ namespace InventoryModels
         public int DayWithinCycle { get; set; }
         public int BeginningInventory { get; set; }
         public int RandomDemand { get; set; }
-        public int leadDays { get; set; }
+        public int Demand { get; set; }
         public int EndingInventory { get; set; }
         public int ShortageQuantity { get; set; }
         public int OrderQuantity { get; set; }
