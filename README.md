@@ -5,17 +5,24 @@ Simulately is a package that consists of Three simulation systems from different
 - [x] Newspaper Seller Simulation.
 - [x] Inventory Simulation. 
 
+# Prerequisites
+
+1. Install Visual Studio version 2013 or higher
+2. Install .Net Framework 4.5.1 or higher
+3. C# Programming Language
+
+
 ## 1) Multi-Queue Simulation
 
 Multi-Queue Simulation is a full simulation desktop system that simulate customer service for multi-servers operations and calculate servers/system Performance Measurements.
 
 ### Features: 
-- Calculate Servers/System Performance measurements
-- Visualize servers state using Charts `Busy` , `Idle`
-- Automation Testing with some test cases
-- Select Server Selection Method `Highest Priority` , `Random` , `Least Utilization`
-- Select System Stopping Criteria `Number Of Customers` , `Simulation End Time`
-- Loading input from text file with specific format
+- Calculate Servers/System Performance measurements.
+- Visualize servers state using Charts `Busy` , `Idle`.
+- Automation Testing with some test cases.
+- Select Server Selection Method `Highest Priority` , `Random` , `Least Utilization`.
+- Select System Stopping Criteria `Number Of Customers` , `Simulation End Time`.
+- Loading input from text file with specific format.
 
 
 ### Working Screenshots:
@@ -100,15 +107,9 @@ Multi-Queue Simulation is a full simulation desktop system that simulate custome
 </details>
 
 
-
-
-
-
-
-
 <details>
 
-  <summary> InValid Inputs</summary>
+  <summary> Invalid Inputs</summary>
 
 <p>
 
@@ -157,11 +158,110 @@ Multi-Queue Simulation is a full simulation desktop system that simulate custome
 </details>
 
 
-# Prerequisites
+## 2) Newspaper Seller Simulation
 
-1. Install Visual Studio version 2013 or higher
-2. Install .Net Framework 4.5.1 or higher
-3. C# Programming Language
+Newspaper Seller Simulation is a full simulation desktop system that simulate newspaper seller operations
+
+in different days `Good`, `Fair`, `Poor` such as:
+- Daily Profit.
+- Lost Profit from Excess Demand.
+- Salvage from Scale of Scrap. 
+
+Then calculate System Performance Measurements such as:
+- Total Sales Revenue.
+- Total Cost of Newspapers.
+- Total Lost Profit from Excess Demand.
+- Total Salvage from sale of Scrap papers.
+- Net Profit.
+- Number of days having excess demand.
+- Number of days having unsold papers.
+
+
+
+### Working Screenshots:
+
+<details>
+
+  <summary> Valid System</summary>
+
+<p>
+
+### 1.Home Screen
+
+![1](https://user-images.githubusercontent.com/52586356/140431913-8f2b3527-623a-463b-acbe-cf339c481b90.png)
+
+</p>
+
+<p>
+
+
+### 2.Loading Input From Text File
+
+![2](https://user-images.githubusercontent.com/52586356/140432020-e3b666d8-94cd-45cf-8126-842d9d3863e0.png)
+
+
+![3](https://user-images.githubusercontent.com/52586356/148279268-6f20a8f3-6158-494a-b265-df3e9a694f7b.png)
+
+  
+
+</p>
+
+
+<p>
+
+### 3.Manual Input
+
+![4](https://user-images.githubusercontent.com/52586356/148279697-56f6d1bc-5bc7-4244-8f6a-0e6721dacb8f.png)
+
+
+![5](https://user-images.githubusercontent.com/52586356/148279798-4ffff0d0-4ce6-4400-a95c-6fda8326be7b.png)
+
+  
+</p>
+
+<p>
+
+### 4.Simulation System
+
+![6](https://user-images.githubusercontent.com/52586356/148280187-9b4a90a5-652a-45c3-a72a-948d94cefc0f.png)
+
+</p>
+  
+<p>
+
+### 5.System Performance Measurements
+
+![7](https://user-images.githubusercontent.com/52586356/148280231-38fe28f9-4d2f-4d8b-b402-be3ee36f6a14.png)
+
+</p>
+
+
+</details>
+
+
+
+<details>
+
+  <summary> Invalid Inputs</summary>
+
+
+<p>
+
+### 1.Invalid Manual input
+
+- Sum of Probability must be equal 1 
+
+![1](https://user-images.githubusercontent.com/52586356/148281692-5108502a-5b69-4a80-81aa-95c4ff0a9a5a.png)
+
+- Must Fill all fields
+
+![1](https://user-images.githubusercontent.com/52586356/148281788-69e57405-7a59-4688-b3ca-f4b3d18d2798.png)
+
+</p>
+
+</details>
+
+
 
 
 # References
