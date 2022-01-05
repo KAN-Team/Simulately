@@ -179,24 +179,20 @@ System Performance Measurements such as:
 - Number of days having unsold papers.
 
 *** 
+
 ## 3) Inventory Simulation
 
-Inventory Seller Simulation is a full simulation desktop system that simulates a company sells refrigerators with an inventory system that:
-- Review the inventory situation after a fixed number of days (N) and order up to a level (M).
-- `Order quantity = (Order-up-to level) - (Ending inventory) + (Shortage quantity)`
+Inventory Simulation is a full simulation desktop system that simulate refrigerators inventory operations such as:
+- Refrigerators inventory has `M` order up to level.
+- Making order with currently demand after `N` days.
+- it can take the shortage quantity in consedration.
 
-If the order-up-to level (M) is 11 refrigerators, the review period (N) is 5 days , and the ending inventory on day 5 is 4 refrigerators, 7 refrigerators will be ordered from the supplier
-However, if there had been a shortage of 2 refrigerators on the fifth day then 13 would have been ordered (the first two received will be provided to the customers who placed an order and were willing to wait “called backorder”.
-
-#### Random variables: 
-- Number of refrigerators demanded each day.
-- Lead time: the number of days after the order is placed with the supplier before its arrival.
-
-#### System Performance Measures:
-- Ending Inventory Average.
-- Shortage Quantity Average.
+System Performance Measurements such as:
+- Ending Inventory Average 
+- Shortage Quantity Average 
 
 ***
+
 ### Working Screenshots:
 
 <details>
@@ -279,24 +275,6 @@ However, if there had been a shortage of 2 refrigerators on the fifth day then 1
 </p>
 
 </details>
-
-
-## 3) Inventory Simulation
-
-Inventory Simulation is a full simulation desktop system that simulate refrigerators inventory operations such as:
-- Refrigerators inventory has `M` order up to level.
-- Making order with currently demand after `N` days.
-- it can take the shortage quantity in consedration.
-
-System Performance Measurements such as:
-- Ending Inventory Average 
-- Shortage Quantity Average 
-
-
-
-
-### Working Screenshots:
-
 
 # References
 
