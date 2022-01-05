@@ -1,8 +1,13 @@
 # Simulately
 
-## Description
+Simulately is a package that consists of Three simulation systems from different ideas.
+- [x] Multi-Queue Simulation.
+- [x] Newspaper Seller Simulation.
+- [x] Inventory Simulation. 
 
-Simulately is a full simulation desktop system that simulate customer service for multi-servers operations and calculate servers/system Performance Measurements.
+## 1) Multi-Queue Simulation
+
+Multi-Queue Simulation is a full simulation desktop system that simulate customer service for multi-servers operations and calculate servers/system Performance Measurements.
 
 ### Features: 
 - Calculate Servers/System Performance measurements
@@ -12,13 +17,8 @@ Simulately is a full simulation desktop system that simulate customer service fo
 - Select System Stopping Criteria `Number Of Customers` , `Simulation End Time`
 - Loading input from text file with specific format
 
-# Prerequisites
 
-1. Install Visual Studio version 2013 or higher
-2. Install .Net Framework 4.5.1 or higher
-3. C# Programming Language
-
-# Working Screenshots
+### Working Screenshots:
 
 
 <details>
@@ -103,6 +103,9 @@ Simulately is a full simulation desktop system that simulate customer service fo
 
 
 
+
+
+
 <details>
 
   <summary> InValid Inputs</summary>
@@ -152,6 +155,13 @@ Simulately is a full simulation desktop system that simulate customer service fo
 
 
 </details>
+
+
+# Prerequisites
+
+1. Install Visual Studio version 2013 or higher
+2. Install .Net Framework 4.5.1 or higher
+3. C# Programming Language
 
 
 # References
