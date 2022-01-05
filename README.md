@@ -14,7 +14,7 @@ Simulately is a package that consists of Three simulation systems from different
 
 ## 1) Multi-Queue Simulation
 
-Multi-Queue Simulation is a full simulation desktop system that simulate customer service for multi-servers operations and calculate servers/system Performance Measurements.
+Multi-Queue Simulation is a full simulation desktop system that simulates customer service for multi-servers operations and calculate servers/system Performance Measurements.
 
 ### Features: 
 - Calculate Servers/System Performance measurements.
@@ -157,10 +157,11 @@ Multi-Queue Simulation is a full simulation desktop system that simulate custome
 
 </details>
 
+***
 
 ## 2) Newspaper Seller Simulation
 
-Newspaper Seller Simulation is a full simulation desktop system that simulate newspaper seller operations
+Newspaper Seller Simulation is a full simulation desktop system that simulates newspaper seller operations
 
 in different days `Good`, `Fair`, `Poor` such as:
 - Daily Profit.
@@ -176,8 +177,25 @@ Then calculate System Performance Measurements such as:
 - Number of days having excess demand.
 - Number of days having unsold papers.
 
+*** 
+## 3) Inventory Simulation
 
+Inventory Seller Simulation is a full simulation desktop system that simulates a company sells refrigerators with an inventory system that:
+- Review the inventory situation after a fixed number of days (N) and order up to a level (M).
+- `Order quantity = (Order-up-to level) - (Ending inventory) + (Shortage quantity)`
 
+If the order-up-to level (M) is 11 refrigerators, the review period (N) is 5 days , and the ending inventory on day 5 is 4 refrigerators, 7 refrigerators will be ordered from the supplier
+However, if there had been a shortage of 2 refrigerators on the fifth day then 13 would have been ordered (the first two received will be provided to the customers who placed an order and were willing to wait “called backorder”.
+
+#### Random variables: 
+- Number of refrigerators demanded each day.
+- Lead time: the number of days after the order is placed with the supplier before its arrival.
+
+#### System Performance Measures:
+- Ending Inventory Average.
+- Shortage Quantity Average.
+
+***
 ### Working Screenshots:
 
 <details>
