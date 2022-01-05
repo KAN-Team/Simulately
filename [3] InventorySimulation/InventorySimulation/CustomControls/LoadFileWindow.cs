@@ -1,11 +1,9 @@
 ﻿using InventoryModels;
 using InventorySimulation.Forms;
-using InventorySimulation.SimulationCore;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -42,10 +40,7 @@ namespace InventorySimulation
             string fileFormatReadmeText = "";
             try
             {
-                string exeFile = (new Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-                string exeDir = Path.GetDirectoryName(exeFile);
-                string readmeFullPath = Path.Combine(exeDir, @"..\..\TestCases\ReadMe.txt");
-                readmeFullPath = readmeFullPath.Replace("%20", " ");
+                string readmeFullPath = @"..\..\TestCases\ReadMe.txt";
                 fileFormatReadmeText = File.ReadAllText(readmeFullPath);
             }
             catch

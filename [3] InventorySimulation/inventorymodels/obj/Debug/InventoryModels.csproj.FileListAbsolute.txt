@@ -27,3 +27,9 @@ E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\InventorySimulation\InventoryMo
 E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.csproj.CoreCompileInputs.cache
 E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.dll
 E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\InventorySimulation\InventoryModels\obj\Debug\InventoryModels.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[3] InventorySimulation\InventoryModels\bin\Debug\InventoryModels.dll
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[3] InventorySimulation\InventoryModels\bin\Debug\InventoryModels.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[3] InventorySimulation\InventoryModels\obj\Debug\InventoryModels.csproj.AssemblyReference.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[3] InventorySimulation\InventoryModels\obj\Debug\InventoryModels.csproj.CoreCompileInputs.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[3] InventorySimulation\InventoryModels\obj\Debug\InventoryModels.dll
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[3] InventorySimulation\InventoryModels\obj\Debug\InventoryModels.pdb

@@ -51,11 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\FirstCustomInputWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\FirstCustomInputWindow.designer.cs">
+      <DependentUpon>FirstCustomInputWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\LoadFileWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomControls\LoadFileWindow.designer.cs">
       <DependentUpon>LoadFileWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\SecondCustomInputWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\SecondCustomInputWindow.designer.cs">
+      <DependentUpon>SecondCustomInputWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PerformanceMesuresForm.cs">
       <SubType>Form</SubType>
@@ -80,8 +92,14 @@
     <Compile Include="SimulationCore\Defaults.cs" />
     <Compile Include="SimulationCore\InventorySimulator.cs" />
     <Compile Include="SimulationCore\TestSimulationSystem.cs" />
+    <EmbeddedResource Include="CustomControls\FirstCustomInputWindow.resx">
+      <DependentUpon>FirstCustomInputWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\LoadFileWindow.resx">
       <DependentUpon>LoadFileWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\SecondCustomInputWindow.resx">
+      <DependentUpon>SecondCustomInputWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PerformanceMesuresForm.resx">
       <DependentUpon>PerformanceMesuresForm.cs</DependentUpon>
