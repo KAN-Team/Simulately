@@ -1,6 +1,7 @@
 ﻿using InventorySimulation;
 using InventorySimulation.Forms;
 using InventorySimulation.SimulationCore;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -21,20 +22,23 @@ namespace InventorySimulation.Forms
 
         private void loadDataToGgv()
         {
-            //dailyCostLbl.Text = "Daily Cost = " + Program.mSystem.NumOfNewspapers + " * " + Program.mSystem.PurchasePrice + " = " + Program.mSystem.SimulationTable[0].DailyCost;
-            //for (int i = 0; i < Program.mSystem.NumOfRecords; ++i)
-            //{
-            //    simulationDgv.Rows.Add(
-            //       Program.mSystem.SimulationTable[i].DayNo,
-            //       Program.mSystem.SimulationTable[i].RandomNewsDayType,
-            //       Program.mSystem.SimulationTable[i].NewsDayType,
-            //       Program.mSystem.SimulationTable[i].RandomDemand,
-            //       Program.mSystem.SimulationTable[i].Demand,
-            //       Program.mSystem.SimulationTable[i].SalesProfit,
-            //       Program.mSystem.SimulationTable[i].LostProfit,
-            //       Program.mSystem.SimulationTable[i].ScrapProfit,
-            //       Program.mSystem.SimulationTable[i].DailyNetProfit);
-            //}
+            for (int i = 0; i < Program.mSystem.SimulationCases.Count; ++i)
+            {
+                simulationDgv.Rows.Add(
+                    Program.mSystem.SimulationCases[i].Day,
+                    Program.mSystem.SimulationCases[i].Cycle,
+                    Program.mSystem.SimulationCases[i].DayWithinCycle,
+                    Program.mSystem.SimulationCases[i].BeginningInventory,
+                    Program.mSystem.SimulationCases[i].RandomDemand,
+                    Program.mSystem.SimulationCases[i].Demand,
+                    Program.mSystem.SimulationCases[i].EndingInventory,
+                    Program.mSystem.SimulationCases[i].ShortageQuantity,
+                    Program.mSystem.SimulationCases[i].OrderQuantity,
+                    Program.mSystem.SimulationCases[i].RandomLeadDays,
+                    Program.mSystem.SimulationCases[i].LeadDays,
+                    -8
+                    );
+            }
         }
 
         #region HANDLING_FOOTER_NAVIGATION_BUTTONS

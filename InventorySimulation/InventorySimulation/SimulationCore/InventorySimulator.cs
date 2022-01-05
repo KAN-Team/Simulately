@@ -8,257 +8,211 @@ namespace InventorySimulation.SimulationCore
     {
         private SimulationSystem System;
         private readonly Random random;
+        private List<int> DaysUntilOrderArrives = new List<int>();
+        private SimulationCase SimulationCasesTemp;
+
+        private int DayCounter = 0;
+        private int OrderQuantity = 0;
+        private int ShortQuantity = 0;
+        private int EndingQuantity = 0;
+        private int DayWithinCycle = 1;
 
         public InventorySimulator()
         {
             random = new Random();
             System = Program.mSystem;
 
-            calcDayTypeDist();
-            calcDemandDist();
-            simulateTable();
-            calcPerformanceMeasures();
+            DaysUntilOrderArrives.Add(System.StartLeadDays - 1);
+
+            while (DayCounter < System.NumberOfDays)
+            {
+                // Initial Static Values Assignment  
+                SimulationCasesTemp = new SimulationCase();
+                SimulationCasesTemp.Day = DayCounter + 1;
+                SimulationCasesTemp.Cycle = GetCycle(SimulationCasesTemp.Day);
+                SimulationCasesTemp.RandomDemand = GenerateRandom();
+                SimulationCasesTemp.Demand = GetDemand(SimulationCasesTemp.RandomDemand);
+                SimulationCasesTemp.LeadDays = 0;
+                SimulationCasesTemp.ShortageQuantity = 0;
+
+                // Day Within Cycle 
+                workOnDayWithinCycle();
+
+                // Beginning/Ending Inventory 
+                workOnBeginningAndEndingInventory();
+
+                // Cycle Order 
+                workOnCycleOrder();
+
+                // Lead Days 
+                workOnLeadDays();
+
+                // Counters Control
+                System.SimulationCases.Add(SimulationCasesTemp);
+                DayWithinCycle++;
+                DayCounter++;
+            }
+
+            // Set All Negative Values To Zeros
+            setAllNegativeValuesToZeroes();
+
+            doPerformanceMeasure();
+
         }
 
-        #region DAYTPYE_AND_DEMAND_DISTRIBUTIONS
-        public void calcDayTypeDist()
+        #region HELPERS
+        public int GetCycle(int Day)
         {
-            //decimal cumulative = 0;
-            //int minNum = 1;
-            //for (int i = 0; i < System.DayTypeDistributions.Count; ++i)
-            //{
-            //    cumulative += System.DayTypeDistributions[i].Probability;
-            //    System.DayTypeDistributions[i].CummProbability = cumulative;
-
-            //    System.DayTypeDistributions[i].MinRange = minNum;
-            //    System.DayTypeDistributions[i].MaxRange = (int)(cumulative * 100);
-            //    minNum = System.DayTypeDistributions[i].MaxRange + 1;
-            //}
+            if (Day % System.ReviewPeriod == 0)
+            {
+                return (Day / System.ReviewPeriod);
+            }
+            return (Day / System.ReviewPeriod) + 1;
         }
 
-        public void calcDemandDist()
+        private int GenerateRandom()
         {
-            //decimal cumulative_1 = 0, cumulative_2 = 0, cumulative_3 = 0;
-            //int minNum_1 = 1, minNum_2 = 1, minNum_3 = 1;
-            //for (int j = 0; j < System.DemandDistributions.Count; ++j)
-            //{
-            //    List<DayTypeDistribution> dayTypeDistributions = System.DemandDistributions[j].DayTypeDistributions;
-                
-            //    cumulative_1 += dayTypeDistributions[0].Probability;
-            //    cumulative_2 += dayTypeDistributions[1].Probability;
-            //    cumulative_3 += dayTypeDistributions[2].Probability;
-            //    dayTypeDistributions[0].CummProbability = cumulative_1;
-            //    dayTypeDistributions[1].CummProbability = cumulative_2;
-            //    dayTypeDistributions[2].CummProbability = cumulative_3;
-            //    dayTypeDistributions[0].MinRange = minNum_1;
-            //    dayTypeDistributions[1].MinRange = minNum_2;
-            //    dayTypeDistributions[2].MinRange = minNum_3;
-            //    dayTypeDistributions[0].MaxRange = (int)(cumulative_1 * 100);
-            //    dayTypeDistributions[1].MaxRange = (int)(cumulative_2 * 100);
-            //    dayTypeDistributions[2].MaxRange = (int)(cumulative_3 * 100);
-            //    minNum_1 = dayTypeDistributions[0].MaxRange + 1;
-            //    minNum_2 = dayTypeDistributions[1].MaxRange + 1;
-            //    minNum_3 = dayTypeDistributions[2].MaxRange + 1;
-            //}
+            return random.Next(1, 101);
         }
-        #endregion
 
-        #region SIMULATION_TABLE
-        private void simulateTable()
+        private int GetDemand(int Random)
         {
-            //for (int i = 0; i < System.NumOfRecords; ++i)
-            //{
-            //    System.SimulationTable.Add(new SimulationCase());
-            //    setDayNo(i);
-            //    genRandomNewsDayType(i);
-            //    setNewsDayType(i);
-            //    genRandomDemand(i);
-            //    setDemand(i);
-            //    setDailyCost(i);
-            //    setSalesProfit(i);
-            //    setLostProfit(i);
-            //    setScrapProfit(i);
-            //    setDailyNetProfit(i);
-            //}
+            for (int i = 0; i < System.DemandDistribution.Count; i++)
+            {
+                if (Random >= System.DemandDistribution[i].MinRange &&
+                    Random <= System.DemandDistribution[i].MaxRange)
+                {
+                    return System.DemandDistribution[i].Value;
+                }
+            }
+            return -1;
         }
 
-        private void setDayNo(int i)
+        private void workOnDayWithinCycle()
         {
-            //System.SimulationTable[i].DayNo = i + 1;
+            if (DayWithinCycle != System.ReviewPeriod)
+            {
+                DayWithinCycle = DayWithinCycle % System.ReviewPeriod;
+            }
+            SimulationCasesTemp.DayWithinCycle = DayWithinCycle;
         }
 
-        private void genRandomNewsDayType(int i)
+        private void workOnBeginningAndEndingInventory()
         {
-            //System.SimulationTable[i].RandomNewsDayType = random.Next(1, 100);
+            if (DayCounter == 0)
+            {
+                SimulationCasesTemp.BeginningInventory = System.StartInventoryQuantity;
+                SimulationCasesTemp.EndingInventory = SimulationCasesTemp.BeginningInventory - SimulationCasesTemp.Demand;
+            }
+            else
+            {
+                if (DaysUntilOrderArrives[DayCounter] == -1 && DayCounter / System.ReviewPeriod == 0)
+                {
+                    SimulationCasesTemp.BeginningInventory =
+                        System.SimulationCases[DayCounter - 1].EndingInventory
+                        + System.StartOrderQuantity;
+                }
+                else if (DaysUntilOrderArrives[DayCounter] == -1 && DayCounter / System.ReviewPeriod != 0 && DayWithinCycle != System.ReviewPeriod)
+                {
+                    SimulationCasesTemp.BeginningInventory = System.SimulationCases[DayCounter - 1].EndingInventory + OrderQuantity;
+                }
+                else
+                {
+                    SimulationCasesTemp.BeginningInventory = System.SimulationCases[DayCounter - 1].EndingInventory;
+                }
+
+
+                SimulationCasesTemp.EndingInventory = EndingQuantity = SimulationCasesTemp.BeginningInventory -
+                    (SimulationCasesTemp.Demand + System.SimulationCases[DayCounter - 1].ShortageQuantity);
+            }
+
+
+            if (SimulationCasesTemp.EndingInventory <= 0)
+            {
+                SimulationCasesTemp.ShortageQuantity = ShortQuantity = Math.Abs(SimulationCasesTemp.EndingInventory);
+                SimulationCasesTemp.EndingInventory = EndingQuantity = 0;
+            }
+            else
+            {
+                ShortQuantity = 0;
+            }
         }
 
-        private void setNewsDayType(int i)
+        private void workOnCycleOrder()
         {
-            //for (int j = 0; j < System.DayTypeDistributions.Count; ++j)
-            //{
-            //    int minRange = System.DayTypeDistributions[j].MinRange;
-            //    int maxRange = System.DayTypeDistributions[j].MaxRange;
-            //    int RandomNewsdayType = System.SimulationTable[i].RandomNewsDayType;
-            //    if (RandomNewsdayType >= minRange && RandomNewsdayType <= maxRange)
-            //    {
-            //        Enums.DayType dayType = System.DayTypeDistributions[j].DayType;
-            //        System.SimulationTable[i].NewsDayType = dayType;
-            //        break;
-            //    }
-            //}
+            if (SimulationCasesTemp.DayWithinCycle == 5)
+            {
+                SimulationCasesTemp.OrderQuantity = OrderQuantity = GetOrderQuantity(
+                   EndingQuantity,
+                   ShortQuantity);
+
+                SimulationCasesTemp.RandomLeadDays = GenerateRandom();
+                SimulationCasesTemp.LeadDays = GetLeadDays(SimulationCasesTemp.RandomLeadDays);
+                DaysUntilOrderArrives[DayCounter] = SimulationCasesTemp.LeadDays;
+            }
+            else
+            {
+                SimulationCasesTemp.OrderQuantity = 0;
+                SimulationCasesTemp.RandomLeadDays = 0;
+            }
         }
 
-        private void genRandomDemand(int i)
+        private int GetOrderQuantity(int EndingE, int ShortQuantity)
         {
-            //System.SimulationTable[i].RandomDemand = random.Next(1, 100);
+            return OrderQuantity = System.OrderUpTo - EndingE + ShortQuantity;
         }
 
-        private void setDemand(int i)
+        private int GetLeadDays(int Random)
         {
-            //int randomDigitForDemand = System.SimulationTable[i].RandomDemand;
-            //Enums.DayType dayType = System.SimulationTable[i].NewsDayType;
-            //int type;
-            //if (dayType == Enums.DayType.Good) type = 0;
-            //else if (dayType == Enums.DayType.Fair) type = 1;
-            //else type = 2;
-
-            //for (int j = 0; j < System.DemandDistributions.Count; ++j)
-            //{
-            //    DayTypeDistribution dateType = System.DemandDistributions[j].DayTypeDistributions[type];
-            //    if (randomDigitForDemand >= dateType.MinRange && randomDigitForDemand <= dateType.MaxRange)
-            //    {
-            //        System.SimulationTable[i].Demand = System.DemandDistributions[j].Demand;
-            //        break;
-            //    }
-            //}
+            for (int i = 0; i < System.LeadDaysDistribution.Count; i++)
+            {
+                if (Random >= System.LeadDaysDistribution[i].MinRange &&
+                    Random <= System.LeadDaysDistribution[i].MaxRange)
+                {
+                    return System.LeadDaysDistribution[i].Value;
+                }
+            }
+            return -1;
         }
 
-        private void setDailyCost(int i)
+        private void workOnLeadDays()
         {
-           //System.SimulationTable[i].DailyCost = System.NumOfNewspapers * System.PurchasePrice;
+            if (DaysUntilOrderArrives[DayCounter] >= -1)
+            {
+                DaysUntilOrderArrives.Add(DaysUntilOrderArrives[DayCounter] - 1);
+            }
+            else
+            {
+                DaysUntilOrderArrives.Add(0);
+            }
         }
 
-        private void setSalesProfit(int i)
-        { 
-            //if (System.SimulationTable[i].Demand <= System.NumOfNewspapers)
-            //{
-            //    System.SimulationTable[i].SalesProfit = System.SimulationTable[i].Demand * System.SellingPrice;
-            //}
-            //else
-            //{
-            //    System.SimulationTable[i].SalesProfit = System.NumOfNewspapers * System.SellingPrice;
-            //}
-        }
-
-        private void setLostProfit(int i)
+        private void setAllNegativeValuesToZeroes()
         {
-            //if (System.SimulationTable[i].Demand > System.NumOfNewspapers)
-            //{
-            //    decimal ExcessDemand = System.SimulationTable[i].Demand - System.NumOfNewspapers;
-            //    decimal ProfitForPiece = System.SellingPrice - System.PurchasePrice;
-            //    System.SimulationTable[i].LostProfit = ProfitForPiece*ExcessDemand;
-            //}
-            //else
-            //{
-            //  System.SimulationTable[i].LostProfit = 0;
-            //}
-        }
-
-        private void setScrapProfit(int i)
-        {
-            //if (System.SimulationTable[i].Demand < System.NumOfNewspapers)
-            //{
-            //    decimal scrap = System.NumOfNewspapers - System.SimulationTable[i].Demand;
-            //    System.SimulationTable[i].ScrapProfit = scrap * System.ScrapPrice;
-            //}
-            //else
-            //{
-            //System.SimulationTable[i].ScrapProfit = 0;
-            //}
-        }
-
-        private void setDailyNetProfit(int i)
-        {
-            //System.SimulationTable[i].DailyNetProfit = 
-            //     System.SimulationTable[i].SalesProfit 
-            //   - System.SimulationTable[i].DailyCost 
-            //   - System.SimulationTable[i].LostProfit 
-            //   + System.SimulationTable[i].ScrapProfit;
+            for (int i = 0; i < DaysUntilOrderArrives.Count; i++)
+            {
+                if (DaysUntilOrderArrives[i] < 0)
+                {
+                    DaysUntilOrderArrives[i] = 0;
+                }
+            }
         }
         #endregion
 
         #region PERFORMANCE_MEASURES
-        private void calcPerformanceMeasures()
+        private void doPerformanceMeasure()
         {
-            calcTotalSalesProfit();
-            calcTotalCost();
-            calcTotalLostProfit();
-            calcTotalScrapProfit();
-            calcTotalNetProfit();
-            calcDaysWithMoreDemand();
-            calcDaysWithUnsoldPapers();
-        }
-
-        private void calcTotalSalesProfit()
-        {
-            //decimal CostSum = 0;
-            //for (int i = 0; i < System.NumOfRecords; i++)
-            //{
-            //    CostSum += System.SimulationTable[i].SalesProfit;
-            //}
-            //System.PerformanceMeasures.TotalSalesProfit = CostSum;
-        }
-        private void calcTotalCost()
-        {
-            //decimal TotalCost = System.NumOfNewspapers * System.PurchasePrice * System.NumOfRecords ;
-            //System.PerformanceMeasures.TotalCost = TotalCost;
-        }
-        private void calcTotalLostProfit()
-        {
-            //decimal LostProfitSum = 0;
-            //for (int i = 0; i < System.NumOfRecords; i++)
-            //{
-            //    LostProfitSum += System.SimulationTable[i].LostProfit;
-            //}
-            //System.PerformanceMeasures.TotalLostProfit = LostProfitSum;
-        }
-        private void calcTotalScrapProfit()
-        {
-            //decimal ScrapPrpfitSum = 0;
-            //for (int i = 0; i < System.NumOfRecords; i++)
-            //{
-            //    ScrapPrpfitSum += System.SimulationTable[i].ScrapProfit;
-            //}
-            //System.PerformanceMeasures.TotalScrapProfit = ScrapPrpfitSum;
-        }
-        private void calcTotalNetProfit()
-        {
-            //decimal NetProfit = 0;
-            //for (int i = 0; i < System.NumOfRecords; i++)
-            //{
-            //    NetProfit += System.SimulationTable[i].DailyNetProfit;
-            //}
-            //System.PerformanceMeasures.TotalNetProfit = NetProfit;
-        }
-        private void calcDaysWithMoreDemand()
-        {
-            //int ExcessDemandCount = 0;
-            //for (int i = 0; i < System.NumOfRecords; i++)
-            //{
-            //    if (System.SimulationTable[i].LostProfit != 0)
-            //        ExcessDemandCount++;
-            //}
-            //System.PerformanceMeasures.DaysWithMoreDemand = ExcessDemandCount;
-        }
-        private void calcDaysWithUnsoldPapers()
-        {
-            //    int ScrapCount = 0;
-            //    for (int i = 0; i < System.NumOfRecords; i++)
-            //    {
-            //        if (System.SimulationTable[i].ScrapProfit != 0)
-            //            ScrapCount++;
-            //    }
-            //    System.PerformanceMeasures.DaysWithUnsoldPapers = ScrapCount;
+            // Performance Measures 
+            decimal ShortSum = 0, EndinSum = 0;
+            for (int i = 0; i < System.SimulationCases.Count; i++)
+            {
+                ShortSum += System.SimulationCases[i].ShortageQuantity;
+                EndinSum += System.SimulationCases[i].EndingInventory;
+            }
+            PerformanceMeasures PM = new PerformanceMeasures();
+            PM.ShortageQuantityAverage = ShortSum / System.SimulationCases.Count;
+            PM.EndingInventoryAverage = EndinSum / System.SimulationCases.Count;
+            System.PerformanceMeasures = PM;
         }
         #endregion
     }

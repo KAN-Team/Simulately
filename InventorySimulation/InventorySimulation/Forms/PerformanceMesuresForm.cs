@@ -8,13 +8,8 @@ namespace InventorySimulation.Forms
         public PerformanceMesuresForm()
         {
             InitializeComponent();
-            //totalSalesProfitAnsLbl.Text = Program.mSystem.PerformanceMeasures.TotalSalesProfit.ToString();
-            //totalLostProfitAnsLbl.Text = Program.mSystem.PerformanceMeasures.TotalLostProfit.ToString();
-            //totalCostAnsLbl.Text = Program.mSystem.PerformanceMeasures.TotalCost.ToString();
-            //totalScrapProfitAnsLbl.Text = Program.mSystem.PerformanceMeasures.TotalScrapProfit.ToString();
-            //totalNetProfitAnsLbl.Text = Program.mSystem.PerformanceMeasures.TotalNetProfit.ToString();
-            //dayWithMoreDemandAnsLbl.Text = Program.mSystem.PerformanceMeasures.DaysWithMoreDemand.ToString();
-            //daysWithUnsoldPapersAnsLbl.Text = Program.mSystem.PerformanceMeasures.DaysWithUnsoldPapers.ToString();
+            EndingInventoryAverageAnsLbl.Text = Program.mSystem.PerformanceMeasures.EndingInventoryAverage.ToString();
+            ShortageQuantityAverageAnsLbl.Text = Program.mSystem.PerformanceMeasures.ShortageQuantityAverage.ToString();
         }
     }
 }

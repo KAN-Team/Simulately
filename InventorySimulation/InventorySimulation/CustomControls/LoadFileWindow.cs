@@ -65,14 +65,14 @@ namespace InventorySimulation
                         setDemandDistributions(lines);
                         setLeadDaysDistribution(lines);
 
-                        // openSumulationTableForm();
+                        openSumulationTableForm();
                     } catch
                     {
                         MessageBox.Show("Here is What the Input File Should look like !!\n\n" + fileFormatReadmeText, "Invalid File Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                     // Testing Data which we get from the input file.
-                    TestSimulationSystem.testSimulationData();
+                    // TestSimulationSystem.testSimulationData();
                 }
             }
         }
