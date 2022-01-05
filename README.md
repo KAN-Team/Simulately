@@ -167,7 +167,7 @@ in different days `Good`, `Fair`, `Poor` such as:
 - Lost Profit from Excess Demand.
 - Salvage from Scale of Scrap. 
 
-Then calculate System Performance Measurements such as:
+System Performance Measurements such as:
 - Total Sales Revenue.
 - Total Cost of Newspapers.
 - Total Lost Profit from Excess Demand.
@@ -262,6 +262,21 @@ Then calculate System Performance Measurements such as:
 </details>
 
 
+## 3) Inventory Simulation
+
+Inventory Simulation is a full simulation desktop system that simulate refrigerators inventory operations such as:
+- Refrigerators inventory has `M` order up to level.
+- Making order with currently demand after `N` days.
+- it can take the shortage quantity in consedration.
+
+System Performance Measurements such as:
+- Ending Inventory Average 
+- Shortage Quantity Average 
+
+
+
+
+### Working Screenshots:
 
 
 # References
