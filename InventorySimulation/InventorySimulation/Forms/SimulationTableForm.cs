@@ -1,7 +1,4 @@
-﻿using InventorySimulation;
-using InventorySimulation.Forms;
-using InventorySimulation.SimulationCore;
-using System.Collections.Generic;
+﻿using InventorySimulation.SimulationCore;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -36,7 +33,7 @@ namespace InventorySimulation.Forms
                     Program.mSystem.SimulationCases[i].OrderQuantity,
                     Program.mSystem.SimulationCases[i].RandomLeadDays,
                     Program.mSystem.SimulationCases[i].LeadDays,
-                    -8
+                    Program.mSystem.SimulationCases[i].DaysUntilOrderArrives
                     );
             }
         }

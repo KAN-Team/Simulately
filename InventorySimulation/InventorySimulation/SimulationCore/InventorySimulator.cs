@@ -47,6 +47,9 @@ namespace InventorySimulation.SimulationCore
                 // Lead Days 
                 workOnLeadDays();
 
+                // Update Days Until Order Arrives
+                SimulationCasesTemp.DaysUntilOrderArrives = DaysUntilOrderArrives[DayCounter];
+
                 // Counters Control
                 System.SimulationCases.Add(SimulationCasesTemp);
                 DayWithinCycle++;
@@ -194,6 +197,7 @@ namespace InventorySimulation.SimulationCore
                 if (DaysUntilOrderArrives[i] < 0)
                 {
                     DaysUntilOrderArrives[i] = 0;
+                    System.SimulationCases[i].DaysUntilOrderArrives = 0;
                 }
             }
         }
