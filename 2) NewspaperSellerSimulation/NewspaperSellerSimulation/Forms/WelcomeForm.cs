@@ -154,10 +154,5 @@ namespace NewspaperSellerSimulation.Forms
             gitHubLinkLbl.Font = new Font("Monotype Corsiva", 14, FontStyle.Bold | FontStyle.Italic);
         }
         #endregion
-
-        private void welcomePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
