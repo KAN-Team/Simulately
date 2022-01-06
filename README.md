@@ -276,10 +276,15 @@ System Performance Measurements such as:
 
 </details>
 
-# References
+***
+
+### References
 
 - [System Performance Measurements](MultiQueueSimulation/MultiQueueSimulation/Assets/performance_mesures.png) 
- 
 - [.Net Framework 4.5.1](https://www.microsoft.com/ar-sa/download/details.aspx?id=40779)
-
 - [Visual studio](https://visualstudio.microsoft.com/downloads/)
+
+#### Copyrights
+- Kareem S. Fathy - Kareem S. Ragab - Abanoub A. Azaab - Nada M. Abdelhamed - Nada S. Anies
+- KAN Org.
+- University of Ain Shams, Egypt
