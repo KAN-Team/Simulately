@@ -86,7 +86,7 @@ Multi-Queue Simulation is a full simulation desktop system that simulates custom
 
 ### 5.System Performance Measurements
 
-![9](https://user-images.githubusercontent.com/52586356/140432356-1adc88e3-df1e-4d8f-b619-a9166000d55f.png)
+![9](https://user-images.githubusercontent.com/48348589/149645100-1e7a1d0d-63f5-4432-ae7a-b56c45304c2d.png)
 
 
 </p>
