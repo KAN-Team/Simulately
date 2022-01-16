@@ -58,3 +58,9 @@ E:\Projects\[GitHub]\Desktop\Simulately\MultiQueueSimulation\MultiQueueModels\ob
 E:\Projects\[GitHub]\Desktop\Simulately\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.CoreCompileInputs.cache
 E:\Projects\[GitHub]\Desktop\Simulately\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
 E:\Projects\[GitHub]\Desktop\Simulately\MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.dll
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueModels\bin\Debug\MultiQueueModels.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.AssemblyReference.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.csproj.CoreCompileInputs.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.dll
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueModels\obj\Debug\MultiQueueModels.pdb
