@@ -1,20 +1,23 @@
-﻿namespace NewspaperSellerSimulation.SimulationCore
+﻿namespace InventorySimulation.SimulationCore
 {
     class Defaults
     {
-        // Number of Newspapers to Simulate on.
-        public static readonly int NUMBER_OF_NEWSPAPERS = 70;
+        // Order up to Level (M)
+        public static readonly int ORDER_UP_TO = 11;
 
-        // Number of Days to Simulate.
-        public static readonly int NUMBER_OF_RECORDS = 20;
+        // The Review Period (N)
+        public static readonly int REVIEW_PERIOD = 5;
 
-        // The Price by which the Newspaper Seller buys.
-        public static readonly decimal PURCHASE_PRICE = (decimal)0.33;
+        // Begining Inventory Quantity
+        public static readonly int START_INVENTORY_QUANTITY = 3;
 
-        // The Price of Newspapers that are not Sold at the end of the day.
-        public static readonly decimal SCRAP_PRICE = (decimal)0.05;
+        // Starting Lead Days
+        public static readonly int START_LEAD_DAYS = 2;
 
-        // The Price by which the Newspapers Seller sells.
-        public static readonly decimal SELLING_PRICE = (decimal)0.5;
+        // Begining Order Quantity
+        public static readonly int START_ORDER_QUANTITY = 8;
+
+        // Number of Days (Stopping Condition)
+        public static readonly int NUMBER_OF_DAYS = 25;
     }
 }

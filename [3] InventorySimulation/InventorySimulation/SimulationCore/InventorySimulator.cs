@@ -60,7 +60,6 @@ namespace InventorySimulation.SimulationCore
             setAllNegativeValuesToZeroes();
 
             doPerformanceMeasure();
-
         }
 
         #region HELPERS
