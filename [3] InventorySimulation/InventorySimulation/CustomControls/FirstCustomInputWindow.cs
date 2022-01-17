@@ -1,5 +1,4 @@
-﻿using InventorySimulation;
-using InventorySimulation.SimulationCore;
+﻿using InventorySimulation.SimulationCore;
 using System;
 using System.Windows.Forms;
 
@@ -15,12 +14,31 @@ namespace InventorySimulation
 
         private void setDefaults()
         {
-            //numberOfNewspapersTxt.Text = Defaults.NUMBER_OF_NEWSPAPERS.ToString();
-            //numberOfRecordsTxt.Text = Defaults.NUMBER_OF_RECORDS.ToString();
-            //purchasePriceTxt.Text = Defaults.PURCHASE_PRICE.ToString();
-            //scrapPriceTxt.Text = Defaults.SCRAP_PRICE.ToString();
-            //sellingPriceTxt.Text = Defaults.SELLING_PRICE.ToString();
+            orderUpToTxt.Text = Defaults.ORDER_UP_TO.ToString();
+            reviewPeriodTxt.Text = Defaults.REVIEW_PERIOD.ToString();
+            startInventoryQuantityTxt.Text = Defaults.START_INVENTORY_QUANTITY.ToString();
+            startLeadDaysTxt.Text = Defaults.START_LEAD_DAYS.ToString();
+            startOrderQuantityTxt.Text = Defaults.START_ORDER_QUANTITY.ToString();
+            numberOfDaysTxt.Text = Defaults.NUMBER_OF_DAYS.ToString();
         }
 
+        #region HANDLING_INSTANT_VALUE_CHANGES
+        private void orderUpToTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void orderUpToTxt_TextChanged(object sender, EventArgs e)
+        {
+            Program.mSystem.OrderUpTo = int.Parse(orderUpToTxt.Text);
+            Program.mSystem.ReviewPeriod = int.Parse(reviewPeriodTxt.Text);
+            Program.mSystem.StartInventoryQuantity = int.Parse(startInventoryQuantityTxt.Text);
+            Program.mSystem.StartLeadDays = int.Parse(startLeadDaysTxt.Text);
+            Program.mSystem.StartOrderQuantity = int.Parse(startOrderQuantityTxt.Text);
+            Program.mSystem.NumberOfDays = int.Parse(numberOfDaysTxt.Text);
+        }
+        #endregion
+        
     }
 }

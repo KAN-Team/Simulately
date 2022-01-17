@@ -30,161 +30,173 @@ namespace InventorySimulation
         private void InitializeComponent()
         {
             this.containerPanel = new System.Windows.Forms.Panel();
-            this.StartOrderQuantity = new System.Windows.Forms.GroupBox();
-            this.sellingPriceTxt = new System.Windows.Forms.TextBox();
-            this.ReviewPeriod = new System.Windows.Forms.GroupBox();
-            this.numberOfRecordsTxt = new System.Windows.Forms.TextBox();
-            this.StartInventoryQuantity = new System.Windows.Forms.GroupBox();
-            this.purchasePriceTxt = new System.Windows.Forms.TextBox();
-            this.OrderUpTo = new System.Windows.Forms.GroupBox();
-            this.numberOfNewspapersTxt = new System.Windows.Forms.TextBox();
-            this.StartLeadDays = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.NumberOfDays = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NumberOfDaysGroup = new System.Windows.Forms.GroupBox();
+            this.numberOfDaysTxt = new System.Windows.Forms.TextBox();
+            this.StartLeadDaysGroup = new System.Windows.Forms.GroupBox();
+            this.startLeadDaysTxt = new System.Windows.Forms.TextBox();
+            this.StartOrderQuantityGroup = new System.Windows.Forms.GroupBox();
+            this.startOrderQuantityTxt = new System.Windows.Forms.TextBox();
+            this.ReviewPeriodGroup = new System.Windows.Forms.GroupBox();
+            this.reviewPeriodTxt = new System.Windows.Forms.TextBox();
+            this.StartInventoryQuantityGroup = new System.Windows.Forms.GroupBox();
+            this.startInventoryQuantityTxt = new System.Windows.Forms.TextBox();
+            this.OrderUpToGroup = new System.Windows.Forms.GroupBox();
+            this.orderUpToTxt = new System.Windows.Forms.TextBox();
             this.containerPanel.SuspendLayout();
-            this.StartOrderQuantity.SuspendLayout();
-            this.ReviewPeriod.SuspendLayout();
-            this.StartInventoryQuantity.SuspendLayout();
-            this.OrderUpTo.SuspendLayout();
-            this.StartLeadDays.SuspendLayout();
-            this.NumberOfDays.SuspendLayout();
+            this.NumberOfDaysGroup.SuspendLayout();
+            this.StartLeadDaysGroup.SuspendLayout();
+            this.StartOrderQuantityGroup.SuspendLayout();
+            this.ReviewPeriodGroup.SuspendLayout();
+            this.StartInventoryQuantityGroup.SuspendLayout();
+            this.OrderUpToGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // containerPanel
             // 
             this.containerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(36)))));
-            this.containerPanel.Controls.Add(this.NumberOfDays);
-            this.containerPanel.Controls.Add(this.StartLeadDays);
-            this.containerPanel.Controls.Add(this.StartOrderQuantity);
-            this.containerPanel.Controls.Add(this.ReviewPeriod);
-            this.containerPanel.Controls.Add(this.StartInventoryQuantity);
-            this.containerPanel.Controls.Add(this.OrderUpTo);
+            this.containerPanel.Controls.Add(this.NumberOfDaysGroup);
+            this.containerPanel.Controls.Add(this.StartLeadDaysGroup);
+            this.containerPanel.Controls.Add(this.StartOrderQuantityGroup);
+            this.containerPanel.Controls.Add(this.ReviewPeriodGroup);
+            this.containerPanel.Controls.Add(this.StartInventoryQuantityGroup);
+            this.containerPanel.Controls.Add(this.OrderUpToGroup);
             this.containerPanel.Location = new System.Drawing.Point(10, 10);
             this.containerPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.containerPanel.Name = "containerPanel";
             this.containerPanel.Size = new System.Drawing.Size(580, 480);
             this.containerPanel.TabIndex = 1;
             // 
-            // StartOrderQuantity
+            // NumberOfDaysGroup
             // 
-            this.StartOrderQuantity.Controls.Add(this.sellingPriceTxt);
-            this.StartOrderQuantity.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.StartOrderQuantity.Location = new System.Drawing.Point(129, 321);
-            this.StartOrderQuantity.Name = "StartOrderQuantity";
-            this.StartOrderQuantity.Size = new System.Drawing.Size(359, 70);
-            this.StartOrderQuantity.TabIndex = 11;
-            this.StartOrderQuantity.TabStop = false;
-            this.StartOrderQuantity.Text = "Start Order Quantity";
+            this.NumberOfDaysGroup.Controls.Add(this.numberOfDaysTxt);
+            this.NumberOfDaysGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.NumberOfDaysGroup.Location = new System.Drawing.Point(129, 398);
+            this.NumberOfDaysGroup.Name = "NumberOfDaysGroup";
+            this.NumberOfDaysGroup.Size = new System.Drawing.Size(359, 70);
+            this.NumberOfDaysGroup.TabIndex = 12;
+            this.NumberOfDaysGroup.TabStop = false;
+            this.NumberOfDaysGroup.Text = "Number Of Days";
             // 
-            // sellingPriceTxt
+            // numberOfDaysTxt
             // 
-            this.sellingPriceTxt.Location = new System.Drawing.Point(81, 30);
-            this.sellingPriceTxt.Name = "sellingPriceTxt";
-            this.sellingPriceTxt.Size = new System.Drawing.Size(198, 30);
-            this.sellingPriceTxt.TabIndex = 7;
-            this.sellingPriceTxt.Text = "2";
-            this.sellingPriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numberOfDaysTxt.Location = new System.Drawing.Point(81, 30);
+            this.numberOfDaysTxt.Name = "numberOfDaysTxt";
+            this.numberOfDaysTxt.Size = new System.Drawing.Size(198, 30);
+            this.numberOfDaysTxt.TabIndex = 7;
+            this.numberOfDaysTxt.Text = "2";
+            this.numberOfDaysTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numberOfDaysTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
+            this.numberOfDaysTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderUpToTxt_KeyPress);
             // 
-            // ReviewPeriod
+            // StartLeadDaysGroup
             // 
-            this.ReviewPeriod.Controls.Add(this.numberOfRecordsTxt);
-            this.ReviewPeriod.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ReviewPeriod.Location = new System.Drawing.Point(129, 90);
-            this.ReviewPeriod.Name = "ReviewPeriod";
-            this.ReviewPeriod.Size = new System.Drawing.Size(359, 70);
-            this.ReviewPeriod.TabIndex = 11;
-            this.ReviewPeriod.TabStop = false;
-            this.ReviewPeriod.Text = "Review Period";
+            this.StartLeadDaysGroup.Controls.Add(this.startLeadDaysTxt);
+            this.StartLeadDaysGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.StartLeadDaysGroup.Location = new System.Drawing.Point(129, 244);
+            this.StartLeadDaysGroup.Name = "StartLeadDaysGroup";
+            this.StartLeadDaysGroup.Size = new System.Drawing.Size(359, 70);
+            this.StartLeadDaysGroup.TabIndex = 12;
+            this.StartLeadDaysGroup.TabStop = false;
+            this.StartLeadDaysGroup.Text = "Start Lead Days";
             // 
-            // numberOfRecordsTxt
+            // startLeadDaysTxt
             // 
-            this.numberOfRecordsTxt.Location = new System.Drawing.Point(81, 30);
-            this.numberOfRecordsTxt.Name = "numberOfRecordsTxt";
-            this.numberOfRecordsTxt.Size = new System.Drawing.Size(198, 30);
-            this.numberOfRecordsTxt.TabIndex = 8;
-            this.numberOfRecordsTxt.Text = "2";
-            this.numberOfRecordsTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startLeadDaysTxt.Location = new System.Drawing.Point(81, 30);
+            this.startLeadDaysTxt.Name = "startLeadDaysTxt";
+            this.startLeadDaysTxt.Size = new System.Drawing.Size(198, 30);
+            this.startLeadDaysTxt.TabIndex = 7;
+            this.startLeadDaysTxt.Text = "2";
+            this.startLeadDaysTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startLeadDaysTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
+            this.startLeadDaysTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderUpToTxt_KeyPress);
             // 
-            // StartInventoryQuantity
+            // StartOrderQuantityGroup
             // 
-            this.StartInventoryQuantity.Controls.Add(this.purchasePriceTxt);
-            this.StartInventoryQuantity.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.StartInventoryQuantity.Location = new System.Drawing.Point(129, 167);
-            this.StartInventoryQuantity.Name = "StartInventoryQuantity";
-            this.StartInventoryQuantity.Size = new System.Drawing.Size(359, 70);
-            this.StartInventoryQuantity.TabIndex = 10;
-            this.StartInventoryQuantity.TabStop = false;
-            this.StartInventoryQuantity.Text = "Start Inventory Quantity";
+            this.StartOrderQuantityGroup.Controls.Add(this.startOrderQuantityTxt);
+            this.StartOrderQuantityGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.StartOrderQuantityGroup.Location = new System.Drawing.Point(129, 321);
+            this.StartOrderQuantityGroup.Name = "StartOrderQuantityGroup";
+            this.StartOrderQuantityGroup.Size = new System.Drawing.Size(359, 70);
+            this.StartOrderQuantityGroup.TabIndex = 11;
+            this.StartOrderQuantityGroup.TabStop = false;
+            this.StartOrderQuantityGroup.Text = "Start Order Quantity";
             // 
-            // purchasePriceTxt
+            // startOrderQuantityTxt
             // 
-            this.purchasePriceTxt.Location = new System.Drawing.Point(81, 30);
-            this.purchasePriceTxt.Name = "purchasePriceTxt";
-            this.purchasePriceTxt.Size = new System.Drawing.Size(198, 30);
-            this.purchasePriceTxt.TabIndex = 7;
-            this.purchasePriceTxt.Text = "2";
-            this.purchasePriceTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startOrderQuantityTxt.Location = new System.Drawing.Point(81, 30);
+            this.startOrderQuantityTxt.Name = "startOrderQuantityTxt";
+            this.startOrderQuantityTxt.Size = new System.Drawing.Size(198, 30);
+            this.startOrderQuantityTxt.TabIndex = 7;
+            this.startOrderQuantityTxt.Text = "2";
+            this.startOrderQuantityTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startOrderQuantityTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
+            this.startOrderQuantityTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderUpToTxt_KeyPress);
             // 
-            // OrderUpTo
+            // ReviewPeriodGroup
             // 
-            this.OrderUpTo.Controls.Add(this.numberOfNewspapersTxt);
-            this.OrderUpTo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.OrderUpTo.Location = new System.Drawing.Point(129, 13);
-            this.OrderUpTo.Name = "OrderUpTo";
-            this.OrderUpTo.Size = new System.Drawing.Size(359, 70);
-            this.OrderUpTo.TabIndex = 9;
-            this.OrderUpTo.TabStop = false;
-            this.OrderUpTo.Text = "Order Up To Level";
+            this.ReviewPeriodGroup.Controls.Add(this.reviewPeriodTxt);
+            this.ReviewPeriodGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.ReviewPeriodGroup.Location = new System.Drawing.Point(129, 90);
+            this.ReviewPeriodGroup.Name = "ReviewPeriodGroup";
+            this.ReviewPeriodGroup.Size = new System.Drawing.Size(359, 70);
+            this.ReviewPeriodGroup.TabIndex = 11;
+            this.ReviewPeriodGroup.TabStop = false;
+            this.ReviewPeriodGroup.Text = "Review Period";
             // 
-            // numberOfNewspapersTxt
+            // reviewPeriodTxt
             // 
-            this.numberOfNewspapersTxt.Location = new System.Drawing.Point(81, 30);
-            this.numberOfNewspapersTxt.Name = "numberOfNewspapersTxt";
-            this.numberOfNewspapersTxt.Size = new System.Drawing.Size(198, 30);
-            this.numberOfNewspapersTxt.TabIndex = 8;
-            this.numberOfNewspapersTxt.Text = "2";
-            this.numberOfNewspapersTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.reviewPeriodTxt.Location = new System.Drawing.Point(81, 30);
+            this.reviewPeriodTxt.Name = "reviewPeriodTxt";
+            this.reviewPeriodTxt.Size = new System.Drawing.Size(198, 30);
+            this.reviewPeriodTxt.TabIndex = 8;
+            this.reviewPeriodTxt.Text = "2";
+            this.reviewPeriodTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.reviewPeriodTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
+            this.reviewPeriodTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderUpToTxt_KeyPress);
             // 
-            // StartLeadDays
+            // StartInventoryQuantityGroup
             // 
-            this.StartLeadDays.Controls.Add(this.textBox1);
-            this.StartLeadDays.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.StartLeadDays.Location = new System.Drawing.Point(129, 244);
-            this.StartLeadDays.Name = "StartLeadDays";
-            this.StartLeadDays.Size = new System.Drawing.Size(359, 70);
-            this.StartLeadDays.TabIndex = 12;
-            this.StartLeadDays.TabStop = false;
-            this.StartLeadDays.Text = "Start Lead Days";
+            this.StartInventoryQuantityGroup.Controls.Add(this.startInventoryQuantityTxt);
+            this.StartInventoryQuantityGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.StartInventoryQuantityGroup.Location = new System.Drawing.Point(129, 167);
+            this.StartInventoryQuantityGroup.Name = "StartInventoryQuantityGroup";
+            this.StartInventoryQuantityGroup.Size = new System.Drawing.Size(359, 70);
+            this.StartInventoryQuantityGroup.TabIndex = 10;
+            this.StartInventoryQuantityGroup.TabStop = false;
+            this.StartInventoryQuantityGroup.Text = "Start Inventory Quantity";
             // 
-            // textBox1
+            // startInventoryQuantityTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 30);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "2";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startInventoryQuantityTxt.Location = new System.Drawing.Point(81, 30);
+            this.startInventoryQuantityTxt.Name = "startInventoryQuantityTxt";
+            this.startInventoryQuantityTxt.Size = new System.Drawing.Size(198, 30);
+            this.startInventoryQuantityTxt.TabIndex = 7;
+            this.startInventoryQuantityTxt.Text = "2";
+            this.startInventoryQuantityTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.startInventoryQuantityTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
+            this.startInventoryQuantityTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderUpToTxt_KeyPress);
             // 
-            // NumberOfDays
+            // OrderUpToGroup
             // 
-            this.NumberOfDays.Controls.Add(this.textBox2);
-            this.NumberOfDays.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.NumberOfDays.Location = new System.Drawing.Point(129, 398);
-            this.NumberOfDays.Name = "NumberOfDays";
-            this.NumberOfDays.Size = new System.Drawing.Size(359, 70);
-            this.NumberOfDays.TabIndex = 12;
-            this.NumberOfDays.TabStop = false;
-            this.NumberOfDays.Text = "Number Of Days";
+            this.OrderUpToGroup.Controls.Add(this.orderUpToTxt);
+            this.OrderUpToGroup.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.OrderUpToGroup.Location = new System.Drawing.Point(129, 13);
+            this.OrderUpToGroup.Name = "OrderUpToGroup";
+            this.OrderUpToGroup.Size = new System.Drawing.Size(359, 70);
+            this.OrderUpToGroup.TabIndex = 9;
+            this.OrderUpToGroup.TabStop = false;
+            this.OrderUpToGroup.Text = "Order Up To Level";
             // 
-            // textBox2
+            // orderUpToTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(81, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 30);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "2";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.orderUpToTxt.Location = new System.Drawing.Point(81, 30);
+            this.orderUpToTxt.Name = "orderUpToTxt";
+            this.orderUpToTxt.Size = new System.Drawing.Size(198, 30);
+            this.orderUpToTxt.TabIndex = 8;
+            this.orderUpToTxt.Text = "2";
+            this.orderUpToTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.orderUpToTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
+            this.orderUpToTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.orderUpToTxt_KeyPress);
             // 
             // FirstCustomInputWindow
             // 
@@ -197,18 +209,18 @@ namespace InventorySimulation
             this.Name = "FirstCustomInputWindow";
             this.Size = new System.Drawing.Size(600, 500);
             this.containerPanel.ResumeLayout(false);
-            this.StartOrderQuantity.ResumeLayout(false);
-            this.StartOrderQuantity.PerformLayout();
-            this.ReviewPeriod.ResumeLayout(false);
-            this.ReviewPeriod.PerformLayout();
-            this.StartInventoryQuantity.ResumeLayout(false);
-            this.StartInventoryQuantity.PerformLayout();
-            this.OrderUpTo.ResumeLayout(false);
-            this.OrderUpTo.PerformLayout();
-            this.StartLeadDays.ResumeLayout(false);
-            this.StartLeadDays.PerformLayout();
-            this.NumberOfDays.ResumeLayout(false);
-            this.NumberOfDays.PerformLayout();
+            this.NumberOfDaysGroup.ResumeLayout(false);
+            this.NumberOfDaysGroup.PerformLayout();
+            this.StartLeadDaysGroup.ResumeLayout(false);
+            this.StartLeadDaysGroup.PerformLayout();
+            this.StartOrderQuantityGroup.ResumeLayout(false);
+            this.StartOrderQuantityGroup.PerformLayout();
+            this.ReviewPeriodGroup.ResumeLayout(false);
+            this.ReviewPeriodGroup.PerformLayout();
+            this.StartInventoryQuantityGroup.ResumeLayout(false);
+            this.StartInventoryQuantityGroup.PerformLayout();
+            this.OrderUpToGroup.ResumeLayout(false);
+            this.OrderUpToGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -216,17 +228,17 @@ namespace InventorySimulation
         #endregion
 
         private System.Windows.Forms.Panel containerPanel;
-        private System.Windows.Forms.GroupBox OrderUpTo;
-        private System.Windows.Forms.GroupBox StartInventoryQuantity;
-        private System.Windows.Forms.TextBox purchasePriceTxt;
-        private System.Windows.Forms.TextBox numberOfNewspapersTxt;
-        private System.Windows.Forms.GroupBox StartOrderQuantity;
-        private System.Windows.Forms.TextBox sellingPriceTxt;
-        private System.Windows.Forms.GroupBox ReviewPeriod;
-        private System.Windows.Forms.TextBox numberOfRecordsTxt;
-        private System.Windows.Forms.GroupBox StartLeadDays;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox NumberOfDays;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox OrderUpToGroup;
+        private System.Windows.Forms.GroupBox StartInventoryQuantityGroup;
+        private System.Windows.Forms.TextBox startInventoryQuantityTxt;
+        private System.Windows.Forms.TextBox orderUpToTxt;
+        private System.Windows.Forms.GroupBox StartOrderQuantityGroup;
+        private System.Windows.Forms.TextBox startOrderQuantityTxt;
+        private System.Windows.Forms.GroupBox ReviewPeriodGroup;
+        private System.Windows.Forms.TextBox reviewPeriodTxt;
+        private System.Windows.Forms.GroupBox StartLeadDaysGroup;
+        private System.Windows.Forms.TextBox startLeadDaysTxt;
+        private System.Windows.Forms.GroupBox NumberOfDaysGroup;
+        private System.Windows.Forms.TextBox numberOfDaysTxt;
     }
 }
