@@ -10,7 +10,7 @@ namespace MultiQueueSimulation.CustomControls
     public partial class ChartWindow : UserControl
     {
         private string seriesName;
-        private Server server;
+        private readonly Server server;
 
         public ChartWindow(int serverID)
         {

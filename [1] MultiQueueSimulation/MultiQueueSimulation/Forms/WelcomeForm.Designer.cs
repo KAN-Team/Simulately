@@ -35,9 +35,6 @@
             this.welcomePanel = new System.Windows.Forms.Panel();
             this.gitHubPic = new System.Windows.Forms.PictureBox();
             this.gitHubLinkLbl = new System.Windows.Forms.Label();
-            this.secondCustomInputWindow = new MultiQueueSimulation.SecondCustomInputWindow();
-            this.loadFileWindow = new MultiQueueSimulation.LoadFileWindow();
-            this.firstCustomInputWindow = new MultiQueueSimulation.FirstCustomInputWindow();
             this.abanoubLbl = new System.Windows.Forms.Label();
             this.nadaLbl = new System.Windows.Forms.Label();
             this.horizontalSeparatorPanel = new System.Windows.Forms.Panel();
@@ -62,7 +59,7 @@
             this.nextPic.BackColor = System.Drawing.Color.Transparent;
             this.nextPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nextPic.Image = ((System.Drawing.Image)(resources.GetObject("nextPic.Image")));
-            this.nextPic.Location = new System.Drawing.Point(560, 235);
+            this.nextPic.Location = new System.Drawing.Point(555, 235);
             this.nextPic.Name = "nextPic";
             this.nextPic.Size = new System.Drawing.Size(30, 30);
             this.nextPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -75,7 +72,7 @@
             this.backPic.BackColor = System.Drawing.Color.Transparent;
             this.backPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backPic.Image = ((System.Drawing.Image)(resources.GetObject("backPic.Image")));
-            this.backPic.Location = new System.Drawing.Point(10, 235);
+            this.backPic.Location = new System.Drawing.Point(15, 235);
             this.backPic.Name = "backPic";
             this.backPic.Size = new System.Drawing.Size(30, 30);
             this.backPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -87,22 +84,19 @@
             // 
             this.welcomePanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("welcomePanel.BackgroundImage")));
             this.welcomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.welcomePanel.Controls.Add(this.closePic);
             this.welcomePanel.Controls.Add(this.gitHubPic);
+            this.welcomePanel.Controls.Add(this.backPic);
             this.welcomePanel.Controls.Add(this.gitHubLinkLbl);
-            this.welcomePanel.Controls.Add(this.secondCustomInputWindow);
-            this.welcomePanel.Controls.Add(this.loadFileWindow);
-            this.welcomePanel.Controls.Add(this.firstCustomInputWindow);
+            this.welcomePanel.Controls.Add(this.nextPic);
             this.welcomePanel.Controls.Add(this.abanoubLbl);
             this.welcomePanel.Controls.Add(this.nadaLbl);
             this.welcomePanel.Controls.Add(this.horizontalSeparatorPanel);
             this.welcomePanel.Controls.Add(this.welcomeToLbl);
             this.welcomePanel.Controls.Add(this.simulatelyTitleLbl);
             this.welcomePanel.Controls.Add(this.logoPic);
-            this.welcomePanel.Controls.Add(this.backPic);
-            this.welcomePanel.Controls.Add(this.nextPic);
             this.welcomePanel.Controls.Add(this.theBestLbl);
             this.welcomePanel.Controls.Add(this.simulatingSystemLbl);
-            this.welcomePanel.Controls.Add(this.closePic);
             this.welcomePanel.Controls.Add(this.kareemLbl);
             this.welcomePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.welcomePanel.Location = new System.Drawing.Point(0, 0);
@@ -137,36 +131,6 @@
             this.gitHubLinkLbl.Click += new System.EventHandler(this.gitHubLinkLbl_Click);
             this.gitHubLinkLbl.MouseEnter += new System.EventHandler(this.gitHubLinkLbl_MouseEnter);
             this.gitHubLinkLbl.MouseLeave += new System.EventHandler(this.gitHubLinkLbl_MouseLeave);
-            // 
-            // secondCustomInputWindow
-            // 
-            this.secondCustomInputWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.secondCustomInputWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.secondCustomInputWindow.Location = new System.Drawing.Point(600, 0);
-            this.secondCustomInputWindow.Margin = new System.Windows.Forms.Padding(5);
-            this.secondCustomInputWindow.Name = "secondCustomInputWindow";
-            this.secondCustomInputWindow.Size = new System.Drawing.Size(600, 500);
-            this.secondCustomInputWindow.TabIndex = 22;
-            // 
-            // loadFileWindow
-            // 
-            this.loadFileWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.loadFileWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadFileWindow.Location = new System.Drawing.Point(600, 0);
-            this.loadFileWindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.loadFileWindow.Name = "loadFileWindow";
-            this.loadFileWindow.Size = new System.Drawing.Size(600, 500);
-            this.loadFileWindow.TabIndex = 21;
-            // 
-            // firstCustomInputWindow
-            // 
-            this.firstCustomInputWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.firstCustomInputWindow.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstCustomInputWindow.Location = new System.Drawing.Point(600, 0);
-            this.firstCustomInputWindow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.firstCustomInputWindow.Name = "firstCustomInputWindow";
-            this.firstCustomInputWindow.Size = new System.Drawing.Size(600, 500);
-            this.firstCustomInputWindow.TabIndex = 20;
             // 
             // abanoubLbl
             // 
@@ -269,7 +233,7 @@
             this.closePic.BackColor = System.Drawing.Color.Transparent;
             this.closePic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closePic.Image = ((System.Drawing.Image)(resources.GetObject("closePic.Image")));
-            this.closePic.Location = new System.Drawing.Point(562, 6);
+            this.closePic.Location = new System.Drawing.Point(565, 5);
             this.closePic.Name = "closePic";
             this.closePic.Size = new System.Drawing.Size(30, 30);
             this.closePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -309,6 +273,7 @@
             this.Name = "WelcomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.WelcomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nextPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPic)).EndInit();
             this.welcomePanel.ResumeLayout(false);
@@ -335,9 +300,6 @@
         private System.Windows.Forms.Label abanoubLbl;
         private System.Windows.Forms.Label kareemLbl;
         private System.Windows.Forms.Label nadaLbl;
-        private SecondCustomInputWindow secondCustomInputWindow;
-        private LoadFileWindow loadFileWindow;
-        private FirstCustomInputWindow firstCustomInputWindow;
         private System.Windows.Forms.Label gitHubLinkLbl;
         private System.Windows.Forms.PictureBox gitHubPic;
     }

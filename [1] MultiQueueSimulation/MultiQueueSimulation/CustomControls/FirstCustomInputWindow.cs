@@ -7,14 +7,13 @@ namespace MultiQueueSimulation
 {
     public partial class FirstCustomInputWindow : UserControl
     {
-        private WelcomeForm welcomeForm;
-
         public FirstCustomInputWindow()
         {
             InitializeComponent();
+            setDefaults();
         }
 
-        private void Form_Initiator()
+        private void setDefaults()
         {
             selectionCmb.SelectedIndex = Defaults.SELECTION_METHOD - 1;
             stoppingCriteriaCmb.SelectedIndex = Defaults.STOPPING_CRITERIA - 1;
@@ -71,8 +70,6 @@ namespace MultiQueueSimulation
                 for (int i = 0; i < Program.mSystem.NumberOfServers; ++i)
                     Program.mSystem.Servers.Add(new Server(i + 1));
             }
-
-            welcomeForm.getSecondCustomInput().initializeServersColumns();
         }
 
         private void stoppingNumberTxt_TextChanged(object sender, EventArgs e)
@@ -106,12 +103,6 @@ namespace MultiQueueSimulation
                 Program.mSystem.SelectionMethod = Enums.SelectionMethod.LeastUtilization;
         }
         #endregion
-
-        public void setWelcomeForm(WelcomeForm welcomeForm)
-        {
-            this.welcomeForm = welcomeForm;
-            Form_Initiator();
-        }
 
     }
 }

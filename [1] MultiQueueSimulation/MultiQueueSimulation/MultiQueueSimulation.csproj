@@ -143,6 +143,9 @@
     <EmbeddedResource Include="CustomControls\LoadFileWindow.resx">
       <DependentUpon>LoadFileWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

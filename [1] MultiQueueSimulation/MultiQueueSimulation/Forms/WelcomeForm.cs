@@ -1,5 +1,6 @@
 ﻿using MultiQueueModels;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -23,7 +24,11 @@ namespace MultiQueueSimulation
         // =====================================================================//
 
         // determines which window is active from 0 to 3
+        private List<Control> windowsList;
         private int activeWindow;
+        private bool isSlidingLeft;
+        private bool isSlidingRight;
+        private SecondCustomInputWindow secondCustomInputWindow;
 
         public WelcomeForm()
         {
@@ -31,10 +36,40 @@ namespace MultiQueueSimulation
             SimulationSystem.needsCopy = false;
             InitializeComponent();
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
-            activeWindow = 0;
+            isSlidingLeft = isSlidingRight = false;
+            activeWindow = -1;
+        }
+
+        private void WelcomeForm_Load(object sender, EventArgs e)
+        {
+            // Add LoadFileWindow
+            LoadFileWindow loadFileWindow = new LoadFileWindow();
+            loadFileWindow.Left = Width;
+            loadFileWindow.Top = 0;
+            Controls.Add(loadFileWindow);
+            loadFileWindow.BringToFront();
+            // Add FirstCustomInputWindow
+            FirstCustomInputWindow firstCustomInputWindow = new FirstCustomInputWindow();
+            firstCustomInputWindow.Left = Width;
+            firstCustomInputWindow.Top = 0;
+            Controls.Add(firstCustomInputWindow);
+            firstCustomInputWindow.BringToFront();
+            // Add SecondCustomInputWindow
+            secondCustomInputWindow = new SecondCustomInputWindow();
+            secondCustomInputWindow.Left = Width;
+            secondCustomInputWindow.Top = 0;
+            Controls.Add(secondCustomInputWindow);
+            secondCustomInputWindow.BringToFront();
+
+            // Add the Custom Windows to the windowsList
+            windowsList = new List<Control>
+            {
+                loadFileWindow,
+                firstCustomInputWindow,
+                secondCustomInputWindow
+            };
+
             loadFileWindow.setWelcomeForm(this);
-            firstCustomInputWindow.setWelcomeForm(this);
-            secondCustomInputWindow.setWelcomeForm(this);
         }
 
         #region NAVIGATION_PICTURE_BUTTONS
@@ -46,18 +81,79 @@ namespace MultiQueueSimulation
 
         private void nextPic_Click(object sender, EventArgs e)
         {
-            if (activeWindow < 4)
+            if (activeWindow < windowsList.Count - 1)
+            {
                 activeWindow++;
+                isSlidingLeft = true;
+                if (activeWindow == windowsList.Count - 1)
+                    secondCustomInputWindow.initializeServersColumns();
+            }
 
-            activateWindow();
+            else if (activeWindow == windowsList.Count - 1)
+            {
+                secondCustomInputWindow.openSumulationTableForm(this);
+            }
+
+            handlePicButtons();
         }
 
         private void backPic_Click(object sender, EventArgs e)
         {
             if (activeWindow > 0)
+            {
                 activeWindow--;
+                isSlidingRight = true;
+            }
 
-            activateWindow();
+            handlePicButtons();
+        }
+
+        private void handlePicButtons()
+        {
+            closePic.Parent = windowsList[activeWindow];
+            nextPic.Parent = windowsList[activeWindow];
+            backPic.Parent = windowsList[activeWindow];
+            closePic.BringToFront();
+            nextPic.BringToFront();
+            backPic.BringToFront();
+        }
+        #endregion
+
+        #region TIMER_AND_ACTIVATING_WINDOW
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (activeWindow != -1)
+            {
+                int sliding_speed = 20;
+                Control window = windowsList[activeWindow];
+                if (isSlidingLeft)
+                {
+                    if (window.Left > 0)
+                    {
+                        if (window.Left < sliding_speed)
+                            window.Left = 0;
+                        else
+                            window.Left -= sliding_speed;
+                    }
+
+                    else
+                        isSlidingLeft = false;
+                }
+
+                else if (isSlidingRight)
+                {
+                    window = windowsList[activeWindow + 1];
+                    if (window.Left < Width)
+                    {
+                        if (window.Left + sliding_speed > Width)
+                            window.Left = Width;
+                        else
+                            window.Left += sliding_speed;
+                    }
+                    else
+                        isSlidingRight = false;
+                }
+            }
         }
         #endregion
 
@@ -78,104 +174,5 @@ namespace MultiQueueSimulation
         }
         #endregion
 
-        #region TIMER_AND_ACTIVATING_WINDOW
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            int animation_speed = 20;
-            
-            if (activeWindow == 0 && loadFileWindow.Left < Width)
-            {
-                loadFileWindow.Left += animation_speed;
-            }
-
-            else if (activeWindow == 1 && (loadFileWindow.Left > 0 || firstCustomInputWindow.Left < Width))
-            {
-                if (loadFileWindow.Left > 0)
-                    loadFileWindow.Left -= animation_speed;
-
-                if (firstCustomInputWindow.Left < Width)
-                    firstCustomInputWindow.Left += animation_speed;
-            }
-
-            else if (activeWindow == 2 && (firstCustomInputWindow.Left > 0 || secondCustomInputWindow.Left < Width))
-            {
-                if (firstCustomInputWindow.Left > 0)
-                    firstCustomInputWindow.Left -= animation_speed;
-
-                if (secondCustomInputWindow.Left < Width)
-                    secondCustomInputWindow.Left += animation_speed;
-            }
-
-            else if (activeWindow == 3 && secondCustomInputWindow.Left > 0)
-            {
-                secondCustomInputWindow.Left -= animation_speed;
-            }
-        }
-
-        private void activateWindow()
-        {
-            if (activeWindow == 0) // Welcome Window
-            {
-                nextPic.Parent = welcomePanel;
-                backPic.Parent = welcomePanel;
-                closePic.Parent = welcomePanel;
-            }
-
-            else if (activeWindow == 1) // Load From File Window
-            {
-                nextPic.Parent = loadFileWindow;
-                backPic.Parent = loadFileWindow;
-                closePic.Parent = loadFileWindow;
-            }
-
-            else if (activeWindow == 2) // First Custom Input Window
-            {
-                nextPic.Parent = firstCustomInputWindow;
-                backPic.Parent = firstCustomInputWindow;
-                closePic.Parent = firstCustomInputWindow;
-            }
-
-            else if (activeWindow == 3) // Second Custom Input Window
-            {
-                nextPic.Parent = secondCustomInputWindow;
-                backPic.Parent = secondCustomInputWindow;
-                closePic.Parent = secondCustomInputWindow;
-            }
-
-            else if (activeWindow == 4) // Simulation Table Form
-            {
-                bool isOpened = secondCustomInputWindow.simulateData();
-                if (!isOpened)
-                    activeWindow--;
-            }
-
-            if (activeWindow == 1 && (loadFileWindow.Left > 0 || firstCustomInputWindow.Left < Width))
-            {
-                loadFileWindow.BringToFront();
-                firstCustomInputWindow.BringToFront();
-            }
-
-            else if (activeWindow == 2 && (firstCustomInputWindow.Left > 0 || secondCustomInputWindow.Left < Width))
-            {
-                firstCustomInputWindow.BringToFront();
-                secondCustomInputWindow.BringToFront();
-                secondCustomInputWindow.initializeServersColumns();
-            }
-
-            else if (activeWindow == 3 && secondCustomInputWindow.Left > 0)
-            {
-                secondCustomInputWindow.BringToFront();
-            }
-
-            nextPic.BringToFront();
-            backPic.BringToFront();
-            closePic.BringToFront();
-        }
-        #endregion
-
-        public SecondCustomInputWindow getSecondCustomInput()
-        {
-            return secondCustomInputWindow;
-        }
     }
 }

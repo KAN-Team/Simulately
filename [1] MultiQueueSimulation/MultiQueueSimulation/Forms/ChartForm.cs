@@ -14,6 +14,7 @@ namespace MultiQueueSimulation.Forms
         private int screenWidth;
         private bool isSlidingLeft;
         private bool isSlidingRight;
+
         public ChartForm()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace MultiQueueSimulation.Forms
             screenWidth = Screen.FromControl(this).Bounds.Width;
             isSlidingLeft = isSlidingRight = false;
         }
+
         private void ChartForm_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < Program.mSystem.NumberOfServers; ++i)

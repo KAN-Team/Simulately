@@ -177,3 +177,4 @@ E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQ
 E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CoreCompileInputs.cache
 E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.exe
 E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[1] MultiQueueSimulation\MultiQueueSimulation\obj\Debug\MultiQueueSimulation.csproj.CopyComplete

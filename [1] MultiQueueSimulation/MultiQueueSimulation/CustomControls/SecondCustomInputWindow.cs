@@ -10,7 +10,6 @@ namespace MultiQueueSimulation
 {
     public partial class SecondCustomInputWindow : UserControl
     {
-        private WelcomeForm welcomeForm;
         private Thread thread;
 
         public SecondCustomInputWindow()
@@ -196,11 +195,6 @@ namespace MultiQueueSimulation
 
         #endregion
 
-        public void setWelcomeForm(WelcomeForm welcomeForm)
-        {
-            this.welcomeForm = welcomeForm;
-        }
-
         public void initializeServersColumns()
         {
             DataTable dataTable = new DataTable();
@@ -216,7 +210,8 @@ namespace MultiQueueSimulation
                         new Font("comic sans ms", 10, FontStyle.Bold);
         }
 
-        public bool simulateData()
+        #region OPENING_SIMULATION_TABLE_FORM
+        public void openSumulationTableForm(WelcomeForm welcomeForm)
         {
             toBeFocusedTxt.Focus();
             if (isValidDgvs())
@@ -224,21 +219,13 @@ namespace MultiQueueSimulation
                 setInterarrivalDistribution();
                 setServerServiceTime();
 
-                openSumulationTableForm();
+                thread = new Thread(openSimulationForm);
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
+                welcomeForm.Close();
 
                 //TestSimulationSystem.testSimulationData();
-                return true;
             }
-            return false;
-        }
-
-        #region OPENING_SIMULATION_TABLE_FORM
-        private void openSumulationTableForm()
-        {
-            thread = new Thread(openSimulationForm);
-            thread.SetApartmentState(ApartmentState.STA);
-            thread.Start();
-            welcomeForm.Close();
         }
 
         private void openSimulationForm(object obj)

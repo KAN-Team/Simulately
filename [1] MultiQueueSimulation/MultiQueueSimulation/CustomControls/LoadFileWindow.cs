@@ -39,14 +39,10 @@ namespace MultiQueueSimulation
 
         private void loadFromFileBtn_Click(object sender, EventArgs e)
         {
-            string fileFormatReadmeText = "";
+            string fileFormatReadmeText;
             try
             {
-                string exeFile = (new Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-                string exeDir = Path.GetDirectoryName(exeFile);
-                string readmeFullPath = Path.Combine(exeDir, @"..\..\TestCases\ReadMe.txt");
-                readmeFullPath = readmeFullPath.Replace("%20", " ");
-                fileFormatReadmeText = File.ReadAllText(readmeFullPath);
+                fileFormatReadmeText = File.ReadAllText(@"..\..\TestCases\ReadMe.txt");
             }
             catch
             {

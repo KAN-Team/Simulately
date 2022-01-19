@@ -21,18 +21,20 @@ namespace MultiQueueSimulation.Forms
                     Program.mSystem.Servers[i].Utilization
                     );
 
-            doConclusions();
+            DoConclusions();
         }
 
-        private void doConclusions()
+        private void DoConclusions()
         {
-            Dictionary<string, string> MessageInfo = new Dictionary<string, string>();
-            MessageInfo["SelectionMethod"] = "Another Selection Method may have to be chosen!";
-            MessageInfo["DisposeServers"] = "Number of Servers may have to be disposed of!";
-            MessageInfo["NeedServers"] = "Extra Servers are needed!";
-            MessageInfo["NeedServer"] = "Extra Server may be needed!";
+            Dictionary<string, string> MessageInfo = new Dictionary<string, string>
+            {
+                ["SelectionMethod"] = "Another Selection Method may have to be chosen!",
+                ["DisposeServers"] = "Number of Servers may have to be disposed of!",
+                ["NeedServers"] = "Extra Servers are needed!",
+                ["NeedServer"] = "Extra Server may be needed!"
+            };
 
-            decimal avgUtilization = getAverageUtilization();
+            decimal avgUtilization = GetAverageUtilization();
 
             string hint    = "";
             string message = "";
@@ -81,7 +83,7 @@ namespace MultiQueueSimulation.Forms
             }
         }
 
-        private decimal getAverageUtilization()
+        private decimal GetAverageUtilization()
         {
             decimal utilzationAcc = 0;
             int serveresCount = Program.mSystem.Servers.Count;
