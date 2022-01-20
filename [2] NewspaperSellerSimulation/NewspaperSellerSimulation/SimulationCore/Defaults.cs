@@ -1,4 +1,4 @@
-﻿namespace NewspaperSellerSimulation.SimulationCore
+﻿namespace NewspaperSellerSimulation
 {
     class Defaults
     {

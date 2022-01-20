@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace NewspaperSellerSimulation.SimulationCore
+namespace NewspaperSellerSimulation
 {
     class NewspaperSimulator
     {

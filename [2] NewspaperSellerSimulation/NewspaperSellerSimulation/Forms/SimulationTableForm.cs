@@ -1,10 +1,7 @@
-﻿using NewspaperSellerSimulation;
-using NewspaperSellerSimulation.Forms;
-using NewspaperSellerSimulation.SimulationCore;
-using System.Threading;
+﻿using System.Threading;
 using System.Windows.Forms;
 
-namespace MultiQueueSimulation.Forms
+namespace NewspaperSellerSimulation
 {
     public partial class SimulationTableForm : Form
     {

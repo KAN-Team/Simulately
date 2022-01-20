@@ -1,7 +1,6 @@
-﻿using NewspaperSellerSimulation;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace MultiQueueSimulation.Forms
+namespace NewspaperSellerSimulation
 {
     public partial class PerformanceMesuresForm : Form
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace MultiQueueSimulation
+namespace NewspaperSellerSimulation
 {
     partial class LoadFileWindow
     {

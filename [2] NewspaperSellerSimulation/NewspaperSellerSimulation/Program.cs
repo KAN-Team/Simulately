@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using NewspaperSellerModels;
-using NewspaperSellerSimulation.Forms;
 using NewspaperSellerTesting;
 
 namespace NewspaperSellerSimulation
@@ -19,7 +18,6 @@ namespace NewspaperSellerSimulation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            mSystem = new SimulationSystem();
             Application.Run(new WelcomeForm());
 
             /*System.Threading.Thread.Sleep(500);

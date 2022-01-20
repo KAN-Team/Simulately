@@ -1,7 +1,4 @@
-﻿using MultiQueueSimulation.Forms;
-using NewspaperSellerModels;
-using NewspaperSellerSimulation;
-using NewspaperSellerSimulation.Forms;
+﻿using NewspaperSellerModels;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace MultiQueueSimulation
+namespace NewspaperSellerSimulation
 {
     public partial class LoadFileWindow : UserControl
     {
@@ -40,14 +37,10 @@ namespace MultiQueueSimulation
 
         private void loadFromFileBtn_Click(object sender, EventArgs e)
         {
-            string fileFormatReadmeText = "";
+            string fileFormatReadmeText;
             try
             {
-                string exeFile = (new Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-                string exeDir = Path.GetDirectoryName(exeFile);
-                string readmeFullPath = Path.Combine(exeDir, @"..\..\TestCases\ReadMe.txt");
-                readmeFullPath = readmeFullPath.Replace("%20", " ");
-                fileFormatReadmeText = File.ReadAllText(readmeFullPath);
+                fileFormatReadmeText = File.ReadAllText(@"..\..\TestCases\ReadMe.txt");
             }
             catch
             {
@@ -114,10 +107,12 @@ namespace MultiQueueSimulation
                 decimal fairProb = decimal.Parse(inputLine[2]);
                 decimal poorProb = decimal.Parse(inputLine[3]);
 
-                DayTypeDistributions = new List<DayTypeDistribution>();
-                DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Good, goodProb));
-                DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Fair, fairProb));
-                DayTypeDistributions.Add(new DayTypeDistribution(Enums.DayType.Poor, poorProb));
+                DayTypeDistributions = new List<DayTypeDistribution>
+                {
+                    new DayTypeDistribution(Enums.DayType.Good, goodProb),
+                    new DayTypeDistribution(Enums.DayType.Fair, fairProb),
+                    new DayTypeDistribution(Enums.DayType.Poor, poorProb)
+                };
                 Program.mSystem.DemandDistributions.Add(new DemandDistribution(demand, DayTypeDistributions));
             }
         }

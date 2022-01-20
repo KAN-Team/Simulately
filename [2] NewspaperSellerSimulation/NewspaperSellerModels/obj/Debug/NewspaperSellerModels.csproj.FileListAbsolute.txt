@@ -48,3 +48,9 @@ E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\N
 E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
 E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
 E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.dll
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.AssemblyReference.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb

@@ -1,5 +1,5 @@
 ﻿
-namespace MultiQueueSimulation.Forms
+namespace NewspaperSellerSimulation
 {
     partial class SimulationTableForm
     {

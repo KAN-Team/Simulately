@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace NewspaperSellerSimulation.SimulationCore
+namespace NewspaperSellerSimulation
 {
     class TestSimulationSystem
     {

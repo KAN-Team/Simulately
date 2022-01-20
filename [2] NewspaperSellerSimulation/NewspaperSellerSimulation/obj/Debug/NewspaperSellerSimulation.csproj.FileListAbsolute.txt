@@ -165,3 +165,20 @@ E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Deb
 E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.CopyComplete
 E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.exe
 E:\GitHub\Simulately\NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.AssemblyReference.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.FirstCustomInputWindow.resources
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.LoadFileWindow.resources
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.SecondCustomInputWindow.resources
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.PerformanceMesuresForm.resources
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.SimulationTableForm.resources
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.Properties.Resources.resources
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.GenerateResource.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.CoreCompileInputs.cache
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.exe
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\bin\Debug\NewspaperSellerSimulation.exe.config
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\bin\Debug\NewspaperSellerSimulation.exe
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\bin\Debug\NewspaperSellerSimulation.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\bin\Debug\NewspaperSellerModels.dll
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\bin\Debug\NewspaperSellerModels.pdb
+E:\Projects\[GitHub]\KAN-Org\Projects\Simulately\[2] NewspaperSellerSimulation\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.WelcomeForm.resources

@@ -1,12 +1,9 @@
-﻿using MultiQueueSimulation.Forms;
-using NewspaperSellerModels;
-using NewspaperSellerSimulation;
-using NewspaperSellerSimulation.Forms;
+﻿using NewspaperSellerModels;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace MultiQueueSimulation
+namespace NewspaperSellerSimulation
 {
     public partial class SecondCustomInputWindow : UserControl
     {
@@ -193,6 +190,7 @@ namespace MultiQueueSimulation
         #region OPENING_SIMULATION_TABLE_FORM
         public void openSumulationTableForm(WelcomeForm welcomeForm)
         {
+            toBeFocusedTxt.Focus();
             if (isValidDgvs())
             {
                 getDataReadyForSimulation();

@@ -1,9 +1,7 @@
-﻿using NewspaperSellerSimulation;
-using NewspaperSellerSimulation.SimulationCore;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace MultiQueueSimulation
+namespace NewspaperSellerSimulation
 {
     public partial class FirstCustomInputWindow : UserControl
     {
