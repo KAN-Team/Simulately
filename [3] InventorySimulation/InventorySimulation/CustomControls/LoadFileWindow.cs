@@ -37,11 +37,10 @@ namespace InventorySimulation
 
         private void loadFromFileBtn_Click(object sender, EventArgs e)
         {
-            string fileFormatReadmeText = "";
+            string fileFormatReadmeText;
             try
             {
-                string readmeFullPath = @"..\..\TestCases\ReadMe.txt";
-                fileFormatReadmeText = File.ReadAllText(readmeFullPath);
+                fileFormatReadmeText = File.ReadAllText(@"..\..\TestCases\ReadMe.txt");
             }
             catch
             {

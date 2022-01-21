@@ -19,7 +19,6 @@ namespace InventorySimulation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            mSystem = new SimulationSystem();
             Application.Run(new WelcomeForm());
 
             /*System.Threading.Thread.Sleep(500);

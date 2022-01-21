@@ -73,7 +73,7 @@ namespace InventorySimulation
             this.NumberOfDaysGroup.Location = new System.Drawing.Point(129, 398);
             this.NumberOfDaysGroup.Name = "NumberOfDaysGroup";
             this.NumberOfDaysGroup.Size = new System.Drawing.Size(359, 70);
-            this.NumberOfDaysGroup.TabIndex = 12;
+            this.NumberOfDaysGroup.TabIndex = 6;
             this.NumberOfDaysGroup.TabStop = false;
             this.NumberOfDaysGroup.Text = "Number Of Days";
             // 
@@ -82,7 +82,7 @@ namespace InventorySimulation
             this.numberOfDaysTxt.Location = new System.Drawing.Point(81, 30);
             this.numberOfDaysTxt.Name = "numberOfDaysTxt";
             this.numberOfDaysTxt.Size = new System.Drawing.Size(198, 30);
-            this.numberOfDaysTxt.TabIndex = 7;
+            this.numberOfDaysTxt.TabIndex = 6;
             this.numberOfDaysTxt.Text = "2";
             this.numberOfDaysTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numberOfDaysTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
@@ -95,7 +95,7 @@ namespace InventorySimulation
             this.StartLeadDaysGroup.Location = new System.Drawing.Point(129, 244);
             this.StartLeadDaysGroup.Name = "StartLeadDaysGroup";
             this.StartLeadDaysGroup.Size = new System.Drawing.Size(359, 70);
-            this.StartLeadDaysGroup.TabIndex = 12;
+            this.StartLeadDaysGroup.TabIndex = 4;
             this.StartLeadDaysGroup.TabStop = false;
             this.StartLeadDaysGroup.Text = "Start Lead Days";
             // 
@@ -104,7 +104,7 @@ namespace InventorySimulation
             this.startLeadDaysTxt.Location = new System.Drawing.Point(81, 30);
             this.startLeadDaysTxt.Name = "startLeadDaysTxt";
             this.startLeadDaysTxt.Size = new System.Drawing.Size(198, 30);
-            this.startLeadDaysTxt.TabIndex = 7;
+            this.startLeadDaysTxt.TabIndex = 4;
             this.startLeadDaysTxt.Text = "2";
             this.startLeadDaysTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.startLeadDaysTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
@@ -117,7 +117,7 @@ namespace InventorySimulation
             this.StartOrderQuantityGroup.Location = new System.Drawing.Point(129, 321);
             this.StartOrderQuantityGroup.Name = "StartOrderQuantityGroup";
             this.StartOrderQuantityGroup.Size = new System.Drawing.Size(359, 70);
-            this.StartOrderQuantityGroup.TabIndex = 11;
+            this.StartOrderQuantityGroup.TabIndex = 5;
             this.StartOrderQuantityGroup.TabStop = false;
             this.StartOrderQuantityGroup.Text = "Start Order Quantity";
             // 
@@ -126,7 +126,7 @@ namespace InventorySimulation
             this.startOrderQuantityTxt.Location = new System.Drawing.Point(81, 30);
             this.startOrderQuantityTxt.Name = "startOrderQuantityTxt";
             this.startOrderQuantityTxt.Size = new System.Drawing.Size(198, 30);
-            this.startOrderQuantityTxt.TabIndex = 7;
+            this.startOrderQuantityTxt.TabIndex = 5;
             this.startOrderQuantityTxt.Text = "2";
             this.startOrderQuantityTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.startOrderQuantityTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
@@ -139,7 +139,7 @@ namespace InventorySimulation
             this.ReviewPeriodGroup.Location = new System.Drawing.Point(129, 90);
             this.ReviewPeriodGroup.Name = "ReviewPeriodGroup";
             this.ReviewPeriodGroup.Size = new System.Drawing.Size(359, 70);
-            this.ReviewPeriodGroup.TabIndex = 11;
+            this.ReviewPeriodGroup.TabIndex = 2;
             this.ReviewPeriodGroup.TabStop = false;
             this.ReviewPeriodGroup.Text = "Review Period";
             // 
@@ -148,7 +148,7 @@ namespace InventorySimulation
             this.reviewPeriodTxt.Location = new System.Drawing.Point(81, 30);
             this.reviewPeriodTxt.Name = "reviewPeriodTxt";
             this.reviewPeriodTxt.Size = new System.Drawing.Size(198, 30);
-            this.reviewPeriodTxt.TabIndex = 8;
+            this.reviewPeriodTxt.TabIndex = 2;
             this.reviewPeriodTxt.Text = "2";
             this.reviewPeriodTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.reviewPeriodTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
@@ -161,7 +161,7 @@ namespace InventorySimulation
             this.StartInventoryQuantityGroup.Location = new System.Drawing.Point(129, 167);
             this.StartInventoryQuantityGroup.Name = "StartInventoryQuantityGroup";
             this.StartInventoryQuantityGroup.Size = new System.Drawing.Size(359, 70);
-            this.StartInventoryQuantityGroup.TabIndex = 10;
+            this.StartInventoryQuantityGroup.TabIndex = 3;
             this.StartInventoryQuantityGroup.TabStop = false;
             this.StartInventoryQuantityGroup.Text = "Start Inventory Quantity";
             // 
@@ -170,7 +170,7 @@ namespace InventorySimulation
             this.startInventoryQuantityTxt.Location = new System.Drawing.Point(81, 30);
             this.startInventoryQuantityTxt.Name = "startInventoryQuantityTxt";
             this.startInventoryQuantityTxt.Size = new System.Drawing.Size(198, 30);
-            this.startInventoryQuantityTxt.TabIndex = 7;
+            this.startInventoryQuantityTxt.TabIndex = 3;
             this.startInventoryQuantityTxt.Text = "2";
             this.startInventoryQuantityTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.startInventoryQuantityTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);
@@ -183,7 +183,7 @@ namespace InventorySimulation
             this.OrderUpToGroup.Location = new System.Drawing.Point(129, 13);
             this.OrderUpToGroup.Name = "OrderUpToGroup";
             this.OrderUpToGroup.Size = new System.Drawing.Size(359, 70);
-            this.OrderUpToGroup.TabIndex = 9;
+            this.OrderUpToGroup.TabIndex = 1;
             this.OrderUpToGroup.TabStop = false;
             this.OrderUpToGroup.Text = "Order Up To Level";
             // 
@@ -192,7 +192,7 @@ namespace InventorySimulation
             this.orderUpToTxt.Location = new System.Drawing.Point(81, 30);
             this.orderUpToTxt.Name = "orderUpToTxt";
             this.orderUpToTxt.Size = new System.Drawing.Size(198, 30);
-            this.orderUpToTxt.TabIndex = 8;
+            this.orderUpToTxt.TabIndex = 1;
             this.orderUpToTxt.Text = "2";
             this.orderUpToTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.orderUpToTxt.TextChanged += new System.EventHandler(this.orderUpToTxt_TextChanged);

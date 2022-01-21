@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventoryModels;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -23,7 +24,7 @@ namespace InventorySimulation.Forms
         // =====================================================================//
 
         // determines which window is active from 0 to 3
-        private List<object> windowsList;
+        private List<Control> windowsList;
         private int activeWindow;
         private bool isSlidingLeft;
         private bool isSlidingRight;
@@ -32,6 +33,7 @@ namespace InventorySimulation.Forms
         public WelcomeForm()
         {
             InitializeComponent();
+            Program.mSystem = new SimulationSystem();
 
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
             isSlidingLeft = isSlidingRight = false;
@@ -40,27 +42,27 @@ namespace InventorySimulation.Forms
 
         private void WelcomeForm_Load(object sender, EventArgs e)
         {
+            // Add LoadFileWindow
             LoadFileWindow loadFileWindow = new LoadFileWindow();
             loadFileWindow.Left = Width;
             loadFileWindow.Top = 0;
             Controls.Add(loadFileWindow);
             loadFileWindow.BringToFront();
+            // Add FirstCustomInputWindow
             FirstCustomInputWindow firstCustomInputWindow = new FirstCustomInputWindow();
             firstCustomInputWindow.Left = Width;
             firstCustomInputWindow.Top = 0;
             Controls.Add(firstCustomInputWindow);
             firstCustomInputWindow.BringToFront();
+            // Add SecondCustomInputWindow
             secondCustomInputWindow = new SecondCustomInputWindow();
             secondCustomInputWindow.Left = Width;
             secondCustomInputWindow.Top = 0;
             Controls.Add(secondCustomInputWindow);
             secondCustomInputWindow.BringToFront();
 
-            closePic.BringToFront();
-            backPic.BringToFront();
-            nextPic.BringToFront();
-
-            windowsList = new List<object>();
+            // Add the Custom Windows to the windowsList
+            windowsList = new List<Control>();
             windowsList.Add(loadFileWindow);
             windowsList.Add(firstCustomInputWindow);
             windowsList.Add(secondCustomInputWindow);
@@ -81,6 +83,7 @@ namespace InventorySimulation.Forms
             {
                 activeWindow++;
                 isSlidingLeft = true;
+                handlePicButtons();
             }
 
             else if (activeWindow == windowsList.Count - 1)
@@ -95,7 +98,19 @@ namespace InventorySimulation.Forms
             {
                 activeWindow--;
                 isSlidingRight = true;
+                handlePicButtons();
             }
+        }
+
+        private void handlePicButtons()
+        {
+            closePic.Parent = windowsList[activeWindow];
+            backPic.Parent = windowsList[activeWindow];
+            nextPic.Parent = windowsList[activeWindow];
+
+            closePic.BringToFront();
+            backPic.BringToFront();
+            nextPic.BringToFront();
         }
         #endregion
 
@@ -105,7 +120,7 @@ namespace InventorySimulation.Forms
             if (activeWindow != -1)
             {
                 int sliding_speed = 20;
-                Control window = (Control)windowsList[activeWindow];
+                Control window = windowsList[activeWindow];
                 if (isSlidingLeft)
                 {
                     if (window.Left > 0)
@@ -122,7 +137,7 @@ namespace InventorySimulation.Forms
 
                 else if (isSlidingRight)
                 {
-                    window = (Control)windowsList[activeWindow + 1];
+                    window = windowsList[activeWindow + 1];
                     if (window.Left < Width)
                     {
                         if (window.Left + sliding_speed > Width)

@@ -185,6 +185,7 @@ namespace InventorySimulation
         #region OPENING_SIMULATION_TABLE_FORM
         public void openSumulationTableForm(WelcomeForm welcomeForm)
         {
+            toBeFocusedTxt.Focus();
             try
             {
                 if (isValidDgvs())

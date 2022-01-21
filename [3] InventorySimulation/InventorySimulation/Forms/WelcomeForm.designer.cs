@@ -241,8 +241,11 @@ namespace InventorySimulation.Forms
             // 
             this.welcomePanel.BackColor = System.Drawing.Color.Transparent;
             this.welcomePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.welcomePanel.Controls.Add(this.closePic);
+            this.welcomePanel.Controls.Add(this.backPic);
             this.welcomePanel.Controls.Add(this.gitHubPic);
             this.welcomePanel.Controls.Add(this.gitHubLinkLbl);
+            this.welcomePanel.Controls.Add(this.nextPic);
             this.welcomePanel.Controls.Add(this.abanoubLbl);
             this.welcomePanel.Controls.Add(this.nadaLbl);
             this.welcomePanel.Controls.Add(this.horizontalSeparatorPanel);
@@ -265,9 +268,6 @@ namespace InventorySimulation.Forms
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 500);
-            this.Controls.Add(this.backPic);
-            this.Controls.Add(this.closePic);
-            this.Controls.Add(this.nextPic);
             this.Controls.Add(this.welcomePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
