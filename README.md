@@ -31,44 +31,42 @@ Multi-Queue Simulation is a full simulation desktop system that simulates custom
 
 <details>
 
-  <summary> Valid System</summary>
+  <summary> Valid System </summary>
 
 <p>
 
 ### 1.Home Screen
 
-![1](https://user-images.githubusercontent.com/52586356/140431913-8f2b3527-623a-463b-acbe-cf339c481b90.png)
+![Home Screen](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/1.png)
 
 </p>
 
 <p>
 
+### 2.Loading Inputs From Text File
 
-### 2.Loading Input From Text File
-
-![2](https://user-images.githubusercontent.com/52586356/140432020-e3b666d8-94cd-45cf-8126-842d9d3863e0.png)
+![CustomLoadFileWindow](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/2.png)
 
 
-![3](https://user-images.githubusercontent.com/52586356/140432064-f3789b40-5f40-4cc4-8bfe-f6ec892582be.png)
-
+![CustomLoadFileWindow Dialog](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/3.png)
 
 </p>
 
 
 <p>
 
-### 3.Manual Input
+### 3.Manual Inputs
 
-![4](https://user-images.githubusercontent.com/52586356/140432146-e5f3fb8b-adf0-4e42-91e4-a4fca150f0b5.png)
-
-
-![5](https://user-images.githubusercontent.com/52586356/140432122-d68d23c0-fbfe-4824-ab1b-55da830d724e.png)
-
-
-![6](https://user-images.githubusercontent.com/52586356/140432165-310c9e76-28f6-4e7c-b633-02f70d4e5e9e.png)
+![4](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/4.png)
+  
+  
+![5](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/5.png)
 
 
-![7](https://user-images.githubusercontent.com/52586356/140432236-888000b0-8153-4dcf-a9e6-88bffc7b86d4.png)
+![6](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/6.png)
+
+
+![7](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/7.png)
 
 </p>
 
@@ -77,7 +75,7 @@ Multi-Queue Simulation is a full simulation desktop system that simulates custom
 
 ### 4.Simulation System
 
-![8](https://user-images.githubusercontent.com/52586356/140432253-86bc7e27-1436-4885-a7ab-92e82d1e2341.png)
+![8](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/8.png)
 
 </p>
 
@@ -86,8 +84,7 @@ Multi-Queue Simulation is a full simulation desktop system that simulates custom
 
 ### 5.System Performance Measurements
 
-![9](https://user-images.githubusercontent.com/48348589/149645100-1e7a1d0d-63f5-4432-ae7a-b56c45304c2d.png)
-
+![9](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/9.png)
 
 </p>
 
@@ -96,11 +93,10 @@ Multi-Queue Simulation is a full simulation desktop system that simulates custom
 
 ### 3.Servers State Charts
 
-![10](https://user-images.githubusercontent.com/52586356/140432401-55169e42-79d1-42cf-91ac-91d83a1fcef0.png)
+![10](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/10.png)
 
 
-![11](https://user-images.githubusercontent.com/52586356/140432409-2d18a993-87f4-41b1-9bc8-5f06a581d07c.png)
-
+![11](Screenshots/1%29%20MultiQueueSimulation/Valid%20system/11.png)
 
 </p>
 
@@ -110,53 +106,51 @@ Multi-Queue Simulation is a full simulation desktop system that simulates custom
 
 <details>
 
-  <summary> Invalid Inputs</summary>
+  <summary> Invalid Inputs </summary>
 
 <p>
 
-### 1.Invalid input file Formate 
+### 1.Invalid Input File Format
 
+- Missing Number of Servers
 
-- missing number of servers
+![1](Screenshots/1%29%20MultiQueueSimulation/InValid%20system/1.png)
 
-![12](https://user-images.githubusercontent.com/52586356/140434041-dd97db46-015b-486f-883d-85c552d05b3d.png)
+- Reading Invalid Format
 
-- choosing in-valid format
+![2](Screenshots/1%29%20MultiQueueSimulation/InValid%20system/2.png)
 
-![13](https://user-images.githubusercontent.com/52586356/140434153-13759788-9de4-471c-b669-10d4e114d0cb.png)
+- Invalid Format Error Message
 
-- Valid format Warning Message
-
-![14](https://user-images.githubusercontent.com/52586356/140434212-e73fd644-bdfb-4a83-aecc-8d1812b7bc78.png)
-
+![3](Screenshots/1%29%20MultiQueueSimulation/InValid%20system/3.png)
 
 </p>
 
-
-
+  
 <p>
 
-### 2.Invalid Manual input
+### 2.Invalid Manual inputs
 
-- There must be at least 2 servers to simulate.
+- There must be at least 2 servers to simulate
 
-![15](https://user-images.githubusercontent.com/52586356/140434277-b98ce9c9-1407-4f0b-b22a-1649a0761ce4.png)
+![4](Screenshots/1%29%20MultiQueueSimulation/InValid%20system/4.png)
 
 - There must be at least 2 customers OR 2 clock to simulate
 
-![16](https://user-images.githubusercontent.com/52586356/140434711-6c2d79a5-8684-44b4-8e84-c90bfbac1fe5.png)
+![5](Screenshots/1%29%20MultiQueueSimulation/InValid%20system/5.png)
 
-- sum of Probability must be equal 1 
+- Sum of Probabilities must be Equal 1 
 
-![17](https://user-images.githubusercontent.com/52586356/140434814-4618fb94-7b21-471d-869e-20273838559a.png)
+![6](Screenshots/1%29%20MultiQueueSimulation/InValid%20system/6.png)
 
-![18](https://user-images.githubusercontent.com/52586356/140434832-cebae250-5e7e-440c-8763-c56ab55633ff.png)
-
+![7](Screenshots/1%29%20MultiQueueSimulation/InValid%20system/7.png)
 
 </p>
 
 
 </details>
+
+<!--- ############################################################################################################################## --->
 
 ***
 
@@ -178,6 +172,74 @@ System Performance Measurements such as:
 - Number of days having excess demand.
 - Number of days having unsold papers.
 
+### Working Screenshots:
+
+<details>
+
+  <summary> Valid System</summary>
+
+<p>
+
+### 1.Loading Inputs From Text File
+
+![1](Screenshots/2%29%20NewspaperSellerSimulation/Valid/1.png)
+  
+</p>
+
+
+<p>
+
+### 2.Manual Inputs
+
+![2](Screenshots/2%29%20NewspaperSellerSimulation/Valid/2.png)
+
+![3](Screenshots/2%29%20NewspaperSellerSimulation/Valid/3.png)
+  
+</p>
+
+  
+<p>
+
+### 3.Simulation System
+
+![4](Screenshots/2%29%20NewspaperSellerSimulation/Valid/4.png)
+
+</p>
+  
+  
+<p>
+
+### 4.System Performance Measurements
+
+![5](Screenshots/2%29%20NewspaperSellerSimulation/Valid/5.png)
+
+</p>
+
+</details>
+
+
+<details>
+
+  <summary> Invalid Inputs </summary>
+
+<p>
+
+### 1.Invalid Manual Inputs
+
+- All Fields must be Filled
+
+!![1](Screenshots/2%29%20NewspaperSellerSimulation/Invalid/1.png)
+  
+- Sum of Probabilities must be Equal 1 
+
+![2](Screenshots/2%29%20NewspaperSellerSimulation/Invalid/2.png)
+
+</p>
+
+</details>
+
+<!--- ############################################################################################################################## --->
+
 *** 
 
 ## 3) Inventory Simulation
@@ -191,8 +253,6 @@ System Performance Measurements such as:
 - Ending Inventory Average 
 - Shortage Quantity Average 
 
-***
-
 ### Working Screenshots:
 
 <details>
@@ -201,80 +261,39 @@ System Performance Measurements such as:
 
 <p>
 
-### 1.Home Screen
+### 1.Loading Inputs From Text File
 
-![1](https://user-images.githubusercontent.com/52586356/140431913-8f2b3527-623a-463b-acbe-cf339c481b90.png)
-
-</p>
-
-<p>
-
-
-### 2.Loading Input From Text File
-
-![2](https://user-images.githubusercontent.com/52586356/140432020-e3b666d8-94cd-45cf-8126-842d9d3863e0.png)
-
-
-![3](https://user-images.githubusercontent.com/52586356/148279268-6f20a8f3-6158-494a-b265-df3e9a694f7b.png)
-
-  
-
-</p>
-
-
-<p>
-
-### 3.Manual Input
-
-![4](https://user-images.githubusercontent.com/52586356/148279697-56f6d1bc-5bc7-4244-8f6a-0e6721dacb8f.png)
-
-
-![5](https://user-images.githubusercontent.com/52586356/148279798-4ffff0d0-4ce6-4400-a95c-6fda8326be7b.png)
-
+![1](Screenshots/3%29%20InventorySimulation/Valid/1.png)
   
 </p>
 
-<p>
-
-### 4.Simulation System
-
-![6](https://user-images.githubusercontent.com/52586356/148280187-9b4a90a5-652a-45c3-a72a-948d94cefc0f.png)
-
-</p>
   
 <p>
 
-### 5.System Performance Measurements
+### 2.Simulation System
 
-![7](https://user-images.githubusercontent.com/52586356/148280231-38fe28f9-4d2f-4d8b-b402-be3ee36f6a14.png)
+![2](Screenshots/3%29%20InventorySimulation/Valid/2.png)
 
 </p>
-
 
 </details>
-
 
 
 <details>
 
-  <summary> Invalid Inputs</summary>
-
+  <summary> Invalid Inputs </summary>
 
 <p>
 
-### 1.Invalid Manual input
+- Reading Invalid Format
 
-- Sum of Probability must be equal 1 
-
-![1](https://user-images.githubusercontent.com/52586356/148281692-5108502a-5b69-4a80-81aa-95c4ff0a9a5a.png)
-
-- Must Fill all fields
-
-![1](https://user-images.githubusercontent.com/52586356/148281788-69e57405-7a59-4688-b3ca-f4b3d18d2798.png)
+![1](Screenshots/3%29%20InventorySimulation/Invalid/1.png)
 
 </p>
 
 </details>
+
+<!--- ############################################################################################################################## --->
 
 ***
 
